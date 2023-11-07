@@ -1,35 +1,104 @@
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  li a:hover {
-    background-color: #111;
-  }
-  .parent {
-    border: 5px solid black;
-    margin: 5rem;
-    padding: 5rem 5rem;
-    text-align: center;
-  }
-  .child {
-    display: inline-block;
-    border: 1px solid red;
-    padding: 1rem 1rem;
-    vertical-align: middle;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #1f1f1f; /* Dark background color */
+  color: #ccc; /* Light text color */
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 30px;
+}
+
+header img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+header h1 {
+  font-size: 36px;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.navbar {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  background-color: #333; /* Dark background color */
+  padding: 10px 0;
+}
+
+.navbar li {
+  margin: 0 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #ccc; /* Light text color */
+  font-weight: bold;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #007BFF; /* Line color when the link is active */
+  transform: scaleX(0); /* Initially, set the line to zero width */
+  transform-origin: right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+  color: #007BFF; /* Highlight color for links on hover */
+}
+
+.navbar a:hover::after {
+  transform: scaleX(1); /* Expand the line on hover */
+  transform-origin: left;
+}
+
+.section {
+  background-color: #333; /* Dark section background color */
+  color: #fff; /* Light text color */
+  padding: 40px 0;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 16px;
+}
+
+footer {
+  background-color: #1f1f1f; /* Dark background color */
+  color: #ccc; /* Light text color */
+  text-align: center;
+  padding: 10px 0;
+}
