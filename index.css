@@ -6,8 +6,8 @@
 
 body {
   font-family: "Arial", sans-serif;
-  background-color: #1f1f1f; /* Dark background color */
-  color: #ccc; /* Light text color */
+  background-color: #1f1f1f;
+  color: #ccc;
 }
 
 .container {
@@ -39,11 +39,35 @@ header p {
   margin: 10px 0;
 }
 
+/* Media query for small screens (mobile devices) */
+@media only screen and (max-width: 600px) {
+  header img {
+    width: 100%;
+    height: auto;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  header p {
+    font-size: 16px;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar li {
+    margin: 10px 0;
+  }
+}
+
 .navbar {
   list-style: none;
   display: flex;
   justify-content: center;
-  background-color: #333; /* Dark background color */
+  background-color: #333;
   padding: 10px 0;
 }
 
@@ -53,7 +77,7 @@ header p {
 
 .navbar a {
   text-decoration: none;
-  color: #ccc; /* Light text color */
+  color: #ccc;
   font-weight: bold;
   transition: color 0.3s;
   position: relative;
@@ -66,24 +90,24 @@ header p {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #007BFF; /* Line color when the link is active */
-  transform: scaleX(0); /* Initially, set the line to zero width */
+  background-color: #007BFF;
+  transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s ease-in-out;
 }
 
 .navbar a:hover {
-  color: #007BFF; /* Highlight color for links on hover */
+  color: #007BFF;
 }
 
 .navbar a:hover::after {
-  transform: scaleX(1); /* Expand the line on hover */
+  transform: scaleX(1);
   transform-origin: left;
 }
 
 .section {
-  background-color: #333; /* Dark section background color */
-  color: #fff; /* Light text color */
+  background-color: #333;
+  color: #fff;
   padding: 40px 0;
 }
 
@@ -99,25 +123,23 @@ p {
   margin-left: 0;
   margin-right: 0;
   text-indent: 30px;
-  text-transform:calc();
-  text-align:justify
+  text-align: justify;
+}
 
+.ulli {
+  text-align: left;
 }
-.ulli{
-  text-align:left
-}
+
 .ulli > ul {
   display: inline-block;
 }
 
-
 footer {
-  background-color: #1f1f1f; /* Dark background color */
-  color: #ccc; /* Light text color */
+  background-color: #1f1f1f;
+  color: #ccc;
   text-align: center;
   padding: 10px 0;
 }
-
 
 .dropdown {
   position: relative;
@@ -129,7 +151,7 @@ footer {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -140,7 +162,9 @@ footer {
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
 
 .dropdown:hover .dropdown-content {
   display: block;
