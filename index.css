@@ -59,7 +59,7 @@ header p {
   }
 
   .navbar li {
-    margin: 10px 0;
+    margin: 10px 0; /* Add space between navigation links on small screens */
   }
 }
 
