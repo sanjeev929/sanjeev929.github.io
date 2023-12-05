@@ -4,22 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name - Portfolio</title>
+    <script src="index.js"></script>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <img src="profile.png" alt="">
+            <img src="profile.jpg" alt="">
             <h1>Sanjeev</h1>
-            <h1>Josy</h1>
-            <!-- <p>Backend Developer</p> -->
+            <h4>Back-end Developer</h4>
         </div>
     </header>
 
     <nav>
         <ul class="navbar">
-            <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About Me</a></li>
+            <div class="dropdown">
+                <a class="dropbtn">Dropdown</a>
+                <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+                </div>
+              </div>
+            <li><a href="#portfolio">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -27,7 +35,36 @@
     <section id="about" class="section">
         <div class="container">
             <h2>About Me</h2>
-            <p>I'm a passionate backend developer with a strong background in building robust and efficient web applications. My goal is to create clean, maintainable, and scalable code that delivers exceptional user experiences. I love solving complex problems and continuously expanding my knowledge in the ever-evolving field of web development.</p>
+            <p> I'm a passionate backend developer with a strong background in building robust and efficient web applications.
+                My goal is to create clean, maintainable, and scalable code that delivers exceptional user experiences.
+                I love solving complex problems and continuously expanding my knowledge in the ever-evolving field of web development.
+                I completed basic python course in kaggle with certificate view, I really intrested to learn about Fast API and Django,Flask. I already complete basic about that platforms ,
+                Now I'm focus to deeper into that and also I developed Alexa Skill and Google Actions to device control with own OAuth2 server,I'm so exited to disscus with this two.
+            </p>
+            <br>
+            <div class="ulli"> 
+            <h3>Skills</h3> 
+            <br>
+            <ul>
+                <li>Python</li>
+                <li>Django</li>
+                <li>Fast API</li>
+                <li>Aws (Ec2,Lamda)</li>
+                <li>Alexa Skills</li>
+            </ul> 
+            <br>
+            <br>
+            <h3>Projects</h3> 
+            <br>
+                <ul>
+                <li>Python</li>
+                <li>Django</li>
+                <li>Fast API</li>
+                <li>Aws (Ec2,Lamda)</li>
+                <li>Alexa Skills</li>
+            </ul> 
+            </div>
+             
         </div>
     </section>
 
@@ -60,5 +97,6 @@
             <p>&copy; 2023 Your Name</p>
         </div>
     </footer>
+    
 </body>
 </html>
