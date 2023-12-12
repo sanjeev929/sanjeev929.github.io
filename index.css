@@ -42,7 +42,7 @@ header p {
 /* Media query for small screens (mobile devices) */
 @media only screen and (max-width: 600px) {
   header img {
-    width: 100%;
+    width: 80%;
     max-width: 150px;
     height: auto;
   }
