@@ -44,7 +44,6 @@ header p {
   header img {
     width: 80px; /* Set your desired width */
     height: 80px; /* Set your desired height */
-    border-radius: 50%;
   }
 
   header h1 {
