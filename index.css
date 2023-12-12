@@ -42,8 +42,8 @@ header p {
 /* Media query for small screens (mobile devices) */
 @media only screen and (max-width: 600px) {
   header img {
-    width: 80px; /* Set your desired width */
-    height: 80px; /* Set your desired height */
+    width: 40px; /* Set your desired width */
+    height: 40px; /* Set your desired height */
     border-radius: 50%;
   }
 
