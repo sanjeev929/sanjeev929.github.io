@@ -1,14 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <title>FastAPI Blog</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='fastapi.css'>
 </head>
 <body>
-    <h3>hello</h3>
+
+    <div class="container">
+        <aside class="topics">
+            <h2>Select Topics</h2>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#getting-started">Getting Started</a></li>
+                <!-- Add more topics as needed -->
+            </ul>
+        </aside>
+
+        <main>
+            <h1>FastAPI Blog</h1>
+            
+            <section id="overview">
+                <h2>Overview</h2>
+                <p>FastAPI is a modern, fast web framework for building APIs with Python 3.7+ based on standard Python type hints. It is designed to be easy to use and efficient, providing automatic validation, documentation, and more.</p>
+            </section>
+
+            <!-- Add more sections for other topics -->
+
+            <div class="code-section">
+                <h3>Code Example:</h3>
+                <div class="code-container">
+                    <div class="code-box" id="codeBox">
+                        <code id="codeSnippet" class="left-align">
+                            # Your FastAPI code here
+                            from fastapi import FastAPI
+
+                            app = FastAPI()
+
+                            @app.get("/")
+                            def read_root():
+                                return {"Hello": "World"}
+                        </code>
+                    </div>                
+                </div>
+                <button onclick="copyCode()">Copy Code</button>
+            </div>
+            <h3>Output:</h3>
+            <img src="fastapi_output.png" alt="FastAPI Output">
+        </main>
+    </div>
+
+    <script>
+        function copyCode() {
+            var codeSnippet = document.getElementById('codeSnippet');
+            var textarea = document.createElement('textarea');
+            textarea.value = codeSnippet.innerText;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+        }
+    </script>
+
 </body>
 </html>
