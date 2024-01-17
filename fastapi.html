@@ -64,6 +64,31 @@
             </section>
 
             <!-- Add more sections for other topics -->
+            <section id="installation">
+            <div class="code-section">
+                <h3>Installation</h3>
+                <p>open terminal in your PC and make your have python update version then type the below command</p>
+                <div class="code-container">
+                    <div class="code-box" id="codeBox">
+                        <code id="codeSnippet" class="left-align">
+pip install fastapi
+                        </code>
+                    </div>                
+                </div>
+                <button onclick="copyCode()">Copy Code</button>
+            </div>
+
+            <div class="code-section">
+                <p>open terminal in your PC and make your have python update version then type the below command</p>
+                <div class="code-container">
+                    <div class="code-box" id="codeBox">
+                        <code id="codeSnippet" class="left-align">
+pip install "uvicorn[standard]"
+                        </code>
+                    </div>                
+                </div>
+                <button onclick="copyCode()">Copy Code</button>
+            </div>
 
             <div class="code-section">
                 <h3>Code Example:</h3>
@@ -83,11 +108,39 @@ def read_root():
                 </div>
                 <button onclick="copyCode()">Copy Code</button>
             </div>
+
+            <div class="code-section">
+                <p>Run the server with following command</p>
+                <div class="code-container">
+                    <div class="code-box" id="codeBox">
+                        <code id="codeSnippet" class="left-align">
+uvicorn main:app --reload
+                        </code>
+                    </div>                
+                </div>
+                <button onclick="copyCode()">Copy Code</button>
+            </div>
+
             <h3>Output:</h3>
-            <img src="fastapi_output.png" alt="FastAPI Output">
+            <div class="code-section">
+                <div class="code-container">
+                    <div class="code-box" id="codeBox">
+                        <code id="codeSnippet" class="left-align">
+$ uvicorn main:app --reload
+
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [28720]
+INFO:     Started server process [28722]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+                            
+                        </code>
+                    </div>                
+                </div>
+            </div>
         </main>
     </div>
-
+    </section>
     <script>
         function copyCode() {
             var codeSnippet = document.getElementById('codeSnippet');
