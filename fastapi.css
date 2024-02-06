@@ -113,18 +113,22 @@ code.left-align {
     margin: 0;
 }
 @media only screen and (max-width: 768px) {
+    body {
+        background-color: red; /* Add a temporary background color */
+    }
+
     .container {
-        flex-direction: column; /* Change flex direction to column */
+        flex-direction: column;
     }
 
     .topics {
-        width: 100%; /* Set width to 100% to take full width */
+        width: 100%;
         padding-left: 0;
         position: static;
     }
 
     main {
-        width: 100%; /* Set width to 100% to take full width */
+        width: 100%;
         padding-left: 0;
     }
 }
