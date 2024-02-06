@@ -55,7 +55,8 @@ main {
 h2 {
     color: #ffffff;
 }
-h1, h3 {
+
+h1, h2, h3 {
     color: #333;
 }
 
@@ -111,27 +112,4 @@ code.left-align {
     white-space: pre;
     text-align: left !important;
     margin: 0;
-}
-@media only screen and (max-width: 768px) {
-    body {
-        background-color: rgb(255, 255, 255); /* Set background color to red */
-    }
-
-    .container {
-        flex-direction: column; /* Change flex direction to column */
-    }
-
-    .topics {
-        width: 100%; /* Set width to 100% to take full width */
-        padding-left: 0;
-        position: static;
-        order: 2; /* Change the order to 2 to move it below */
-    }
-
-    main {
-        width: 100%; /* Set width to 100% to take full width */
-        padding-left: 0;
-        order: 1; /* Change the order to 1 to move it above */
-    }
-}
 }
