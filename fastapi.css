@@ -103,7 +103,7 @@ img {
 }
 
 h2 {
-    color: white;
+    color: white !important;
 }
 /* Additional styles for left-align */
 code.left-align {
