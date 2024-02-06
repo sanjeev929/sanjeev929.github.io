@@ -52,7 +52,10 @@ main {
     padding-left: 25%; /* Add padding to the left side */
 }
 
-h1, h2, h3 {
+h2 {
+    color: #f5efef;
+}
+h1, h3 {
     color: #333;
 }
 
@@ -102,9 +105,6 @@ img {
     margin-top: 10px;
 }
 
-h2 {
-    color: white !important;
-}
 /* Additional styles for left-align */
 code.left-align {
     display: block;
@@ -114,17 +114,17 @@ code.left-align {
 }
 @media only screen and (max-width: 768px) {
     .container {
-      flex-direction: column-reverse;
+        flex-direction: column; /* Change flex direction to column */
     }
-  
+
     .topics {
-      width: 100%;
-      padding-left: 0;
-      position: static;
+        width: 100%; /* Set width to 100% to take full width */
+        padding-left: 0;
+        position: static;
     }
-  
+
     main {
-      width: 100%;
-      padding-left: 0;
+        width: 100%; /* Set width to 100% to take full width */
+        padding-left: 0;
     }
-  }
+}
