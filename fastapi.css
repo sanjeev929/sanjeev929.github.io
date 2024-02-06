@@ -109,3 +109,19 @@ code.left-align {
     text-align: left !important;
     margin: 0;
 }
+@media only screen and (max-width: 768px) {
+    .container {
+      flex-direction: column-reverse;
+    }
+  
+    .topics {
+      width: 100%;
+      padding-left: 0;
+      position: static;
+    }
+  
+    main {
+      width: 100%;
+      padding-left: 0;
+    }
+  }
