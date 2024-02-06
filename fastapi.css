@@ -102,6 +102,9 @@ img {
     margin-top: 10px;
 }
 
+h2 {
+    color: white;
+}
 /* Additional styles for left-align */
 code.left-align {
     display: block;
