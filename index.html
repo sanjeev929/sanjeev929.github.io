@@ -71,6 +71,17 @@
             <div class="portfolio-item">
                 <h3>Project 1: Company website for employee</h3>
                 <img src="image/projects/django.png" alt="Project 1" width="350" height="250">
+                    <div class="video-container">
+                        <video id="myVideo" controls>
+                            <source src="tech1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    
+                        <div class="custom-controls">
+                            <button onclick="togglePlayPause()"></button>
+                            <!-- Add more controls here -->
+                        </div>
+                    </div>
                     <p>
                         In the dynamic landscape of corporate management, the need for efficient employee tracking and engagement is more critical than ever. This brings us to the development of Project 1 – a comprehensive company website tailored for employee use. Built using the Django web framework and seamlessly integrating with Firebase for data storage, this project is hosted on an AWS EC2 instance running Ubuntu, ensuring scalability and reliability.
                     </p>
@@ -184,3 +195,14 @@
     </section>
 </body>
 </html>
+<script>
+    // JavaScript function to toggle play/pause
+    function togglePlayPause() {
+        var myVideo = document.getElementById("myVideo");
+        if (myVideo.paused) {
+            myVideo.play();
+        } else {
+            myVideo.pause();
+        }
+    }
+</script>

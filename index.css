@@ -39,6 +39,102 @@ header p {
   margin: 10px 0;
 }
 
+
+
+/* CSS styles for the video player */
+.video-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Example CSS styling for controls */
+.custom-controls {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Example CSS styling for control buttons */
+.custom-controls button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.custom-controls button:hover {
+  color: #ffca28; /* Change to your desired hover color */
+}
+
+/* Example CSS styling for progress bar */
+.progress-bar {
+  position: relative;
+  flex-grow: 1;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  margin: 0 10px;
+}
+
+.progress-filled {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #ffca28; /* Change to your desired fill color */
+  border-radius: 3px;
+}
+
+/* Example CSS styling for volume control */
+.volume-control {
+  display: flex;
+  align-items: center;
+}
+
+.volume-control input[type="range"] {
+  -webkit-appearance: none; /* Safari and Chrome */
+  -moz-appearance: none; /* Firefox */
+  -ms-appearance: none; /* Edge */
+  -o-appearance: none; /* Opera */
+  appearance: none; /* Standard property */
+  width: 100px;
+  height: 5px;
+  background: transparent;
+  outline: none;
+}
+
+.volume-control input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none; /* Standard property */
+  width: 10px;
+  height: 10px;
+  background: #ffca28; /* Change to your desired thumb color */
+  border-radius: 50%;
+}
+
+/* Example CSS styling for fullscreen button */
+.fullscreen-button {
+  margin-left: auto;
+  -webkit-appearance: none; /* Safari and Chrome */
+  -moz-appearance: none; /* Firefox */
+  -ms-appearance: none; /* Edge */
+  -o-appearance: none; /* Opera */
+  appearance: none; /* Standard property */
+}
 /* Media query for small screens (mobile devices) */
 @media only screen and (max-width: 600px) {
   header img {
