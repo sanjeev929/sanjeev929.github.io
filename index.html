@@ -22,7 +22,7 @@
             <li><div class="dropdown">
                 <a class="dropbtn">Blogs</a>
                 <div class="dropdown-content">
-                <a href="fastapi.html">Fast API</a>
+                <a href="#"></a>
                 <a href="#"></a>
                 <a href="#"></a>
                 </div>
@@ -68,6 +68,44 @@
     <section id="portfolio" class="section">
         <div class="container">
             <h2>Projects</h2>
+            <div class="portfolio-item">
+                <h3>Personal Project 1: CoronaCertify</h3>
+                <br>
+                    <div class="video-container">
+                        <video id="myVideo" controls>
+                            <source src="work.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    
+                        <div class="custom-controls">
+                            <button onclick="togglePlayPause()"></button>
+                            <!-- Add more controls here -->
+                        </div>
+                    </div>
+                    <br>
+                    <p>
+                    I developed a Django project to provide a streamlined solution for issuing COVID-19 positive or negative certificates to users. This project represents a crucial step in facilitating safer interactions and curbing the spread of the virus within communities.
+                    </p>
+                    <p>
+                    The project's framework comprises a meticulously crafted multi-step process starting with user registration. To fortify security measures and safeguard against potential threats, the registration process integrates Google reCAPTCHA, ensuring only authentic users can proceed. Following registration, users undergo email OTP verification, crucial in validating their email addresses and establishing secure communication channels.
+                    </p>
+                    <p>
+                    Once verified, users gain access to their personalized dashboard to input their home details. This information is vital for tracking and managing potential COVID-19 exposure, empowering authorities to respond swiftly to emerging cases. To bolster security, users undergo another round of email OTP verification before accessing their home section, guaranteeing authorized access and safeguarding sensitive health-related information.
+                    </p>
+                    <p>
+                    Within their home section, users declare their COVID-19 test results, specifying positive or negative outcomes. Administrators meticulously review these declarations, verifying their authenticity. Upon approval, users can download their COVID-19 certificates in PDF format, providing tangible proof of their health status.
+                    </p>
+                    <p>
+                    The project leverages FastAPI and PostgreSQL for efficient backend operations, facilitating rapid data processing and retrieval. Deployed on an EC2 instance, the project ensures high availability and scalability to accommodate growing user demand, optimizing resource utilization and enhancing overall performance.
+                    </p>
+                    <P>
+                    In conclusion, this Django project offers a holistic approach to COVID-19 management, combining stringent security measures, efficient data processing, and user-centric features. By streamlining certificate issuance, it significantly contributes to efforts aimed at safeguarding public health and promoting safer interactions within society.
+                    </P>
+                    <p>
+                        For a more detailed exploration of the code, check out the GitHub repository: <a href="https://github.com/sanjeev929/projectcertificate" target="_blank" style="color: red;">GitHub Repository</a>.
+                    </p>
+            </div>
+
             <div class="portfolio-item">
                 <h3>Project 1: Company website for employee</h3>
                 <br>
@@ -181,6 +219,7 @@
                     </p>    
             </div>
             <!-- Add more portfolio items here -->
+            
         </div>
     </section>
     <section id="contact" class="section">
