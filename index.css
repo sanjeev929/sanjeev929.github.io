@@ -291,41 +291,13 @@ video {
   appearance: none; /* Standard property */
 }
 /* Media query for small screens (mobile devices) */
-@media only screen and (max-width: 1000px)
-{
-
+@media only screen and (max-width: 1000px) {
   .clock {
-    width: 150px;
-    height: 150px;
-    top: 50%;
-    right: 50%;
-    transform: translate(50%, -50%);
+    display: none;
   }
-
-  .center {
-    width: 10px;
-    height: 10px;
-    box-shadow: 0 1px 2px -1px black;
-  }
-
-  .hour {
-    width: 2px;
-    height: 25px;
-    top: 50px;
-  }
-
-  .minute {
-    width: 2px;
-    height: 40px;
-    top: 40px;
-  }
-
-  .second {
-    width: 1px;
-    height: 50px;
-    top: 30px;
-  }
-
+}
+@media only screen and (max-width: 200px)
+{
   span {
     font-size: 15px;
   }
