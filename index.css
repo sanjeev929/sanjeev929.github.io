@@ -291,7 +291,7 @@ video {
   appearance: none; /* Standard property */
 }
 /* Media query for small screens (mobile devices) */
-@media only screen and (max-width: 600px)
+@media only screen and (max-width: 1000px)
 {
 
   .clock {
