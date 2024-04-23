@@ -339,7 +339,7 @@ function clock(){
   var m = d.getMinutes(); // Get current minute
   var s = d.getSeconds(); // Get current seconds
   var date = d.getDate(); // Get current date
-  var month = d.getMonth(); // Gets current month
+  var month = d.getMonth()+1; // Gets current month
   var year = d.getFullYear(); // Gets current year
 
   var hDeg = h * 30 + m * (360 / 720); // calculates degrees for hour hand
@@ -354,7 +354,7 @@ function clock(){
 
   var day = weekDay[d.getDay()]; //Gets the current day
 
-  if(month < 9){
+  if(month < 10){
     month = "0" + month; //Prefixes '0' for months less than 10 to match format
   }
 

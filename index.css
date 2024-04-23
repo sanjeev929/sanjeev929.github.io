@@ -63,7 +63,7 @@ body {
   width: 4px;
   height: 55px;
   background: white; /* Set minute lines color to white */
-  top: 55px;
+  top: 54px;
   left: 49%;
   border-top-left-radius: 50%;
   border-top-right-radius: 50%;
