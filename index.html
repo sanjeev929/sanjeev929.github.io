@@ -379,37 +379,36 @@ function clock(){
 
 }
 
-setInterval(clock, 100); // Calls the 'clock' function every 100 milliseconds
- // Your OpenWeather API key
- const apiKey = '2c4cdeac7a24db4e95fde73462a6f29f';
+setInterval(clock, 100); 
+const apiKey = '2c4cdeac7a24db4e95fde73462a6f29f';
 
-// Your location (e.g., city name)
 const city = 'pollachi';
 
-// API endpoint URL
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-// Fetch weather data from the API
 fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
-        // Extract relevant data from the response
         console.log(data)
         const condition = data.weather[0].description;
         const temperature = data.main.temp;
         const humidity = data.main.humidity;
         const city = data.name;
-        
-        // Update weather condition
+
         document.querySelector('.weather-condition').textContent = condition;
+        const temperatureElement = document.querySelector('.temperature');
+        temperatureElement.textContent = `${temperature}°C`;
 
-        // Update temperature
-        document.querySelector('.temperature').textContent = `${temperature}°C`;
+        if (temperature > 30) {
+            temperatureElement.style.color = '#ff5f5f';
+        } else if (temperature > 22) {
+            temperatureElement.style.color = '#b7ff9';
+        } else {
+            temperatureElement.style.color = '#8fecff';
+        }
 
-        document.querySelector('.humidity').textContent = `Humidity : ${humidity}% ,${city}`;
+        document.querySelector('.humidity').textContent = `Humidity: ${humidity}% ${city}`;
 
-
-        // Update weather icon based on condition
         const weatherIcon = document.querySelector('.weather-icon img');
         weatherIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
     })
