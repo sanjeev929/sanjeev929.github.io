@@ -398,8 +398,9 @@ fetch(apiUrl)
         document.querySelector('.weather-condition').textContent = condition;
         const temperatureElement = document.querySelector('.temperature');
         temperatureElement.textContent = `${temperature}°C`;
-
-        if (temperature > 30) {
+        if (temperature > 38){
+            temperatureElement.style.color = '#b80000';
+        }else if (temperature > 30 && temperature <= 38 ) {
             temperatureElement.style.color = '#ff5f5f';
         } else if (temperature >= 22 && temperature <= 30) {
             temperatureElement.style.color = '#b7ffc0';

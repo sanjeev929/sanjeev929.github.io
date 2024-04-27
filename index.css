@@ -220,6 +220,7 @@ header p {
 
 .weather-humidity {
   margin-bottom: 5px;
+  color:#b80000;
 }
 
 .temperature {
