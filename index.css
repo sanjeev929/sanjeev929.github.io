@@ -325,6 +325,10 @@ video {
   .clock {
     display: none;
   }
+  .weather-widget{
+    display: none;
+  }
+
 }
 @media only screen and (max-width: 200px)
 {
