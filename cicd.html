@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjeev - Python Developer</title>
+    <meta name="google-site-verification" content="8FCLnGsAM6-2KzO3nL0iCMJmNkt_hpNkcfqDH" />
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/png" href="image/profile/logo1.png" sizes="32x32">
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <h1>CICD using github actions in AWS ec2 instance</h1>
+        </div>
+    </header>
+    <nav>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li><br>
+            <li><div class="dropdown">
+                <a class="dropbtn">Blogs</a>
+                <div class="dropdown-content">
+                <a href="google_recaptcha.html">Google-recaptcha</a>
+                <a href="#"></a>
+                <a href="#"></a>
+                </div>
+              </div>
+            </li><br>
+        </ul>
+    </nav>
+    <section id="portfolio" class="section">
+        <div class="container">
+            <div class="portfolio-item">
+                <br>
+                <div class="video-container">
+                    <iframe width="740" height="400" src="https://www.youtube.com/embed/oUL3GeZYzbw?si=5KYC91j5O0aMmMn3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                    <br>
+                    <p>
+                        I implemented Continuous Integration/Continuous Deployment (CI/CD) using GitHub Actions for my Django project, ensuring automated deployment processes to streamline development and deployment workflows.
+                    </p>
+                    <p>
+                        The CI/CD pipeline starts with the setup of GitHub Actions workflows defined in YAML format. These workflows are triggered automatically upon certain events, such as code pushes to the main branch.
+                    </p>
+                    <p>
+                        The CD workflow is responsible for deploying the Django project to an EC2 instance, ensuring that the latest changes are deployed to the production environment automatically.
+                    </p>
+                    <p>
+                        Here are the steps involved in the CI/CD process:
+                    </p>
+                    
+                    <ul>
+                        <li><p>GitHub Actions: Define CI/CD workflows in YAML format.</p></li>
+                        <li><p>Trigger Workflow: Workflows are triggered automatically upon code pushes to the main branch.</p></li>
+                        <li><p>Connect to EC2 Instance: Use SSH to connect to the EC2 instance from GitHub Actions.</p></li>
+                        <li><p>Execute Deployment Script: Run deployment scripts on the EC2 instance to pull the latest code from the GitHub repository.</p></li>
+                        <li><p>Install Dependencies: Install any new dependencies required by the Django project.</p></li>
+                        <li><p>Restart Application Server: Restart the Django application server (e.g., Gunicorn) to apply the changes.</p></li>
+                    </ul>
+                    </p>
+                    <p>
+                        By automating the deployment process with GitHub Actions, I was able to significantly improve the efficiency and reliability of my Django project's deployment workflows. This ensures that new features and bug fixes can be delivered to production quickly and safely.
+                    </p>
+                    <p>
+                        For a more detailed exploration of the CI/CD setup, you can refer to the GitHub repository:
+                        <a href="https://github.com/sanjeev929/cicdtest" target="_blank">GitHub Repository</a>.
+                    </p>
+                    
+            </div>
+        </div>
+    </section>
+</body>
+</html>
