@@ -10,13 +10,12 @@
     <link rel="icon" type="image/png" href="image/profile/logo1.png" sizes="32x32">
 </head>
 <body>
-    
     <header>
         <div class="container">
             <img src="image/profile/profile.jpg" alt="">
             <h1>Sanjeev C</h1>
             <h4>Python Developer</h4>
-            <div class="weather-widget">
+            <div class="weather-widget" id="weather-widget">
                 <div class="weather-icon">
                     <img src="" alt="Weather Icon">
                 </div>
@@ -322,100 +321,115 @@
         </div>
     </footer>
     </section>
+
+    <script>
+        var dialLines = document.getElementsByClassName('dials');
+        //Fetches the first element with the class 'clock'
+        var clockE1 = document.getElementsByClassName('clock')[0];
+        
+        for(var i = 1; i < 60; i++){
+          //Appends div elements with class 'dials' inside the clock element
+          clockE1.innerHTML += "<div class='dials'></div>"
+          //see rotation for each line
+          dialLines[i].style.transform = "rotate(" + 6 * i + "deg)";
+        }
+        
+        function clock(){
+          var weekDay = [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wenesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ];
+        
+          var d = new Date(); // Creates a date object to obtain current date and time
+          var h = d.getHours(); // Gets current hour
+          var m = d.getMinutes(); // Get current minute
+          var s = d.getSeconds(); // Get current seconds
+          var date = d.getDate(); // Get current date
+          var month = d.getMonth()+1; // Gets current month
+          var year = d.getFullYear(); // Gets current year
+        
+          var hDeg = h * 30 + m * (360 / 720); // calculates degrees for hour hand
+          var mDeg = m * 6 + s * (360 / 3600); // calculates degree for minute hand
+          var sDeg = s * 6; // calculates degreee for second hand
+        
+          var hE1 = document.querySelector('.hour'); // Selects the element for the hour hand
+          var mE1 = document.querySelector('.minute'); //Selects the lement for the minute hand
+          var sE1 = document.querySelector('.second'); //Select the element for the second hand
+          var dateE1 = document.querySelector('.date'); //Select the element for the date
+          var dayE1 = document.querySelector('.day'); // Select the element for the day
+        
+          var day = weekDay[d.getDay()]; //Gets the current day
+        
+          if(month < 10){
+            month = "0" + month; //Prefixes '0' for months less than 10 to match format
+          }
+        
+          hE1.style.transform = "rotate(" +hDeg + "deg)"; //Rotates hour hand based on the calculated degree
+          mE1.style.transform = "rotate(" + mDeg + "deg)"; // Rotates minute hand based on the calculated degree
+          sE1.style.transform = "rotate(" + sDeg + "deg)"; // Rotates second hand based on the calculated degree
+          dateE1.innerHTML = date + "/" + month + "/" + year; // Updates the data display
+          dayE1.innerHTML = day; // Updates the day display
+        
+        
+        }
+        
+        setInterval(clock, 100); 
+        const apiKey = '2c4cdeac7a24db4e95fde73462a6f29f';
+        
+        const city = 'pollachi';
+        
+        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                const condition = data.weather[0].description;
+                const temperature = data.main.temp;
+                const humidity = data.main.humidity;
+                const city = data.name;
+        
+                document.querySelector('.weather-condition').textContent = condition;
+                const temperatureElement = document.querySelector('.temperature');
+                temperatureElement.textContent = `${temperature}°C`;
+                if (temperature > 38){
+                    temperatureElement.style.color = '#b80000';
+                }else if (temperature > 30 && temperature <= 38 ) {
+                    temperatureElement.style.color = '#ff5f5f';
+                } else if (temperature >= 22 && temperature <= 30) {
+                    temperatureElement.style.color = '#74ff86';
+                } else {
+                    temperatureElement.style.color = '#00ccff';
+                }
+        
+                document.querySelector('.humidity').textContent = `Humidity: ${humidity}% ${city}`;
+        
+                const weatherIcon = document.querySelector('.weather-icon img');
+                weatherIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+            })
+            .catch(error => {
+                console.error('Error fetching weather data:', error);
+            });
+        
+            document.addEventListener("DOMContentLoaded", function () {
+              const weatherWidget = document.getElementById("weather-widget");
+              const currentTime = new Date().getHours();
+        
+              if (currentTime >= 6 && currentTime < 18) {
+                // Day time styling
+                weatherWidget.style.backgroundColor = "#21d3ff"; /* Light blue color */
+              } else {
+                // Night time styling
+                weatherWidget.style.backgroundColor = "#0F3057"; /* Dark blue color */
+              }
+            });
+          </script>
+        
+        
 </body>
 </html>
-<script>
-    var dialLines = document.getElementsByClassName('dials');
-//Fetches the first element with the class 'clock'
-var clockE1 = document.getElementsByClassName('clock')[0];
-
-for(var i = 1; i < 60; i++){
-  //Appends div elements with class 'dials' inside the clock element
-  clockE1.innerHTML += "<div class='dials'></div>"
-  //see rotation for each line
-  dialLines[i].style.transform = "rotate(" + 6 * i + "deg)";
-}
-
-function clock(){
-  var weekDay = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wenesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
-  ];
-
-  var d = new Date(); // Creates a date object to obtain current date and time
-  var h = d.getHours(); // Gets current hour
-  var m = d.getMinutes(); // Get current minute
-  var s = d.getSeconds(); // Get current seconds
-  var date = d.getDate(); // Get current date
-  var month = d.getMonth()+1; // Gets current month
-  var year = d.getFullYear(); // Gets current year
-
-  var hDeg = h * 30 + m * (360 / 720); // calculates degrees for hour hand
-  var mDeg = m * 6 + s * (360 / 3600); // calculates degree for minute hand
-  var sDeg = s * 6; // calculates degreee for second hand
-
-  var hE1 = document.querySelector('.hour'); // Selects the element for the hour hand
-  var mE1 = document.querySelector('.minute'); //Selects the lement for the minute hand
-  var sE1 = document.querySelector('.second'); //Select the element for the second hand
-  var dateE1 = document.querySelector('.date'); //Select the element for the date
-  var dayE1 = document.querySelector('.day'); // Select the element for the day
-
-  var day = weekDay[d.getDay()]; //Gets the current day
-
-  if(month < 10){
-    month = "0" + month; //Prefixes '0' for months less than 10 to match format
-  }
-
-  hE1.style.transform = "rotate(" +hDeg + "deg)"; //Rotates hour hand based on the calculated degree
-  mE1.style.transform = "rotate(" + mDeg + "deg)"; // Rotates minute hand based on the calculated degree
-  sE1.style.transform = "rotate(" + sDeg + "deg)"; // Rotates second hand based on the calculated degree
-  dateE1.innerHTML = date + "/" + month + "/" + year; // Updates the data display
-  dayE1.innerHTML = day; // Updates the day display
-
-
-}
-
-setInterval(clock, 100); 
-const apiKey = '2c4cdeac7a24db4e95fde73462a6f29f';
-
-const city = 'pollachi';
-
-const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-fetch(apiUrl)
-    .then(response => response.json())
-    .then(data => {
-        console.log(data)
-        const condition = data.weather[0].description;
-        const temperature = data.main.temp;
-        const humidity = data.main.humidity;
-        const city = data.name;
-
-        document.querySelector('.weather-condition').textContent = condition;
-        const temperatureElement = document.querySelector('.temperature');
-        temperatureElement.textContent = `${temperature}°C`;
-        if (temperature > 38){
-            temperatureElement.style.color = '#b80000';
-        }else if (temperature > 30 && temperature <= 38 ) {
-            temperatureElement.style.color = '#ff5f5f';
-        } else if (temperature >= 22 && temperature <= 30) {
-            temperatureElement.style.color = '#b7ffc0';
-        } else {
-            temperatureElement.style.color = '#8fecff';
-        }
-
-        document.querySelector('.humidity').textContent = `Humidity: ${humidity}% ${city}`;
-
-        const weatherIcon = document.querySelector('.weather-icon img');
-        weatherIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
-    })
-    .catch(error => {
-        console.error('Error fetching weather data:', error);
-    });
-</script>
-

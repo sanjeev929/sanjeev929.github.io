@@ -179,7 +179,7 @@ header {
 }
 
 header img {
-  border-radius: 50%;
+  border-radius: 100%;
   width: 150px;
   height: 180px;
 }
@@ -194,37 +194,41 @@ header p {
   margin: 10px 0;
 }
 
-
 .weather-widget {
-  position:absolute;
+  position: absolute;
+  width: 300px;
   top: 45px;
   left: 20px;
   display: flex;
   align-items: center;
   color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-out; /* Only transition for transform */
+}
+
+.weather-widget:hover {
+  transform: scale(1.05);
 }
 
 .weather-icon img {
-  width: 50px; /* Adjust the size of the weather icon */
+  width: 50px;
   height: auto;
   margin-right: 10px;
 }
 
 .weather-info {
   font-size: 16px;
+  font-weight:600;
 }
 
-.weather-condition {
-  margin-bottom: 5px;
-}
-
+.weather-condition,
 .weather-humidity {
   margin-bottom: 5px;
-  color:#b80000;
 }
 
 .temperature {
-  font-weight: bold;
+  font-weight:900;
 }
 /* CSS styles for the video player */
 .video-container {
