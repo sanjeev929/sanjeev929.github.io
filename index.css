@@ -351,7 +351,7 @@ footer p {
   }
 }
 
-@media (max-width: 100px) {
+@media (max-width: 768px) {
   * {
     box-sizing: border-box;
     margin: 0;
@@ -360,14 +360,14 @@ footer p {
   
   body {
     font-family: 'Roboto', sans-serif;
-    background-color: #fbf7f7;
+    background-color: #121212;
     color: #ffffff;
     line-height: 1.6;
   }
   
   /* Container styling */
   .container {
-    width: 50%;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
@@ -378,7 +378,7 @@ footer p {
     background-color: #000000;
     padding: 20px 0;
     position: fixed;
-    width: 30%;
+    width: 100%;
     top: 0;
     z-index: 1000;
     animation: fadeIn 2s ease-in-out;
