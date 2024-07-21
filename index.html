@@ -1,435 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanjeev - Python Developer</title>
-    <meta name="google-site-verification" content="8FCLnGsAM6-2KzO3nL0iCMJmNkt_hpNkcfqDH" />
+    <title>Portfolio</title>
     <link rel="stylesheet" href="index.css">
-    <link rel="icon" type="image/png" href="image/profile/logo1.png" sizes="32x32">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
+    <nav>
         <div class="container">
-            <img src="image/profile/profile.jpg" alt="">
-            <h1>Sanjeev C</h1>
-            <h4>Python Developer</h4>
-            <div class="weather-widget" id="weather-widget">
-                <div class="weather-icon">
-                    <img src="" alt="Weather Icon">
-                </div>
-                <div class="weather-info">
-                    <div class="temperature"></div>
-                    <div class="weather-condition"></div>
-                    <div class="humidity"></div>
-                </div>
-            </div>
-            <div class="clock">
-                <div>
-                    <div class="detail date"></div>
-                    <div class="detail day"></div>
-                </div>
-                <div class="center"></div>
-                <div>
-                    <div class="hour"></div>
-                    <div class="minute"></div>
-                    <div class="second"></div>
-                </div>
-                <div>
-                    <span class="h3">3</span>
-                    <span class="h6">6</span>
-                    <span class="h9">9</span>
-                    <span class="h12">12</span>
-                </div>
-                <div class="dials"></div>
+            <h1>SANJEEV</h1>
+            <div class="nav-links-container">
+                <ul>
+                    <li><a href="#about">Home</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#services">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a href="#download" class="btn">Download CV</a>
             </div>
         </div>
-    </header>
-    <nav>
-        <ul class="navbar">
-            <li><div class="dropdown">
-                <a class="dropbtn">Blogs</a>
-                <div class="dropdown-content">
-                <a href="google_recaptcha.html">Google-recaptcha</a>
-                <a href="cicd.html">CICD with github actions</a>
-                <a href="graphql.html">Grapql with FastAPI</a>
-                <a href="#"></a>
-                </div>
-              </div>
-            </li><br> 
-            <li><a href="#portfolio">Projects</a></li><br>
-            <li><a href="#contact">Contact</a></li><br>
-        </ul>
     </nav>
-    <section id="about" class="section">
+
+    <div class="hero">
         <div class="container">
-            <p> I'm a passionate backend developer with a strong background in building robust and efficient web applications.
-                My goal is to create clean, maintainable, and scalable code that delivers exceptional user experiences.
-                I love solving complex problems and continuously expanding my knowledge in the ever-evolving field of web development.
-                I completed basic python course in kaggle with certificate view, I really intrested to learn about Fast API and Django,Flask. I already complete basic about that platforms ,
-                Now I'm focus to deeper into that and also I developed Alexa Skill and Google Actions to device control with own OAuth2 server,I'm so exited to disscus with this two.
-            </p>
+            <h2>Hello, I am a</h2>
             <br>
-            <div class="ulli"> 
-            <h3>Skills</h3> 
+            <p>Python Developer</p>
             <br>
-            <ul>
-                <li>Python</li>
-                <li>Django</li>
-                <li>Fast API</li>
-                <li>Aws (Ec2,Lamda)</li>
-                <li>Alexa Skills</li>
-            </ul> 
-            <br>
-            <br>
-            <h3>Projects</h3> 
-            <br>
-            <ul>
-                <li>Corona Certify</li>
-                <li>Live Chat</li>
-                <li>Company website</li>
-                <li>PR Dashboard</li>
-                <li>FastAPI Project for Device Communication with MongoDB Integration</li>
-                <li>Voice-Controlled Device Management with Custom OAuth2 Authorization Server</li>
-            </ul>
-            </div>
+            <a href="#portfolio" class="btn">View My Portfolio</a>
+        </div>
+    </div>
+    
+    <section id="about" class="about">
+        <div class="container">
+          <h2>About Me</h2>
+          <br>
+          <br>
+          <p>I am a passionate Python developer with a strong skills in backend development and a keen interest in solving complex problems with elegant solutions. Within this portfolio, you'll find a curated selection of my best work, showcasing my expertise and dedication to the craft of coding.</p>
+          <h3>Skills</h3>
+          <br>
+          <br>
+          <ul>
+            <li><i class="fab fa-python"></i><strong>Programming Languages:</strong> Python</li>
+            <li><i class="fas fa-code"></i><strong>Frameworks and Libraries:</strong> Django, Flask, FastAPI, Pandas</li>
+            <li><i class="fas fa-database"></i><strong>Database Management:</strong> PostgreSQL, MongoDB, Firebase</li>
+            <li><i class="fab fa-html5"></i><i class="fab fa-css3-alt"></i><i class="fab fa-js"></i><strong>Web Development:</strong> HTML, CSS, JavaScript</li>
+            <li><i class="fas fa-tools"></i><strong>Tools and Platforms:</strong> Git, Visual Studio Code, AWS</li>
+            <li><i class="fas fa-vial"></i><strong>Testing:</strong> pytest</li>
+            <li><i class="fas fa-check-circle"></i><strong>Principles:</strong> SOLID, DRY, Clean Code</li>
+          </ul>
         </div>
     </section>
-
-    <section id="portfolio" class="section">
+    
+    <section id="projects" class="projects">
         <div class="container">
             <h2>Projects</h2>
-            <div class="portfolio-item">
-                <h3>Personal Project 1: CoronaCertify</h3>
-                <br>
-                    <div class="video-container">
-                        <video id="myVideo" controls>
-                            <source src="coronacertify.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    
-                        <div class="custom-controls">
-                            <button onclick="togglePlayPause()"></button>
-                            <!-- Add more controls here -->
-                        </div>
-                    </div>
-                    <br>
-                    <p>
-                    I developed a Django project to provide a streamlined solution for issuing COVID-19 positive or negative certificates to users. This project represents a crucial step in facilitating safer interactions and curbing the spread of the virus within communities.
-                    </p>
-                    <p>
-                    The project's framework comprises a meticulously crafted multi-step process starting with user registration. To fortify security measures and safeguard against potential threats, the registration process integrates Google reCAPTCHA, ensuring only authentic users can proceed. Following registration, users undergo email OTP verification, crucial in validating their email addresses and establishing secure communication channels.
-                    </p>
-                    <p>
-                    Once verified, users gain access to their personalized dashboard to input their home details. This information is vital for tracking and managing potential COVID-19 exposure, empowering authorities to respond swiftly to emerging cases. To bolster security, users undergo another round of email OTP verification before accessing their home section, guaranteeing authorized access and safeguarding sensitive health-related information.
-                    </p>
-                    <p>
-                    Within their home section, users declare their COVID-19 test results, specifying positive or negative outcomes. Administrators meticulously review these declarations, verifying their authenticity. Upon approval, users can download their COVID-19 certificates in PDF format, providing tangible proof of their health status.
-                    </p>
-                    <p>
-                    The project leverages FastAPI and PostgreSQL for efficient backend operations, facilitating rapid data processing and retrieval. Deployed on an EC2 instance, the project ensures high availability and scalability to accommodate growing user demand, optimizing resource utilization and enhancing overall performance.
-                    </p>
-                    <P>
-                    In conclusion, this Django project offers a holistic approach to COVID-19 management, combining stringent security measures, efficient data processing, and user-centric features. By streamlining certificate issuance, it significantly contributes to efforts aimed at safeguarding public health and promoting safer interactions within society.
-                    </P>
-                    <p>
-                        For a more detailed exploration of the code, check out the GitHub repository: <a href="https://github.com/sanjeev929/projectcertificate" target="_blank">GitHub Repository</a>.
-                    </p>
-            </div>
-            <br>
-            <br>
-            <div class="portfolio-item">
-                <h3>Personal Project 2: Live Chat</h3>
-                <br>
-                    <div class="video-container">
-                        <video id="myVideo" controls>
-                            <source src="livechat.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    
-                        <div class="custom-controls">
-                            <button onclick="togglePlayPause()"></button>
-                            <!-- Add more controls here -->
-                        </div>
-                    </div>
-                    <br>
-                    <p>
-                    I've developed a Django web application for live chat functionality with PostgreSQL integration. This project aims to facilitate real-time communication and networking between users, enhancing their overall experience.
-                    </p>
-                    <p>
-                    The application begins with user registration, where individuals can sign up by providing their name, email, and password. Once registered, users can log in using their credentials, gaining access to the platform's features.
-                    </p>
-                    <p>
-                    Upon logging in, users are presented with suggestions for potential connections, generated randomly. This feature aims to broaden users' networks and encourage interaction within the community.
-                    </p>
-                    <p>
-                    Users have the option to send follow requests to other users, expressing their interest in establishing a connection. Once the recipient accepts the request, the two users become friends within the platform.
-                    </p>
-                    <p>
-                    Once connected as friends, users can initiate conversations through the messaging section. This feature enables real-time chat between friends, fostering meaningful interactions and communication.
-                    </p>
-                    <p>
-                    Additionally, users have the capability to exchange pictures within the messaging interface, further enhancing the communication experience.
-                    </p>
-                    <p>
-                    To personalize their profiles, users can update their individual bios and profile pictures, allowing them to express themselves and provide additional context to their connections.
-                    </p>
-                    <p>
-                    The application is equipped with robust error handling, ensuring that if invalid URLs are entered, Django defaults to a custom 404 page, enhancing the user experience.
-                    </p>
-                    <p>
-                    For a more in-depth exploration of the codebase, you can visit the GitHub repository: <a href="https://github.com/sanjeev929/livechat" target="_blank">GitHub Repository</a>.
-                    </p>
-            </div>
-            <br>
-            <br>
-            <div class="portfolio-item">
-                <h3>Project 1: Company website for employee</h3>
-                <br>
-                    <div class="video-container">
-                        <video id="myVideo" controls>
-                            <source src="companywebsite.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    
-                        <div class="custom-controls">
-                            <button onclick="togglePlayPause()"></button>
-                            <!-- Add more controls here -->
-                        </div>
-                    </div>
-                    <br>
-                    <p>
-                        In the dynamic landscape of corporate management, the need for efficient employee tracking and engagement is more critical than ever. This brings us to the development of Project 1 – a comprehensive company website tailored for employee use. Built using the Django web framework and seamlessly integrating with Firebase for data storage, this project is hosted on an AWS EC2 instance running Ubuntu, ensuring scalability and reliability.
-                    </p>
-                    <p>
-                        The website is designed to empower individual users with a personalized dashboard, offering features such as tea and coffee count tracking, work done logs, leave applications, late work submissions, and a suggestion box for continuous improvement.
-                    </p>
-                    <p>
-                        Leveraging the simplicity and flexibility of Django, the project follows the model-view-controller (MVC) architectural pattern, providing a well-organized and scalable codebase. The integration with Firebase ensures real-time data synchronization, enhancing collaboration among users.
-                    </p>
-                    <p>
-                        Key features of the project include individual user management, tea and coffee count tracking, work done logs, a streamlined leave application system, late work submissions recording, and a suggestion box for employee feedback. The AWS EC2 hosting on an Ubuntu server ensures a stable and scalable environment, making the platform accessible to all employees.
-                    </p>
-                    <p>
-                        In summary, Project 1 exemplifies a modern and efficient solution for employee management within a company. From tracking daily activities to fostering a collaborative work environment, this project is a testament to the power of Django, Firebase integration, and AWS hosting in creating a robust and user-friendly platform.
-                    </p>
-                    <p>
-                        For a more detailed exploration of the code, check out the GitHub repository: <a href="https://github.com/your-username/project2" target="_blank">GitHub Repository</a>.
-                    </p>
-            </div>
-            <br><br>
-            <div class="portfolio-item">
-                <h3>Project 2: PR Dashboard for Monthly Achievements</h3>
-                <br>
-                <img src="image/projects/django.png" alt="Project 2" width="350" height="250">
-                <br>
-                    <p>
-                        In the realm of public relations, tracking and achieving monthly targets is paramount for success. Project 2 introduces a dynamic PR Dashboard designed exclusively for PR staff. This dashboard not only enables PR professionals to monitor their monthly achievements but also provides valuable insights into company performance, customer counts, ongoing campaigns, and a countdown to target completion.
-                    </p>
-                    <p>
-                        The dashboard incorporates features such as PR staff rankings based on performance, each staff member's picture, and real-time updates on who secures the top position. Additionally, a unique element is added where staff members are recognized and celebrated individually, starting from the top performer and moving sequentially to others, fostering a positive and competitive work environment.
-                    </p>
-                    <p>
-                        The backend is powered by Firebase Realtime Database, ensuring seamless data synchronization and providing a reliable and scalable foundation. The integration with Firebase allows for the real-time update of customer counts, ongoing campaigns, and PR staff rankings.
-                    </p>
-                    <p>
-                        The dashboard now includes an additional feature that displays the total number of employees present and breaks down the attendance into the count of employees on leave and those present. This provides a quick snapshot of the workforce's availability and helps in managing resources effectively.
-                    </p>
-                    <p>
-                        For a more detailed exploration of the code, check out the GitHub repository: <a href="https://github.com/your-username/project2" target="_blank">GitHub Repository</a>.
-                    </p>
-                    <p>
-                        In conclusion, Project 2 stands as a testament to the power of data-driven PR management. By combining real-time metrics, dynamic rankings, and a countdown feature, this dashboard empowers PR staff to not only meet but exceed their monthly targets, contributing to the overall success of the company.
-                    </p>          
-            </div>
-            <br><br>
-            <div class="portfolio-item">
-                <h3>Project 3: FastAPI Project for Device Communication with MongoDB Integration</h3>
-                <br>
-                <div class="video-container">
-                    <video id="myVideo" controls>
-                        <source src="fastapiwithmongodb.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                
-                    <div class="custom-controls">
-                        <button onclick="togglePlayPause()"></button>
-                        <!-- Add more controls here -->
-                    </div>
+            <div class="project-cards">
+                <div class="project-card">
+                    <h3>Company Website</h3>
+                    <p>Details about your Django project. This is a brief description to give an overview of what this project entails.</p>
+                    <a href="#django-project-details">Read more</a>
                 </div>
-                <br>
-                    <p>
-                        Project 3 introduces a FastAPI-based solution for seamless communication between a MongoDB database and device modules. This innovative project allows for efficient manipulation of devices, including control functionalities such as on/off switches, property range adjustments, and additional custom operations.
-                    </p>
-                    <p>
-                        The project is designed to run on individual Intel NUCs, each equipped with Ubuntu OS. The setup includes an auto-run feature, ensuring that the FastAPI project launches automatically upon system startup. This not only enhances the project's accessibility but also ensures its continuous operation without manual intervention.
-                    </p>
-                    <p>
-                        FastAPI, known for its high-performance capabilities and easy-to-use syntax, serves as the backbone of this project. It facilitates fast development, easy testing, and automatic generation of OpenAPI and JSON Schema documentation. The integration with MongoDB adds a robust and scalable data storage solution to the project, allowing for efficient management of device-related information.
-                    </p>
-                    <p>
-                        The project's functionality revolves around communication between the MongoDB database and device modules. It enables users to control device states, adjust property ranges, and execute custom operations seamlessly. The Intel NUC deployment, coupled with Ubuntu OS, provides a reliable and stable environment for the FastAPI project to operate.
-                    </p>
-                    <p>
-                        The auto-run setup ensures that the FastAPI application launches automatically, enhancing the project's user-friendliness and reducing the need for manual intervention. This feature is particularly beneficial in scenarios where continuous device communication is essential.
-                    </p>
-                    <p>
-                        For those interested in exploring the FastAPI code and MongoDB integration, the project's GitHub repository can be found here: <a href="https://github.com/sanjeev929/fastapilocalserver" target="_blank">GitHub Repository</a>.
-                    </p>
-                    <p>
-                        In summary, Project 3 showcases the power of FastAPI in enabling efficient communication between MongoDB databases and device modules. The deployment on individual Intel NUCs with an auto-run setup ensures a hassle-free experience, making it an ideal solution for scenarios requiring seamless and continuous device manipulation.
-                    </p>          
+                <div class="project-card">
+                    <h3>FastAPI Server</h3>
+                    <p>Details about your FastAPI project. This is a brief description to give an overview of what this project entails.</p>
+                    <a href="#fastapi-project-details">Read more</a>
+                </div>
+                <div class="project-card">
+                    <h3>Alexa Server</h3>
+                    <p>Details about your Alexa Server project. This is a brief description to give an overview of what this project entails.</p>
+                    <a href="#alexa-server-details">Read more</a>
+                </div>
+                <div class="project-card">
+                    <h3>Authorization Server</h3>
+                    <p>Details about your Alexa Server project. This is a brief description to give an overview of what this project entails.</p>
+                    <a href="#alexa-server-details">Read more</a>
+                </div>
+                <div class="project-card">
+                    <h3>Whatsapp Chatbot with Twilio</h3>
+                    <p>Details about your Alexa Server project. This is a brief description to give an overview of what this project entails.</p>
+                    <a href="#alexa-server-details">Read more</a>
+                </div>
+                <div class="project-card">
+                    <h3>Medical Certificate Generator</h3>
+                    <p>Details about your Alexa Server project. This is a brief description to give an overview of what this project entails.</p>
+                    <a href="#alexa-server-details">Read more</a>
+                </div>
+                <div class="project-card">
+                    <h3>Chat App</h3>
+                    <p>Details about your Alexa Server project. This is a brief description to give an overview of what this project entails.</p>
+                    <a href="#alexa-server-details">Read more</a>
+                </div>
+                <div class="project-card">
+                    <h3>Task Management</h3>
+                    <p>Details about your Alexa Server project. This is a brief description to give an overview of what this project entails.</p>
+                    <a href="#alexa-server-details">Read more</a>
+                </div>
             </div>
-            <br><br>
-            <div class="portfolio-item">
-                <h3>Project 4: Voice-Controlled Device Management with Custom OAuth2 Authorization Server</h3>
-                <br>
-                <img src="image/projects/alexa.png" alt="Project 4" width="350" height="125">
-                <br>
-                    <p>
-                        Project 4 introduces a cutting-edge solution that seamlessly integrates Alexa Skill for voice-controlled device management. The project incorporates a custom OAuth2 authorization server, prioritizing security and ensuring a protected communication channel between Alexa and the user's devices.
-                    </p>
-                    <p>
-                        The entire system is hosted on an AWS EC2 instance running Ubuntu OS, with the backend developed using the Django framework. This choice of technology not only facilitates rapid development but also ensures a robust and scalable solution. The deployment on AWS guarantees high availability, allowing users to access and control their devices at any time.
-                    </p>
-                    <p>
-                        The user journey begins by enabling the Alexa Skill, triggering a secure login process. The custom OAuth2 authorization server handles the authentication, ensuring that only authorized users gain access. Post authentication, the system intelligently identifies the user's device, granting control over specific functionalities, such as managing lights.
-                    </p>
-                    <p>
-                        A distinctive feature of this project is the emphasis on security. The custom OAuth2 server enhances the overall privacy and protection of user data during interactions with Alexa. This project serves as a testament to the fusion of voice technology, secure authentication mechanisms, and cloud-based hosting for efficient device control.
-                    </p>
-                    <p>
-                        For any inquiries, doubts, or further information about the project, feel free to reach out to me at <a href="mailto:sanjeevsanju929@gmail.com">[sanjeevsanju929@gmail.com]</a>. I am more than happy to provide additional insights and address any questions you may have.
-                    </p>
-                    <p>
-                        In conclusion, Project 4 stands as a sophisticated integration of Alexa Skill with a custom OAuth2 authorization server, providing users with a secure, seamless, and voice-driven method to manage their devices effectively.
-                    </p>    
-            </div>
-            <!-- Add more portfolio items here -->
-            
         </div>
     </section>
-    <section id="contact" class="section">
     <footer>
         <div class="container">
-            <h2>Contact</h2><br>
-            <h5>Gmail: sanjeevsanju929@gmail.com</h5><br>
-            <h5>LinkedIn: <a href="https://www.linkedin.com/in/sanjeev-c-44a035252/">https://www.linkedin.com/in/sanjeev-c-44a035252/</a></h5><br>
-            <h5>Github: <a href="https://github.com/sanjeev929">https://github.com/sanjeev929</a></h5><br>
-            <h5>&copy;2024 Sanjeev</h5>
+            <p>&copy; 2023 SANJEEV. All rights reserved.</p>
         </div>
     </footer>
-    </section>
-
-    <script>
-        var dialLines = document.getElementsByClassName('dials');
-        //Fetches the first element with the class 'clock'
-        var clockE1 = document.getElementsByClassName('clock')[0];
-        
-        for(var i = 1; i < 60; i++){
-          //Appends div elements with class 'dials' inside the clock element
-          clockE1.innerHTML += "<div class='dials'></div>"
-          //see rotation for each line
-          dialLines[i].style.transform = "rotate(" + 6 * i + "deg)";
-        }
-        
-        function clock(){
-          var weekDay = [
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday"
-          ];
-        
-          var d = new Date(); // Creates a date object to obtain current date and time
-          var h = d.getHours(); // Gets current hour
-          var m = d.getMinutes(); // Get current minute
-          var s = d.getSeconds(); // Get current seconds
-          var date = d.getDate(); // Get current date
-          var month = d.getMonth()+1; // Gets current month
-          var year = d.getFullYear(); // Gets current year
-        
-          var hDeg = h * 30 + m * (360 / 720); // calculates degrees for hour hand
-          var mDeg = m * 6 + s * (360 / 3600); // calculates degree for minute hand
-          var sDeg = s * 6; // calculates degreee for second hand
-        
-          var hE1 = document.querySelector('.hour'); // Selects the element for the hour hand
-          var mE1 = document.querySelector('.minute'); //Selects the lement for the minute hand
-          var sE1 = document.querySelector('.second'); //Select the element for the second hand
-          var dateE1 = document.querySelector('.date'); //Select the element for the date
-          var dayE1 = document.querySelector('.day'); // Select the element for the day
-        
-          var day = weekDay[d.getDay()]; //Gets the current day
-        
-          if(month < 10){
-            month = "0" + month; //Prefixes '0' for months less than 10 to match format
-          }
-        
-          hE1.style.transform = "rotate(" +hDeg + "deg)"; //Rotates hour hand based on the calculated degree
-          mE1.style.transform = "rotate(" + mDeg + "deg)"; // Rotates minute hand based on the calculated degree
-          sE1.style.transform = "rotate(" + sDeg + "deg)"; // Rotates second hand based on the calculated degree
-          dateE1.innerHTML = date + "/" + month + "/" + year; // Updates the data display
-          dayE1.innerHTML = day; // Updates the day display
-        
-        
-        }
-        
-        setInterval(clock, 100); 
-        const apiKey = '2c4cdeac7a24db4e95fde73462a6f29f';
-        
-        const city = 'pollachi';
-        
-        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-        
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-                const condition = data.weather[0].description;
-                const temperature = data.main.temp;
-                const humidity = data.main.humidity;
-                const city = data.name;
-        
-                document.querySelector('.weather-condition').textContent = condition;
-                const temperatureElement = document.querySelector('.temperature');
-                temperatureElement.textContent = `${temperature}°C`;
-                if (temperature > 38){
-                    temperatureElement.style.color = '#b80000';
-                }else if (temperature > 30 && temperature <= 38 ) {
-                    temperatureElement.style.color = '#ff5f5f';
-                } else if (temperature >= 22 && temperature <= 30) {
-                    temperatureElement.style.color = '#74ff86';
-                } else {
-                    temperatureElement.style.color = '#00ccff';
-                }
-        
-                document.querySelector('.humidity').textContent = `Humidity: ${humidity}% ${city}`;
-        
-                const weatherIcon = document.querySelector('.weather-icon img');
-                weatherIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
-            })
-            .catch(error => {
-                console.error('Error fetching weather data:', error);
-            });
-        
-            document.addEventListener("DOMContentLoaded", function () {
-              const weatherWidget = document.getElementById("weather-widget");
-              const currentTime = new Date().getHours();
-        
-              if (currentTime >= 6 && currentTime < 18) {
-                // Day time styling
-                weatherWidget.style.backgroundColor = "#21d3ff"; /* Light blue color */
-              } else {
-                // Night time styling
-                weatherWidget.style.backgroundColor = "#0F3057"; /* Dark blue color */
-              }
-            });
-          </script>
-        
-        
 </body>
 </html>
