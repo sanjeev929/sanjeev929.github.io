@@ -20,37 +20,44 @@
                 </ul>
                 <a href="#download" class="btn">Download CV</a>
             </div>
+            <div class="hamburger" id="hamburger">
+                &#9776;
+            </div>
         </div>
     </nav>
+
+    <aside class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#services">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#download">Download CV</a></li>
+        </ul>
+    </aside>
+    <div class="overlay" id="overlay"></div>
 
     <div class="hero">
         <div class="container">
             <h2>Hello, I am a</h2>
-            <br>
             <p>Python Developer</p>
-            <br>
             <a href="#portfolio" class="btn">View My Portfolio</a>
         </div>
     </div>
     
     <section id="about" class="about">
         <div class="container">
-          <h2>About Me</h2>
-          <br>
-          <br>
-          <p>I am a passionate Python developer with a strong skills in backend development and a keen interest in solving complex problems with elegant solutions. Within this portfolio, you'll find a curated selection of my best work, showcasing my expertise and dedication to the craft of coding.</p>
-          <h3>Skills</h3>
-          <br>
-          <br>
-          <ul>
-            <li><i class="fab fa-python"></i><strong>Programming Languages:</strong> Python</li>
-            <li><i class="fas fa-code"></i><strong>Frameworks and Libraries:</strong> Django, Flask, FastAPI, Pandas</li>
-            <li><i class="fas fa-database"></i><strong>Database Management:</strong> PostgreSQL, MongoDB, Firebase</li>
-            <li><i class="fab fa-html5"></i><i class="fab fa-css3-alt"></i><i class="fab fa-js"></i><strong>Web Development:</strong> HTML, CSS, JavaScript</li>
-            <li><i class="fas fa-tools"></i><strong>Tools and Platforms:</strong> Git, Visual Studio Code, AWS</li>
-            <li><i class="fas fa-vial"></i><strong>Testing:</strong> pytest</li>
-            <li><i class="fas fa-check-circle"></i><strong>Principles:</strong> SOLID, DRY, Clean Code</li>
-          </ul>
+            <h2>About Me</h2>
+            <p>I am a passionate Python developer with a strong skills in backend development...</p>
+            <h3>Skills</h3>
+            <ul>
+                <li><i class="fab fa-python"></i><strong>Programming Languages:</strong> Python</li>
+                <li><i class="fas fa-code"></i><strong>Frameworks and Libraries:</strong> Django, Flask, FastAPI, Pandas</li>
+                <li><i class="fas fa-database"></i><strong>Database Management:</strong> PostgreSQL, MongoDB, Firebase</li>
+                <li><i class="fab fa-html5"></i><i class="fab fa-css3-alt"></i><i class="fab fa-js"></i><strong>Web Development:</strong> HTML, CSS, JavaScript</li>
+                <li><i class="fas fa-tools"></i><strong>Tools and Platforms:</strong> Git, Visual Studio Code, AWS</li>
+                <li><i class="fas fa-vial"></i><strong>Testing:</strong> pytest</li>
+                <li><i class="fas fa-check-circle"></i><strong>Principles:</strong> SOLID, DRY, Clean Code</li>
+            </ul>
         </div>
     </section>
     
@@ -101,10 +108,29 @@
             </div>
         </div>
     </section>
+
     <footer>
         <div class="container">
             <p>&copy; 2023 SANJEEV. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+
+            hamburger.addEventListener('click', () => {
+                sidebar.style.width = '250px';
+                overlay.classList.add('show');
+            });
+
+            overlay.addEventListener('click', () => {
+                sidebar.style.width = '0';
+                overlay.classList.remove('show');
+            });
+        });
+    </script>
 </body>
 </html>
