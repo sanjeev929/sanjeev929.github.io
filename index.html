@@ -14,11 +14,11 @@
             <h1>SANJEEV</h1>
             <div class="nav-links-container">
                 <ul>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#services">Blog</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#Builds">Builds</a></li>
+                    <li><a href="uderconstruction.html">Blog</a></li>
+                    <li><a href="uderconstruction.html">Contact</a></li>
                 </ul>
-                <a href="#download" class="btn">Download CV</a>
+                <a href="uderconstruction.html" class="btn">Download CV</a>
             </div>
             <div class="hamburger" id="hamburger">
                 &#9776;
@@ -28,10 +28,10 @@
 
     <aside class="sidebar" id="sidebar">
         <ul>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#services">Blog</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#download">Download CV</a></li>
+            <li><a href="#Builds">Builds</a></li>
+            <li><a href="uderconstruction.html">Blog</a></li>
+            <li><a href="uderconstruction.html">Contact</a></li>
+            <li><a href="uderconstruction.html">Download CV</a></li>
         </ul>
     </aside>
     <div class="overlay" id="overlay"></div>
@@ -40,14 +40,15 @@
         <div class="container">
             <h2>Hello, I am a</h2>
             <p>Python Developer</p>
-            <a href="#portfolio" class="btn">View My Portfolio</a>
+            <a href="uderconstruction.html" class="btn">Get in touch</a>
         </div>
     </div>
+    
     
     <section id="about" class="about">
         <div class="container">
             <h2>About Me</h2>
-            <p>I am a passionate Python developer with a strong skills in backend development...</p>
+            <p>I'm a python developer passionate about crafting clean, scalable web applications for exceptional user experiences. I've delved into FastAPI, Django, and Flask, and I'm eager to deepen my expertise in these frameworks. I've also developed Alexa Skills and Google Actions integrated with my own OAuth2 server, sparking my enthusiasm for discussing these technologies further.</p>
             <h3>Skills</h3>
             <ul>
                 <li><i class="fab fa-python"></i><strong>Programming Languages:</strong> Python</li>
@@ -61,7 +62,7 @@
         </div>
     </section>
     
-    <section id="projects" class="projects">
+    <section id="Builds" class="projects">
         <div class="container">
             <h2>Projects</h2>
             <div class="project-cards">
@@ -111,26 +112,40 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 SANJEEV. All rights reserved.</p>
+            <p class="copyright">&copy; 2024 SANJEEV. All rights reserved.</p>
         </div>
     </footer>
+    
+    
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const hamburger = document.getElementById('hamburger');
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    const sidebarLinks = sidebar.querySelectorAll('ul li a');
 
-            hamburger.addEventListener('click', () => {
-                sidebar.style.width = '250px';
-                overlay.classList.add('show');
-            });
+    // Open sidebar and show overlay
+    hamburger.addEventListener('click', () => {
+        sidebar.style.width = '250px';
+        overlay.classList.add('show');
+    });
 
-            overlay.addEventListener('click', () => {
-                sidebar.style.width = '0';
-                overlay.classList.remove('show');
-            });
-        });
+    // Close sidebar and hide overlay
+    function closeSidebar() {
+        sidebar.style.width = '0';
+        overlay.classList.remove('show');
+    }
+
+    // Close sidebar when clicking overlay
+    overlay.addEventListener('click', closeSidebar);
+
+    // Close sidebar when clicking any sidebar navigation link
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', closeSidebar);
+    });
+    });
+
     </script>
 </body>
 </html>

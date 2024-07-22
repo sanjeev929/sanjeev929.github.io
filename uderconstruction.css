@@ -1,0 +1,161 @@
+/* Reset and global styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Container styling */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    text-align: center;
+  }
+  
+  /* Construction page styling */
+  .construction-wrapper {
+    position: relative;
+  }
+  
+  .construction-symbol {
+    font-size: 80px;
+    color: #ffcc00;
+    animation: bounce 2s infinite;
+  }
+  
+  .spanner {
+    font-size: 80px;
+    color: #1a73e8;
+    animation: moveSpanner 3s infinite linear;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #35abff;
+  }
+  
+  p {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .home-link {
+    background: linear-gradient(135deg, #31b3fe, #0374ba);
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 1s ease-in-out;
+  }
+  
+  .home-link:hover {
+    background: linear-gradient(135deg, #0374ba, #31b3fe);
+    color: #ffffff;
+  }
+  
+  /* Barricade styling */
+  .barricade {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+  }
+  
+  .barricade-stripe {
+    width: 100px;
+    height: 20px;
+    background: linear-gradient(45deg, #ffcc00 50%, #121212 50%);
+    margin: 5px;
+    animation: bounce 2s infinite;
+  }
+  
+  /* Red lights styling */
+  .red-lights {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .red-light {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    margin: 5px;
+    animation: blink 1s infinite;
+  }
+  
+  /* Keyframes */
+  @keyframes moveSpanner {
+    0% {
+      transform: rotate(0deg) translateX(0px);
+    }
+    25% {
+      transform: rotate(10deg) translateX(5px);
+    }
+    50% {
+      transform: rotate(0deg) translateX(10px);
+    }
+    75% {
+      transform: rotate(-10deg) translateX(5px);
+    }
+    100% {
+      transform: rotate(0deg) translateX(0px);
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+  }
+  
+  @keyframes blink {
+    0%, 50%, 100% {
+      opacity: 1;
+    }
+    25%, 75% {
+      opacity: 0;
+    }
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 24px;
+    }
+  
+    p {
+      font-size: 18px;
+    }
+  
+    .home-link {
+      padding: 8px 16px;
+    }
+  
+    .construction-symbol, .spanner {
+      font-size: 60px;
+    }
+  }
+  
