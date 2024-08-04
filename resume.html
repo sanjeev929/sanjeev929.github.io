@@ -5,40 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume - Edward Christofer</title>
     <link rel="stylesheet" href="resume.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <div class="profile">
-            <div class="profile-details">
-                <h2>Profile</h2>
-                <p><strong>Name:</strong>Sanjeev</p>
-                <p><strong>Birthday:</strong> 13 March 1995</p>
-                <p><strong>Relationship:</strong> Single</p>
-                <p><strong>Nationality:</strong> Canada</p>
-                <p><strong>Language:</strong> English</p>
-            </div>
-            <hr>
-            <div class="expertise">
-                <h2>Expertise</h2>
+    <nav>
+        <div class="container">
+            <h1>SANJEEV</h1>
+            <div class="nav-links-container">
                 <ul>
-                    <li>Photoshop <span class="level"></span></li>
-                    <li>Illustrator <span class="level"></span></li>
-                    <li>UI/UX Design <span class="level"></span></li>
-                    <li>After Effect <span class="level"></span></li>
-                    <li>WordPress <span class="level"></span></li>
-                    <li>Creativity <span class="level"></span></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="uderconstruction.html">Blog</a></li>
+                    <li><a href="uderconstruction.html">Contact</a></li>
+                </ul>
+                <a href="resume.html" class="btn">Virtual CV</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                &#9776;
+            </div>
+        </div>
+    </nav>
+
+    <aside class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#Builds">Builds</a></li>
+            <li><a href="uderconstruction.html">Blog</a></li>
+            <li><a href="uderconstruction.html">Contact</a></li>
+            <li><a href="resume.html">Virtual CV</a></li>
+        </ul>
+    </aside>
+    <div class="overlay" id="overlay"></div>
+    <div class="recontainer">
+        <div class="profile">
+            <div class="expertise">
+                <div class="reference">
+                    <h2>Profile</h2>
+                    <p><a href="https://www.linkedin.com/in/sanjeev-c-44a035252/">LinkedIn</a><br>sanjeevsanju929@gmail.com<br>+918825815508</p>
+                </div>
+                <hr>
+                <h2>Skills</h2>
+                <ul>
+                    <li>Python JS<span class="level100"></span></li>
+                    <li>FastAPI Django<span class="level100"></span></li>
+                    <li>SQL NoSQL<span class="level100"></span></li>
+                    <li>AWS - Ec2 Lambda<span class="level90"></span></li>
+                    <li>Test - Py Test<span class="level70"></span></li>
+                    <li>HTML CSS<span class="level80"></span></li>
+                    <li>Alexa Googleactions<span class="level65"></span></li>
+                    <li>VSCode pyCharm<span class="level80"></span></li>
                 </ul>
             </div>
             <hr>
-            <div class="awards">
-                <h2>Awards</h2>
-                <p>Best UI Designer Award<br>Company name here<br>2015 - 2016</p>
-                <p>Best UX Designer Award<br>Company name here<br>2017 - 2018</p>
+            <div class="profile-details">
+                <h2>Education</h2>
+                <p><strong>Dr.mahalingam College of Engineering and Technology Pollachi</strong><br>BE Computer Science - 8.2 CGPA<br> Batch 2020-2023</p><br>
+                <p><strong>Nachimuthu polytechnic college Pollachi</strong><br>Dimploma in Computer Engineering - 82% <br>batch 2017-2020</p><br>
+                <p><strong>Palaniammal Heigher Secondary School</strong><br>SSLC state board - 84% <br><br>
             </div>
             <hr>
-            <div class="reference">
-                <h2>Reference</h2>
-                <p>Full Name of the Person<br>Title / Position here<br>Phone: 123-456-789</p>
+            <div class="awards">
+                <h2>Certificates</h2>
+                <p>Completed “Kaggle” online certification for “Python”</p>
+                <p>Completed “Kaggle” online certification for “Pandas”</p>
+                <p>Completed AWS online course “AWSAcademy Cloud Foundations”</p>
             </div>
         </div>
         <div class="main-content">
@@ -86,8 +114,59 @@
                         <li>Learning DB connectivity with Operation</li>
                     </ul>
                 </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <hr>
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            const sidebarLinks = sidebar.querySelectorAll('ul li a');
+    
+            // Set sidebar to closed initially
+            sidebar.style.width = '0';
+            overlay.classList.remove('show');
+    
+            // Open or close sidebar and show or hide overlay
+            hamburger.addEventListener('click', () => {
+                if (sidebar.style.width === '250px') {
+                    // If sidebar is open, close it
+                    sidebar.style.width = '0';
+                    overlay.classList.remove('show');
+                    console.log('Sidebar closed');
+                } else {
+                    // If sidebar is closed, open it
+                    sidebar.style.width = '250px';
+                    overlay.classList.add('show');
+                    console.log('Sidebar opened');
+                }
+            });
+    
+            // Close sidebar and hide overlay
+            function closeSidebar() {
+                sidebar.style.width = '0';
+                overlay.classList.remove('show');
+                console.log('Sidebar closed via closeSidebar');
+            }
+    
+            // Close sidebar when clicking overlay
+            overlay.addEventListener('click', closeSidebar);
+    
+            // Close sidebar when clicking any sidebar navigation link
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', closeSidebar);
+            });
+        });
+    </script>
+    
+    
 </body>
 </html>
