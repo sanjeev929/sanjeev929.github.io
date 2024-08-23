@@ -28,7 +28,7 @@ nav {
   width: 100%;
   top: 0;
   z-index: 1000;
-  animation: fadeIn 2s ease-in-out;
+  animation: fadeIn 2.5s ease-in-out;
 }
 
 nav .container {
@@ -171,7 +171,7 @@ nav .btn:hover {
   justify-content: center;
   text-align: center;
   padding-top: 80px;
-  animation: fadeIn 2s ease-in-out;
+  animation: fadeIn 2.5s ease-in-out;
 }
 
 .hero h2 {
@@ -325,13 +325,13 @@ nav .btn:hover {
   margin: 10px;
   flex: 1 1 300px;
   max-width: 350px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   color: var(--text-color);
   overflow: hidden;
 }
 
 .project-card:hover {
-  transform: scale(var(--hover-scale)) rotate(2deg);
+  transform: scale(1.1); /* Increase the zoom effect to 1.1 */
   box-shadow: var(--hover-shadow);
 }
 

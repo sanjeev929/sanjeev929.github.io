@@ -1,0 +1,375 @@
+/* Reset and global styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    line-height: 1.6;
+    padding-top: 80px;
+  }
+  
+  /* Container styling */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  /* Navbar styling */
+  nav {
+    background-color: #000000;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    animation: fadeIn 2.5s ease-in-out;
+  }
+  
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav h1 {
+    font-size: 24px;
+    background: linear-gradient(135deg, #59bffa, #0066a5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .nav-links-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+  }
+  
+  nav ul li a {
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.4s;
+    margin: 0 30px;
+    display: inline-block;
+  }
+  
+  nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #35abff;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease;
+  }
+  
+  nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  nav ul li a:hover {
+    color: #35abff;
+  }
+  
+  nav .btn {
+    background: linear-gradient(135deg, #31b3fe, #0374ba);
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 1s ease-in-out;
+  }
+  
+  nav .btn:hover {
+    background: linear-gradient(135deg, #0374ba, #31b3fe);
+    color: #ffffff;
+  }
+  
+  /* Hamburger menu styling */
+.hamburger {
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 1001;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 8px 8px 8px 32px;
+    text-align: left;
+  }
+  
+  .sidebar ul li a {
+    text-decoration: none;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar ul li a:hover {
+    color: #f1f1f1;
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: 1000;
+    display: none;
+  }
+  
+  .overlay.show {
+    opacity: 1;
+    display: block;
+  }
+  
+  
+  /* Contact section styling */
+  .contact-section {
+    padding: 60px 30px;
+    background: linear-gradient(135deg, #222222, #333333);
+    border-radius: 15px;
+    margin: 50px auto;
+    max-width: 900px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #ffffff;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .contact-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .contact-form .form-group {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  .contact-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #222;
+    color: #ffffff;
+    font-size: 16px;
+  }
+  
+  .contact-form textarea {
+    resize: vertical;
+  }
+  
+  .contact-form button.btn {
+    background: linear-gradient(135deg, #31b3fe, #0374ba);
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 1s ease-in-out;
+  }
+  
+  .contact-form button.btn:hover {
+    background: linear-gradient(135deg, #0374ba, #31b3fe);
+    color: #ffffff;
+  }
+  
+  /* Social media section styling */
+  .social-section {
+    padding: 60px 30px;
+    background: linear-gradient(135deg, #222222, #333333);
+    border-radius: 15px;
+    margin: 50px auto;
+    max-width: 900px;
+    text-align: center;
+    color: #ffffff;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .social-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .social-icon {
+    color: #ffffff;
+    font-size: 30px;
+    transition: color 0.3s;
+  }
+  
+  .social-icon:hover {
+    color: #35abff;
+  }
+  
+  /* Footer styling */
+  footer {
+    background: linear-gradient(135deg, #333333, #1a1a1a);
+    padding: 40px 0;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  footer .copyright {
+    font-size: 18px;
+    margin: 0;
+    color: #35abff;
+    letter-spacing: 1px;
+    font-weight: 300;
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #35abff;
+    background: rgba(51, 51, 51, 0.8);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Keyframes */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    nav .nav-links-container {
+        display: none;
+      }
+      nav .hamburger {
+        display: block;
+      }
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 14px;
+    }
+    .social-icons {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .social-icon {
+      font-size: 20px;
+    }
+    footer {
+      padding: 20px 0;
+    }
+    footer .container {
+      text-align: center;
+      padding: 0 10px;
+    }
+    footer .copyright {
+      font-size: 16px;
+      padding: 8px;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+@media (max-width: 768px) {
+    nav .nav-links-container {
+      display: none;
+    }
+    nav .hamburger {
+      display: block;
+    }
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+}   
