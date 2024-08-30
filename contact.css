@@ -163,7 +163,7 @@ nav .btn:hover {
   
 .contact {
     padding: 80px 0;
-    background: #222222;
+    background: #2b2b2b;
     border-radius: 15px;
     margin: 50px auto;
     max-width: 900px;
@@ -192,7 +192,7 @@ nav .btn:hover {
 }
   
 .contact-item {
-    background: linear-gradient(135deg, #222222, #222222);
+    background: linear-gradient(135deg, #1f1f1f, #222222);
     padding: 20px;
     border-radius: 15px;
     width: 100%;
@@ -233,6 +233,16 @@ nav .btn:hover {
     color: #35abff;
     text-decoration: underline;
 }
+.contact h2::after {
+    content: '';
+    display: block;
+    width: 200px;
+    height: 4px;
+    background: #28a9fa;
+    margin: 20px auto;
+    border-radius: 3px;
+    animation: underlineGrow 3s ease-in-out;
+  }
   
 footer {
     background-color: #000000;
@@ -245,6 +255,7 @@ footer .container {
     max-width: 1200px;
     margin: 0 auto;
 }
+
   
   
 @keyframes fadeIn {
@@ -257,6 +268,16 @@ footer .container {
       transform: translateY(0);
     }
   }
+
+@keyframes underlineGrow {
+    from {
+      width: 0;
+    }
+    to {
+      width: 200px;
+    }
+}
+  
   
 @media (max-width: 768px) {
     nav .nav-links-container {
@@ -268,5 +289,48 @@ footer .container {
     nav ul {
       flex-direction: column;
       align-items: center;
+    }
+    .contact-details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+      
+    .contact-item {
+        background: linear-gradient(135deg, #1f1f1f, #222222);
+        padding: 5px;
+        border-radius: 15px;
+        width: 40%;
+        max-width: 300px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        transition: transform 0.8s, box-shadow 0.8s;
+        position: relative;
+        overflow: hidden;
+    }
+    .contact-icon {
+        font-size: 28px;
+        color: #35abff;
+        margin-bottom: 10px;
+    }
+      
+    .contact-item h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+      
+    .contact-item p {
+        font-size: 14px;
+    }
+      
+    .contact-item a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+      
+    .contact-item a:hover {
+        color: #35abff;
+        text-decoration: underline;
     }
 }   
