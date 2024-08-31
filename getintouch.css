@@ -104,66 +104,142 @@
     color: #ffffff;
   }
   
-  /* Hamburger menu styling */
+  /* Hamburger Menu */
 .hamburger {
-    font-size: 24px;
-    color: #fff;
-    cursor: pointer;
-    display: none;
-  }
-  
-  .sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    z-index: 1001;
-  }
-  
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .sidebar ul li {
-    padding: 8px 8px 8px 32px;
-    text-align: left;
-  }
-  
-  .sidebar ul li a {
-    text-decoration: none;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .sidebar ul li a:hover {
-    color: #f1f1f1;
-  }
-  
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    opacity: 0;
-    transition: opacity 0.5s;
-    z-index: 1000;
-    display: none;
-  }
-  
-  .overlay.show {
-    opacity: 1;
-    display: block;
-  }
-  
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  display: none; /* Change to block on mobile view */
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1002;
+  transition: color 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.hamburger:hover {
+  color: #00aaff; /* Highlight color on hover */
+  transform: rotate(90deg); /* Rotate on hover for a modern feel */
+}
+
+/* Sidebar */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, #2e2e2e, #1a1a1a); /* Grey gradient background */
+  overflow-x: hidden;
+  overflow-y: auto; /* Allows scrolling if content overflows */
+  transition: width 0.8s ease, background 0.8s ease; /* Slower transition for smoother effect */
+  padding-top: 20px;
+  z-index: 1001;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.7); /* Enhanced shadow for depth */
+  border-radius: 0 15px 15px 0; /* Rounded corners on the right side */
+}
+
+.sidebar.open {
+  width: 600px; /* Adjust width for a more spacious look */
+  border-right: 3px solid #00aaff; /* Add a blue accent border */
+}
+
+/* Sidebar Section Title */
+.sidebar .section-title {
+  padding: 20px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #00aaff;
+  border-bottom: 2px solid #00aaff; /* Fixed line with the title */
+  margin: 0 0 20px 0; /* Margin for spacing */
+  transition: transform 0.8s ease; /* Smooth transition for transform property */
+  white-space: nowrap; /* Prevents text from wrapping */
+}
+
+/* Ensure Title Expands Smoothly */
+.sidebar.open .section-title {
+  transform: translateX(0); /* Reset transformation on opening */
+}
+
+/* Sidebar Menu Items */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0; /* Margin for separation between sections */
+}
+
+.sidebar ul li {
+  padding: 16px 20px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider */
+  transition: background 0.8s ease, padding-left 0.8s ease, transform 0.8s ease; /* Include transform for smooth expansion */
+  display: flex; /* Display flex to align icon and text */
+  align-items: center; /* Center vertically */
+  overflow: hidden; /* Ensures smooth content expansion */
+}
+
+.sidebar ul li.open {
+  transform: scaleX(1); /* Scale horizontally on open */
+  width: 100%; /* Ensure full width is used */
+}
+
+.sidebar ul li:hover {
+  background: rgba(55, 183, 246, 0.897);
+  padding-left: 10px; /* Slide effect on hover */
+  border-radius: 5px; /* Rounded effect on hover */
+}
+
+.sidebar ul li i {
+  margin-right: 15px; /* Space between icon and text */
+  color: #00aaff; /* Icon color */
+  transition: transform 0.8s, color 0.8s; /* Animation for icons */
+}
+
+.sidebar ul li:hover i {
+  transform: scale(1.2); /* Zoom on hover */
+  color: #ffdd57; /* Change icon color on hover */
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #ffffff; /* Light grey text */
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.8s, transform 0.8s;
+}
+
+.sidebar ul li a:hover {
+  color: #00aaff; /* Blue hover effect */
+  transform: translateX(5px); /* Subtle move to the right */
+}
+
+/* Sidebar Active State */
+.sidebar ul li a.active {
+  color: #00aaff; /* Active link color */
+  font-weight: bold;
+  border-left: 4px solid #00aaff; /* Blue accent for active item */
+  padding-left: 5px; /* Slight padding for active state */
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: 1000;
+  display: none;
+}
+
+.overlay.show {
+  opacity: 1;
+  display: block;
+}
+
   
   /* Contact section styling */
   .contact-section {
