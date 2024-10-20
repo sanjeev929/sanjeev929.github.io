@@ -510,6 +510,9 @@ footer .copyright {
   .about ul {
     grid-template-columns: 1fr;
   }
+  .about ul li {
+    margin-left: -20px;
+  }
   .projects .project-cards {
     flex-direction: column;
     align-items: center;

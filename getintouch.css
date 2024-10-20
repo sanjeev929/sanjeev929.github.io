@@ -436,16 +436,3 @@
       transform: translateY(0);
     }
   }
-  
-@media (max-width: 768px) {
-    nav .nav-links-container {
-      display: none;
-    }
-    nav .hamburger {
-      display: block;
-    }
-    nav ul {
-      flex-direction: column;
-      align-items: center;
-    }
-}   
