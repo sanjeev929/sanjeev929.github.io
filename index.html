@@ -24,11 +24,11 @@
             <h1>SANJEEV</h1>
             <div class="nav-links-container">
                 <ul>
-                    <li><a href="#Builds">Builds</a></li>
-                    <li><a href="uderconstruction.html">Blog</a></li>
-                    <li><a href="getintouch.html.html">Contact</a></li>
+                    <li><a href="#Builds">BUILDS</a></li>
+                    <li><a href="uderconstruction.html">BLOGS</a></li>
+                    <li><a href="getintouch.html.html">CONTACT</a></li>
                 </ul>
-                <a href="resume.html" class="btn">Virtual CV</a>
+                <a href="resume.html" class="btn">VIRTUAL CV</a>
             </div>
             <div class="hamburger" id="hamburger">
                 &#9776;
@@ -64,26 +64,34 @@
         </ul> -->
     </aside>
     <div class="overlay" id="overlay"></div>
-
-    <div class="hero">
-        <div class="container">
-            <h2>Hello, I am a</h2>
-            <p>Python Developer</p>
-            <a href="getintouch.html" class="btn">Get in touch</a>
+    <br>
+    <br>
+    <br>
+    <button id="toggleChat" onclick="toggleChat()">✨AI ChatBot</button>
+    <section id="bot" style="display: none;">
+        <div id="chatbox">
         </div>
-    </div>
-    
-    
+        <div id="inputSection">
+            <input type="text" id="userInput" placeholder="Type your message...">
+            <button id="sendButton" onclick="sendMessage()">Send</button>
+            <button id="closeChat" onclick="toggleChat()">X</button>
+        </div>
+    </section>
     <section id="about" class="about">
         <div class="container">
             <h2>About Me</h2>
-            <p>I'm a python developer passionate about crafting clean, scalable web applications for exceptional user experiences. I've delved into FastAPI, Django, and Flask, and I'm eager to deepen my expertise in these frameworks. I've also developed Alexa Skills and Google Actions integrated with my own OAuth2 server, sparking my enthusiasm for discussing these technologies further.</p>
+            <p>
+            I'm a Python developer passionate about building clean, scalable web apps with a focus on exceptional user experiences. I specialize in FastAPI, Django, and Flask, always striving to deepen my expertise.
+            I’ve worked with AI technologies like OpenAI and Gemini, integrating smart solutions into applications. I’m eager to collaborate on projects that fuse AI with web development—let’s build something amazing.
+            I've crafted Alexa Skills and Google Actions, integrating them with custom OAuth2 servers, sparking my interest in authorization and conversational interfaces.
+            </p>
             <h3>Skills</h3>
             <ul>
                 <li><i class="fab fa-python"></i><strong>Programming Languages:</strong> Python</li>
-                <li><i class="fas fa-code"></i><strong>Frameworks and Libraries:</strong> Django, Flask, FastAPI, Pandas</li>
+                <li><i class="fas fa-code"></i><strong>Frameworks:</strong> FastAPI, Django, Flask</li>
+                <li><i class="fas fa-brain"></i> <strong>AI Technologies:</strong>OpenAI, Gemini</li>
                 <li><i class="fas fa-database"></i><strong>Database Management:</strong> PostgreSQL, MongoDB, Firebase</li>
-                <li><i class="fab fa-html5"></i><i class="fab fa-css3-alt"></i><i class="fab fa-js"></i><strong>Web Development:</strong> HTML, CSS, JavaScript</li>
+                <li><i class="fab fa-aws"></i><i class="fab fa-docker"></i><i class="fas fa-server"></i><strong>Server Deployment:</strong> AWS LightSail, Docker, EC2, Rendar</li>
                 <li><i class="fas fa-tools"></i><strong>Tools and Platforms:</strong> Git, Visual Studio Code, AWS</li>
                 <li><i class="fas fa-vial"></i><strong>Testing:</strong> pytest</li>
                 <li><i class="fas fa-check-circle"></i><strong>Principles:</strong> SOLID, DRY, Clean Code</li>
@@ -93,25 +101,20 @@
     
     <section id="Builds" class="projects">
         <div class="container">
-            <h2>Projects</h2>
+            <h2>PROJECTS</h2>
             <div class="project-cards">
                 <div class="project-card">
-                    <h3>Company Website</h3>
-                    <p>Details about your Django project. This is a brief description to give an overview of what this project entails.</p>
-                    <a href="#django-project-details">Read more</a>
-                </div>
-                <div class="project-card">
-                    <h3>FastAPI Server</h3>
-                    <p>Details about your FastAPI project. This is a brief description to give an overview of what this project entails.</p>
-                    <a href="#fastapi-project-details">Read more</a>
-                </div>
-                <div class="project-card">
-                    <h3>Alexa Server</h3>
+                    <h3>E Commerce</h3>
                     <p>Details about your Alexa Server project. This is a brief description to give an overview of what this project entails.</p>
                     <a href="#alexa-server-details">Read more</a>
                 </div>
                 <div class="project-card">
-                    <h3>Authorization Server</h3>
+                    <h3>Expense Tracker</h3>
+                    <p>Details about your Alexa Server project. This is a brief description to give an overview of what this project entails.</p>
+                    <a href="#alexa-server-details">Read more</a>
+                </div>
+                <div class="project-card">
+                    <h3>WhiteBook Extractor</h3>
                     <p>Details about your Alexa Server project. This is a brief description to give an overview of what this project entails.</p>
                     <a href="#alexa-server-details">Read more</a>
                 </div>
@@ -121,17 +124,27 @@
                     <a href="#alexa-server-details">Read more</a>
                 </div>
                 <div class="project-card">
-                    <h3>Medical Certificate Generator</h3>
+                    <h3>Whatsapp Chatbot with Twilio</h3>
                     <p>Details about your Alexa Server project. This is a brief description to give an overview of what this project entails.</p>
                     <a href="#alexa-server-details">Read more</a>
                 </div>
                 <div class="project-card">
-                    <h3>Chat App</h3>
+                    <h3>Company Website</h3>
+                    <p>Details about your Django project. This is a brief description to give an overview of what this project entails.</p>
+                    <a href="#django-project-details">Read more</a>
+                </div>
+                <div class="project-card">
+                    <h3>FastAPI Server  for Smart Home</h3>
+                    <p>Details about your FastAPI project. This is a brief description to give an overview of what this project entails.</p>
+                    <a href="#fastapi-project-details">Read more</a>
+                </div>
+                <div class="project-card">
+                    <h3>Alexa Server</h3>
                     <p>Details about your Alexa Server project. This is a brief description to give an overview of what this project entails.</p>
                     <a href="#alexa-server-details">Read more</a>
                 </div>
                 <div class="project-card">
-                    <h3>Task Management</h3>
+                    <h3>Whatsapp Chatbot with Twilio</h3>
                     <p>Details about your Alexa Server project. This is a brief description to give an overview of what this project entails.</p>
                     <a href="#alexa-server-details">Read more</a>
                 </div>
@@ -139,14 +152,118 @@
         </div>
     </section>
 
+    <!-- Footer Section -->
     <footer>
         <div class="container">
-            <p class="copyright">&copy; 2024 SANJEEV. All rights reserved.</p>
+            <!-- Section 1: Privacy Policy & Terms and Conditions -->
+            <div class="footer-section">
+                <h3>Policies</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Accessibility Statement</a></li>
+                </ul>
+            </div>
+    
+            <!-- Section 2: Contact Info & Social Media Links -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><a href="mailto:contact@example.com">Email Us</a></li>
+                    <li><a href="#">Phone: +1234567890</a></li>
+                    <li>
+                        <a href="#" target="_blank">Facebook</a> |
+                        <a href="#" target="_blank">Instagram</a> |
+                        <a href="#" target="_blank">LinkedIn</a>
+                    </li>
+                </ul>
+            </div>
+    
+            <!-- Section 3: Copyright & Cookie Policy -->
+            <div class="footer-section">
+                <h3>Other Info</h3>
+                <ul>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li>&copy; 2024 SANJEEV. All Rights Reserved.</li>
+                    <li><a href="#">Subscribe to Newsletter</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
-    
-    
 
+    
+    <script>
+        async function sendMessage() {
+            const userInput = document.getElementById('userInput').value.trim();
+            const chatbox = document.getElementById('chatbox');
+    
+            if (userInput === "") return;
+            chatbox.innerHTML += `<div class="user-message"><strong>You:</strong> ${userInput}</div>`;
+            document.getElementById('userInput').value = '';
+            const response = await fetchGeminiAI(userInput);
+            const botResponse = response || "Sorry, I couldn't understand that.";
+            chatbox.innerHTML += `<div class="bot-message"><strong>Bot:</strong> ${botResponse}</div>`;
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }
+        async function fetchGeminiAI(userInput, retries = 3, delay = 2000) {
+            try {
+                const apiKey = 'AIzaSyASU__5e5ZTxpi-7WIGzg2TuAzQjzppqOA';
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
+    
+                const requestBody = {
+                    contents: [{
+                        parts: [{
+                            text: userInput
+                        }]
+                    }]
+                };
+    
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(requestBody)
+                });
+                if (!response.ok) {
+                    if (retries > 0) {
+                        console.log('API is overloaded. Retrying...');
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                        return await fetchGeminiAI(userInput, retries - 1, delay);
+                    } else {
+                        console.error('Max retries reached.');
+                        return "Sorry, the AI service is unavailable. Please try again later.";
+                    }
+                }
+                const data = await response.json();
+                console.log('Gemini API Response:', data);
+                const aiResponse = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+                if (aiResponse) {
+                    return aiResponse;
+                } else {
+                    return "Sorry, I couldn't generate a response.";
+                }
+            } catch (error) {
+                console.error('Error during fetch:', error);
+                return "Sorry, there was an error processing your request.";
+            }
+        }
+    </script>
+    <script>
+        function toggleChat() {
+            const bot = document.getElementById('bot');
+            const toggleButton = document.getElementById('toggleChat');
+
+            if (bot.style.display === 'none' || bot.style.display === '') {
+                bot.style.display = 'flex'; // Show chatbot
+                toggleButton.style.display = 'none'; // Hide toggle button
+            } else {
+                bot.style.display = 'none'; // Hide chatbot
+                toggleButton.style.display = 'block'; // Show toggle button
+            }
+        }
+
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');

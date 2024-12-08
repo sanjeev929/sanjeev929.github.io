@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #121212;
+  background-color: #ffffff;
   color: #ffffff;
   line-height: 1.6;
 }
@@ -22,7 +22,8 @@ body {
 
 /* Navbar styling */
 nav {
-  background-color: #000000;
+  background-color: #313552;
+  background: linear-gradient(90deg, #23263d, #5f6490);
   padding: 20px 0;
   position: fixed;
   width: 100%;
@@ -39,7 +40,7 @@ nav .container {
 
 nav h1 {
   font-size: 24px;
-  background: linear-gradient(135deg, #59bffa, #0066a5);
+  background: linear-gradient(135deg, #fed11e, #fed11e);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -59,8 +60,8 @@ nav ul {
 nav ul li a {
   position: relative;
   text-decoration: none;
-  color: #ffffff;
-  font-weight: bold;
+  color: #fef9f9;
+  font-weight:500;
   transition: color 0.4s;
   margin: 0 30px;
   display: inline-block;
@@ -73,7 +74,7 @@ nav ul li a::after {
   bottom: -5px;
   width: 100%;
   height: 2px;
-  background-color: #35abff;
+  background-color: #fed11e;
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.4s ease;
@@ -85,11 +86,10 @@ nav ul li a:hover::after {
 }
 
 nav ul li a:hover {
-  color: #35abff;
+  color: #fed11e;
 }
 
 nav .btn {
-  background: linear-gradient(135deg, #31b3fe, #0374ba);
   color: #ffffff;
   padding: 10px 20px;
   text-decoration: none;
@@ -99,9 +99,10 @@ nav .btn {
 }
 
 nav .btn:hover {
-  background: linear-gradient(135deg, #0374ba, #31b3fe);
-  color: #ffffff;
+  background: linear-gradient(135deg, #fed11e, #fed11e);
+  color: #2b2e49;
 }
+
 /* Hamburger Menu */
 .hamburger {
   font-size: 24px;
@@ -226,7 +227,7 @@ nav .btn:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(110, 109, 109, 0.7);
   opacity: 0;
   transition: opacity 0.5s;
   z-index: 1000;
@@ -238,52 +239,209 @@ nav .btn:hover {
   display: block;
 }
 
-/* Hero section styling */
-.hero {
-  height: 50vh;
+
+#bot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 100%;
+  max-width: 400px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+  animation: fadeInChatbox 0.5s ease-out;
+}
+
+/* Chatbox - where messages appear */
+#chatbox {
+  height: 300px;
+  overflow-y: auto;
+  background-color: #f7f7f7;
+  border: 1px solid #e0e0e0;
+  border-radius: 15px;
+  padding: 15px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Input Section */
+#inputSection {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding-top: 80px;
-  animation: fadeIn 2.5s ease-in-out;
 }
 
-.hero h2 {
-  font-size: 24px;
-  color: #35abff;
+/* Input Field */
+#userInput {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.hero p {
-  font-size: 24px;
-  margin-bottom: 20px;
+#userInput:focus {
+  border-color: #7176a3;
+  box-shadow: 0 0 8px #7176a3;
 }
 
-.hero .btn {
-  background: linear-gradient(135deg, #31b3fe, #0374ba);
+/* Send Button */
+#sendButton {
+  padding: 12px 20px;
+  background-color: #7176a3;
   color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#sendButton:hover {
+  background-color: #5a6398;
+  transform: scale(1.05);
+}
+
+#sendButton:active {
+  transform: scale(0.95);
+}
+
+.user-message {
+  background-color: #7176a3;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 15px;
+  align-self: flex-end; 
+  max-width: 75%;
+  box-shadow: 0 4px 12px rgba(113, 118, 163, 0.2);
+  animation: slideInRight 0.3s ease-out;
+}
+
+/* Bot Message */
+.bot-message {
+  background-color: #7176a3;
+  color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 15px;
+  align-self: flex-start;
+  max-width: 75%;
+  box-shadow: 0 4px 12px rgba(113, 118, 163, 0.2);
+  animation: slideInLeft 0.3s ease-out;
+}
+
+#chatbox::-webkit-scrollbar {
+  width: 8px;
+}
+
+#chatbox::-webkit-scrollbar-thumb {
+  background-color: #7176a3;
+  border-radius: 4px;
+}
+
+#chatbox::-webkit-scrollbar-thumb:hover {
+  background-color: #5a6398;
+}
+
+#toggleChat {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  background-color: #0066ff;
+  color: white;
   padding: 10px 20px;
-  text-decoration: none;
-  font-weight: bold;
+  border: none;
   border-radius: 5px;
-  transition: background 1s ease-in-out;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(0, 102, 255, 0.2);
 }
 
-.hero .btn:hover {
-  background: linear-gradient(135deg, #0374ba, #31b3fe);
-  color: #ffffff;
+#toggleChat:hover {
+  background-color: #0056cc;
+}
+
+#closeChat {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none; 
+  border: none; 
+  color: #333; 
+  font-size: 18px; 
+  cursor: pointer; 
+}
+
+#closeChat:hover {
+  color: #000;
+}
+
+#closeChat:active {
+  color: #555; 
+}
+
+
+@keyframes fadeInChatbox {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+@media (max-width: 600px) {
+  #bot {
+    max-width: 100%;
+    bottom: 10px;
+    right: 10px;
+  }
 }
 
 /* About section styling */
 .about {
-  background: linear-gradient(135deg, #222222, #222222);
+  background: linear-gradient(90deg, #ffffff, #ffffff);
   padding: 60px 30px;
   border-radius: 15px;
+  margin-top: 80px;
   margin: 50px auto;
   max-width: 900px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px #2b2e49;
   text-align: center;
-  color: #ffffff;
+  color: #2b2e49;
   animation: fadeIn 2s ease-in-out;
 }
 
@@ -303,8 +461,8 @@ nav .btn:hover {
   content: '';
   display: block;
   width: 150px;
-  height: 4px;
-  background: #28a9fa;
+  height: 5px;
+  background: linear-gradient(90deg, #24263e, #868cc0);
   margin: 20px auto;
   border-radius: 3px;
   animation: underlineGrow 3s ease-in-out;
@@ -336,7 +494,7 @@ nav .btn:hover {
   line-height: 1.5;
   margin-bottom: 15px;
   padding: 20px;
-  background-color: #333333;
+  background-color: #5f6490;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -350,20 +508,20 @@ nav .btn:hover {
 
 .about ul li strong {
   font-weight: 700;
-  color: #35abff;
+  color: #ffffff;
   margin-right: 10px;
 }
 
 .about ul li i {
   font-size: 24px;
-  color: #35abff;
+  color: #ffffff;
   margin-right: 10px;
 }
 
 /* Projects section styling */
 :root {
-  --primary-color: #35abff;
-  --secondary-color: #333333;
+  --primary-color: #ffffff;
+  --secondary-color: #5f6490;
   --accent-color: #444;
   --background-color: #121212;
   --text-color: #fff;
@@ -375,7 +533,7 @@ nav .btn:hover {
 
 .projects {
   padding: 50px 0;
-  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
   color: var(--text-color);
 }
 
@@ -395,7 +553,6 @@ nav .btn:hover {
   background-color: var(--secondary-color);
   border: 1px solid var(--accent-color);
   border-radius: 15px;
-  box-shadow: var(--card-shadow);
   padding: 30px;
   margin: 10px;
   flex: 1 1 300px;
@@ -403,6 +560,7 @@ nav .btn:hover {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   color: var(--text-color);
   overflow: hidden;
+  box-shadow: 0 10px 20px #2b2e49;
 }
 
 .project-card:hover {
@@ -431,22 +589,22 @@ nav .btn:hover {
   color: var(--primary-color);
   text-decoration: none;
   font-weight: bold;
-  border: 2px solid var(--primary-color);
+  border: 2px solid #fed11e;
   padding: 10px 20px;
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .project-card a:hover {
-  background-color: var(--primary-color);
+  background-color: #fed11e;
   color: var(--secondary-color);
 }
 
-/* Footer styling */
+
+/* Footer Styling */
 footer {
-  background: linear-gradient(135deg, #333333, #1a1a1a);
+  background: linear-gradient(135deg, #5f6490, #5f6490);
   padding: 40px 0;
-  text-align: center;
   color: #ffffff;
   position: relative;
   overflow: hidden;
@@ -456,22 +614,62 @@ footer .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
-  position: relative;
-  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-footer .copyright {
-  font-size: 18px;
+footer .footer-section {
+  flex: 1;
+  margin: 15px;
+  min-width: 250px;
+}
+
+footer .footer-section h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #fed11e;
+}
+
+footer .footer-section ul {
+  list-style: none;
+  padding: 0;
   margin: 0;
-  color: #35abff;
-  letter-spacing: 1px;
+}
+
+footer .footer-section li {
+  margin: 10px 0;
+}
+
+footer .footer-section a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+footer .footer-section a:hover {
+  color: #f1f1f1;
+}
+
+footer .footer-section li {
+  font-size: 14px;
   font-weight: 300;
-  display: inline-block;
-  padding: 10px;
-  border: 1px solid #35abff; /* Ensure this color is correct */
-  background: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile responsive design */
+@media (max-width: 768px) {
+  footer .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  footer .footer-section {
+    width: 100%;
+    margin: 10px 0;
+  }
 }
 
 /* Keyframes */
