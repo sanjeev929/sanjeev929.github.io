@@ -16,6 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 
 <body>
@@ -100,57 +101,52 @@
     </section>
     
     <section id="Builds" class="projects">
-        <div class="container">
-            <h2>PROJECTS</h2>
-            <div class="project-cards">
-                <div class="project-card">
-                    <h3>E Commerce</h3>
-                    <p>Details about your Alexa Server project. This is a brief description to give an overview of what this project entails.</p>
-                    <a href="#alexa-server-details">Read more</a>
-                </div>
-                <div class="project-card">
-                    <h3>Expense Tracker</h3>
-                    <p>Details about your Alexa Server project. This is a brief description to give an overview of what this project entails.</p>
-                    <a href="#alexa-server-details">Read more</a>
-                </div>
-                <div class="project-card">
-                    <h3>WhiteBook Extractor</h3>
-                    <p>Details about your Alexa Server project. This is a brief description to give an overview of what this project entails.</p>
-                    <a href="#alexa-server-details">Read more</a>
-                </div>
-                <div class="project-card">
-                    <h3>Whatsapp Chatbot with Twilio</h3>
-                    <p>Details about your Alexa Server project. This is a brief description to give an overview of what this project entails.</p>
-                    <a href="#alexa-server-details">Read more</a>
-                </div>
-                <div class="project-card">
-                    <h3>Whatsapp Chatbot with Twilio</h3>
-                    <p>Details about your Alexa Server project. This is a brief description to give an overview of what this project entails.</p>
-                    <a href="#alexa-server-details">Read more</a>
-                </div>
-                <div class="project-card">
-                    <h3>Company Website</h3>
-                    <p>Details about your Django project. This is a brief description to give an overview of what this project entails.</p>
-                    <a href="#django-project-details">Read more</a>
-                </div>
-                <div class="project-card">
-                    <h3>FastAPI Server  for Smart Home</h3>
-                    <p>Details about your FastAPI project. This is a brief description to give an overview of what this project entails.</p>
-                    <a href="#fastapi-project-details">Read more</a>
-                </div>
-                <div class="project-card">
-                    <h3>Alexa Server</h3>
-                    <p>Details about your Alexa Server project. This is a brief description to give an overview of what this project entails.</p>
-                    <a href="#alexa-server-details">Read more</a>
-                </div>
-                <div class="project-card">
-                    <h3>Whatsapp Chatbot with Twilio</h3>
-                    <p>Details about your Alexa Server project. This is a brief description to give an overview of what this project entails.</p>
-                    <a href="#alexa-server-details">Read more</a>
-                </div>
+        <div class="container swiper">
+          <h2>PROJECTS</h2>
+          <div class="slider-wrapper">
+            <div class="card-list swiper-wrapper">
+              <!-- Project Cards -->
+              <div class="card-item swiper-slide">
+                <h3 class="project-title">E-Commerce</h3>
+                <p class="project-description">Details about your E-Commerce project. This is a brief description to give an overview of what this project entails.</p>
+                <a href="#ecommerce-details" class="project-link">Read more</a>
+              </div>
+    
+              <div class="card-item swiper-slide">
+                <h3 class="project-title">Expense Tracker</h3>
+                <p class="project-description">Details about your Expense Tracker project. This is a brief description to give an overview of what this project entails.</p>
+                <a href="#expense-tracker-details" class="project-link">Read more</a>
+              </div>
+    
+              <div class="card-item swiper-slide">
+                <h3 class="project-title">WhiteBook Extractor</h3>
+                <p class="project-description">Details about your WhiteBook Extractor project. This is a brief description to give an overview of what this project entails.</p>
+                <a href="#whitebook-details" class="project-link">Read more</a>
+              </div>
+    
+              <div class="card-item swiper-slide">
+                <h3 class="project-title">WhatsApp Chatbot</h3>
+                <p class="project-description">Details about your WhatsApp Chatbot project. This is a brief description to give an overview of what this project entails.</p>
+                <a href="#chatbot-details" class="project-link">Read more</a>
+              </div>
+    
+              <div class="card-item swiper-slide">
+                <h3 class="project-title">Company Website</h3>
+                <p class="project-description">Details about your Company Website project. This is a brief description to give an overview of what this project entails.</p>
+                <a href="#company-website-details" class="project-link">Read more</a>
+              </div>
             </div>
+    
+            <div class="swiper-pagination"></div>
+            <div class="swiper-slide-button swiper-button-prev"></div>
+            <div class="swiper-slide-button swiper-button-next"></div>
+          </div>
         </div>
-    </section>
+      </section>
+    
+      
+      
+    
 
     <!-- Footer Section -->
     <footer>
@@ -191,7 +187,41 @@
         </div>
     </footer>
 
-    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+       const swiper = new Swiper('.slider-wrapper', {
+  loop: true,
+  grabCursor: true,
+  spaceBetween: 30,
+
+  // Pagination bullets
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    dynamicBullets: true
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // Responsive breakpoints
+  breakpoints: {
+    0: {
+      slidesPerView: 1
+    },
+    768: {
+      slidesPerView: 2
+    },
+    1024: {
+      slidesPerView: 3
+    }
+  }
+});
+    </script>
+      
     <script>
         async function sendMessage() {
             const userInput = document.getElementById('userInput').value.trim();
