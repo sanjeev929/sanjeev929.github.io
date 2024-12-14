@@ -520,153 +520,84 @@ nav .btn:hover {
   margin-right: 10px;
 }
 
-/* Projects section styling */
-:root {
-  --primary-color: #ffffff;
-  --secondary-color: #5f6490;
-  --accent-color: #444;
-  --background-color: #121212;
-  --text-color: #fff;
-  --text-light-color: #ddd;
-  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  --hover-scale: 1.05;
-  --hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-}
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-/* General Section Styling */
-#Builds {
-  padding: 50px 0;
-  background: #f8f9fa; /* Light background for contrast */
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Space between cards */
+  flex-wrap: wrap; /* Ensures responsiveness */
+  padding: 20px;
 }
 
-.container {
-  width: 100%;
-  margin: 0 auto;
-}
-
-h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  color: #030728;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-/* Slider Wrapper */
-.slider-wrapper {
-  overflow: hidden;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.card-list .card-item {
-  background: linear-gradient(145deg, #ffffff, #e0e0e0); /* Subtle gradient background */
+.card {
+  flex: 1 1 calc(33.333% - 20px); /* Ensures three cards per row */
+  max-width: calc(33.333% - 20px);
+  background: #ffffff;
   border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Stronger shadow for depth */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transition */
-  position: relative;
+  height: 400px;
 }
 
-.card-item:hover {
-  transform: translateY(-15px); /* Lift card up on hover */
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
-  background-color: #f0f0f0; /* Lighten background on hover */
+.card-image {
+  width: 100%;
+  height: 50%; /* Half of the card height for the image */
+  object-fit: cover;
 }
 
-.card-item:hover .project-title {
-  color: #4658ff; /* Change title color on hover */
+/* Content Section */
+.card-content {
+  background: #5f6490;
+  padding: 20px;
+  color: #ffffff;
+  height: 50%; /* Half of the card height for the content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.card-item:hover .project-description {
-  color: #333; /* Darker text for the description on hover */
+/* Title */
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
-/* Project Title */
-.project-title {
-  font-size: 1.7rem;
-  font-weight: bold;
-  color: #030728;
-  margin-bottom: 15px;
-  text-transform: capitalize;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-}
-
-/* Project Description */
-.project-description {
+/* Description */
+.card-description {
   font-size: 1rem;
-  color: #777;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   line-height: 1.5;
-  transition: color 0.3s ease;
 }
 
-/* Project Link */
-.project-link {
-  display: inline-block;
-  font-size: 1.2rem;
-  color: #4658ff;
+/* Button */
+.card-button {
   text-decoration: none;
-  font-weight: 500;
+  background: #fed11e; /* Yellow */
+  color: #000000;
   padding: 10px 20px;
   border-radius: 5px;
-  background: rgba(70, 88, 255, 0.1);
-  transition: background 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+  transition: background 0.3s ease;
 }
 
-.project-link:hover {
-  background: #4658ff;
-  color: #fff;
-  transform: scale(1.05);
+.card-button:hover {
+  background: #fdb813; /* Darker Yellow */
 }
 
-/* Swiper Pagination */
-.swiper-pagination-bullet {
-  background: #4658ff;
-  height: 12px;
-  width: 12px;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-}
-
-.swiper-pagination-bullet-active {
-  opacity: 1;
-  transform: scale(1.2);
-}
-
-/* Swiper Buttons */
-.swiper-slide-button {
-  color: #4658ff;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
-  transform: translateY(50px)
-}
-
-.swiper-slide-button:hover {
-  color: #030728;
-  transform: translateY(50px) scale(1.1);;
-}
-
+/* Responsive Design */
 @media (max-width: 768px) {
-  .card-item {
-    padding: 20px;
+  .card {
+    flex: 1 1 100%; /* Single column for small screens */
+    max-width: 100%;
   }
-
-  .swiper-slide-button {
-    display: none;
+  .card-image {
+    height: auto; /* Adjust image height dynamically */
   }
-
-  /* For mobile, make sure text and links remain visually accessible */
-  .project-title {
-    font-size: 1.4rem;
-  }
-
-  .project-link {
-    font-size: 1.1rem;
+  .card-content {
+    height: auto; /* Adjust content section height dynamically */
   }
 }
 
