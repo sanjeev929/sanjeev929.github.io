@@ -252,7 +252,7 @@ nav .btn:hover {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  z-index: 1000;
+  z-index: 99999;
   animation: fadeInChatbox 0.5s ease-out;
 }
 
@@ -362,6 +362,7 @@ nav .btn:hover {
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
+  z-index: 99999;
   box-shadow: 0 4px 10px rgba(0, 102, 255, 0.2);
 }
 
@@ -520,16 +521,40 @@ nav .btn:hover {
   margin-right: 10px;
 }
 
+.card-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card-section-heading {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.card-section-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+/* Card Container */
 .card-container {
   display: flex;
   justify-content: space-between;
-  gap: 20px; /* Space between cards */
-  flex-wrap: wrap; /* Ensures responsiveness */
+  gap: 20px;
+  flex-wrap: wrap;
   padding: 20px;
 }
 
+/* Card Styling */
 .card {
-  flex: 1 1 calc(33.333% - 20px); /* Ensures three cards per row */
+  flex: 1 1 calc(33.333% - 20px);
   max-width: calc(33.333% - 20px);
   background: #ffffff;
   border-radius: 15px;
@@ -537,13 +562,29 @@ nav .btn:hover {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  text-align: center;
+  position: relative; /* For positioning topic */
   height: 400px;
+  text-align: center;
 }
 
+/* Project Topic */
+.card-topic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #5f6490;
+  color: #ffffff;
+  padding: 5px 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-bottom-right-radius: 10px;
+  z-index: 1;
+}
+
+/* Image Section */
 .card-image {
   width: 100%;
-  height: 50%; /* Half of the card height for the image */
+  height: 50%;
   object-fit: cover;
 }
 
@@ -552,7 +593,7 @@ nav .btn:hover {
   background: #5f6490;
   padding: 20px;
   color: #ffffff;
-  height: 50%; /* Half of the card height for the content */
+  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -572,32 +613,106 @@ nav .btn:hover {
   line-height: 1.5;
 }
 
-/* Button */
+/* Button with Zoom Effect */
 .card-button {
   text-decoration: none;
-  background: #fed11e; /* Yellow */
-  color: #000000;
+  background: #fed11e;
+  color: #5f6490;
   padding: 10px 20px;
   border-radius: 5px;
   font-weight: bold;
-  transition: background 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .card-button:hover {
-  background: #fdb813; /* Darker Yellow */
+  background: #fdb813;
+  transform: scale(1.1); /* Zoom effect */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .card {
-    flex: 1 1 100%; /* Single column for small screens */
+    flex: 1 1 100%;
     max-width: 100%;
   }
-  .card-image {
-    height: auto; /* Adjust image height dynamically */
-  }
+  .card-image,
   .card-content {
-    height: auto; /* Adjust content section height dynamically */
+    height: auto;
+  }
+}
+
+
+/* Main Layout */
+.unique-project-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.unique-chart-section {
+  flex: 2;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.unique-card-section {
+  flex: 1;
+  background-color: #ffffff; /* Violet background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  color: white; /* Text color white */
+}
+
+.unique-card {
+  background-color: #5f6490;
+  padding: 40px;
+  border-radius: 10px;
+  margin-top: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.unique-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.unique-card h3 {
+  font-size: 1.6rem;
+  color: yellow; /* Yellow text for heading */
+  margin-bottom: 15px;
+}
+
+.unique-card p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: white; /* White text for paragraphs */
+}
+
+/* Chart Styling */
+#uniqueProjectChart {
+  width: 100%;
+  height: 400px;
+  border-radius: 8px;
+}
+
+/* Hover Effects for Bars */
+.chart-container canvas {
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .unique-project-container {
+    flex-direction: column;
+  }
+
+  .unique-chart-section, .unique-card-section {
+    flex: 1;
   }
 }
 

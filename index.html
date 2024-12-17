@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -100,48 +101,66 @@
         </div>
     </section>
 
-    <div class="card-container">
-        <div class="card">
-          <img src="image/projects/ecommerce-vs-online-marketplace1603983748724190.jpg" alt="Project Image" class="card-image">
-          <div class="card-content">
-            <h3 class="card-title">Project Title 1</h3>
-            <p class="card-description">This is a brief description of the project.</p>
-            <a href="#" class="card-button">View More</a>
-          </div>
-        </div>
-
-        <div class="card">
-            <img src="image/projects/ecommerce-vs-online-marketplace1603983748724190.jpg" alt="Project Image" class="card-image">
-            <div class="card-content">
-              <h3 class="card-title">Project Title 1</h3>
-              <p class="card-description">This is a brief description of the project.</p>
-              <a href="#" class="card-button">View More</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="image/projects/ecommerce-vs-online-marketplace1603983748724190.jpg" alt="Project Image" class="card-image">
-            <div class="card-content">
-              <h3 class="card-title">Project Title 1</h3>
-              <p class="card-description">This is a brief description of the project.</p>
-              <a href="#" class="card-button">View More</a>
-            </div>
-        </div>
+    <div class="card-section">
+        <!-- Section Heading -->
+        <h2 class="card-section-heading">Projects</h2>
+        <p class="card-section-description">Explore some of my best projects and recent works that showcase our expertise.</p>
         
-        <div class="card">
+        <div class="card-container">
+          <!-- Card 1 -->
+          <div class="card">
+            <div class="card-topic">Project</div>
             <img src="image/projects/ecommerce-vs-online-marketplace1603983748724190.jpg" alt="Project Image" class="card-image">
             <div class="card-content">
               <h3 class="card-title">Project Title 1</h3>
               <p class="card-description">This is a brief description of the project.</p>
               <a href="#" class="card-button">View More</a>
             </div>
+          </div>
+          
+          <!-- Card 2 -->
+          <div class="card">
+            <div class="card-topic">Project</div>
+            <img src="image/projects/ecommerce-vs-online-marketplace1603983748724190.jpg" alt="Project Image" class="card-image">
+            <div class="card-content">
+              <h3 class="card-title">Project Title 2</h3>
+              <p class="card-description">This is a brief description of the project.</p>
+              <a href="#" class="card-button">View More</a>
+            </div>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="card">
+            <div class="card-topic">Project</div>
+            <img src="image/projects/ecommerce-vs-online-marketplace1603983748724190.jpg" alt="Project Image" class="card-image">
+            <div class="card-content">
+              <h3 class="card-title">Project Title 3</h3>
+              <p class="card-description">This is a brief description of the project.</p>
+              <a href="#" class="card-button">View More</a>
+            </div>
+          </div>
         </div>
       </div>
       
-    
+      <div class="unique-project-container">
+        <div class="unique-chart-section">
+          <canvas id="uniqueProjectChart"></canvas>
+        </div>
+        <div class="unique-card-section">
+          <div class="unique-card">
+            <h3>Projects Overview</h3>
+            <p>Total Projects: <strong id="uniqueTotalProjects">0</strong></p>
+            <p>Projects Completed: <strong id="uniqueCompletedProjects">0</strong></p>
+            <p>Projects In Progress: <strong id="uniqueInProgressProjects">0</strong></p>
+            <p>Projects In Progress: <strong id="uniqueInProgressProjects1">0</strong></p>
+            <p>Projects In Progress: <strong id="uniqueInProgressProjects2">0</strong></p>
+            <p>Projects In Progress: <strong id="uniqueInProgressProjects3">0</strong></p>
+          </div>
+        </div>
+      </div>
       
       
-    
+      
 
     <!-- Footer Section -->
     <footer>
@@ -216,6 +235,88 @@
   }
 });
     </script>
+    <script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const ctx = document.getElementById('uniqueProjectChart').getContext('2d');
+
+  const data = {
+    labels: ['Completed', 'In Progress', 'Pending'],
+    datasets: [{
+      label: '# of Projects',
+      data: [10, 5, 7], // Replace with actual data
+      backgroundColor: ['#4caf50', '#ff9800', '#f44336'],
+      borderColor: ['#388e3c', '#f57c00', '#d32f2f'],
+      borderWidth: 2,
+      hoverBackgroundColor: ['#45a049', '#ffb300', '#e53935'],
+      hoverBorderColor: ['#2c6f2b', '#e65100', '#9a0007'],
+      hoverBorderWidth: 3,
+      barThickness: 100,
+      borderRadius: 10,
+    }]
+  };
+
+  const config = {
+    type: 'bar',
+    data: data,
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Number of Projects',
+            font: {
+              size: 14,
+              weight: 'bold'
+            },
+            color: '#333'
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Project Status',
+            font: {
+              size: 14,
+              weight: 'bold'
+            },
+            color: '#333'
+          }
+        }
+      },
+      plugins: {
+        tooltip: {
+          backgroundColor: '#333',
+          titleColor: '#fff',
+          bodyColor: '#fff',
+          bodyFont: {
+            size: 14
+          },
+          displayColors: false
+        },
+        legend: {
+          display: false
+        }
+      },
+      animation: {
+        duration: 1000,
+        easing: 'easeInOutQuad',
+      }
+    }
+  };
+
+  const uniqueProjectChart = new Chart(ctx, config);
+
+  // Sample data population - you can use AJAX or fetch requests to get real data
+  document.getElementById('uniqueTotalProjects').innerText = 22;
+  document.getElementById('uniqueCompletedProjects').innerText = 10;
+  document.getElementById('uniqueInProgressProjects').innerText = 5;
+});
+
+
+
+    </script>
       
     <script>
         async function sendMessage() {
@@ -232,7 +333,7 @@
         }
         async function fetchGeminiAI(userInput, retries = 3, delay = 2000) {
             try {
-                const apiKey = 'AIzaSyASU__5e5ZTxpi-7WIGzg2TuAzQjzppqOA';
+                const apiKey = 'AIzaSyCJ4oX5iXAS6g59yb-OLQab1czXShMBOTU';
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
     
                 const requestBody = {
@@ -256,7 +357,7 @@
                         await new Promise(resolve => setTimeout(resolve, delay));
                         return await fetchGeminiAI(userInput, retries - 1, delay);
                     } else {
-                        console.error('Max retries reached.');
+                        console.error('Max retries reached.',response);
                         return "Sorry, the AI service is unavailable. Please try again later.";
                     }
                 }
