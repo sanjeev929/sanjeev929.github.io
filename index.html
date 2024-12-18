@@ -142,22 +142,7 @@
         </div>
       </div>
       
-      <div class="unique-project-container">
-        <div class="unique-chart-section">
-          <canvas id="uniqueProjectChart"></canvas>
-        </div>
-        <div class="unique-card-section">
-          <div class="unique-card">
-            <h3>Projects Overview</h3>
-            <p>Total Projects: <strong id="uniqueTotalProjects">0</strong></p>
-            <p>Projects Completed: <strong id="uniqueCompletedProjects">0</strong></p>
-            <p>Projects In Progress: <strong id="uniqueInProgressProjects">0</strong></p>
-            <p>Projects In Progress: <strong id="uniqueInProgressProjects1">0</strong></p>
-            <p>Projects In Progress: <strong id="uniqueInProgressProjects2">0</strong></p>
-            <p>Projects In Progress: <strong id="uniqueInProgressProjects3">0</strong></p>
-          </div>
-        </div>
-      </div>
+
       
       
       
@@ -234,88 +219,6 @@
     }
   }
 });
-    </script>
-    <script>
-  document.addEventListener('DOMContentLoaded', function () {
-  const ctx = document.getElementById('uniqueProjectChart').getContext('2d');
-
-  const data = {
-    labels: ['Completed', 'In Progress', 'Pending'],
-    datasets: [{
-      label: '# of Projects',
-      data: [10, 5, 7], // Replace with actual data
-      backgroundColor: ['#4caf50', '#ff9800', '#f44336'],
-      borderColor: ['#388e3c', '#f57c00', '#d32f2f'],
-      borderWidth: 2,
-      hoverBackgroundColor: ['#45a049', '#ffb300', '#e53935'],
-      hoverBorderColor: ['#2c6f2b', '#e65100', '#9a0007'],
-      hoverBorderWidth: 3,
-      barThickness: 100,
-      borderRadius: 10,
-    }]
-  };
-
-  const config = {
-    type: 'bar',
-    data: data,
-    options: {
-      responsive: true,
-      scales: {
-        y: {
-          beginAtZero: true,
-          title: {
-            display: true,
-            text: 'Number of Projects',
-            font: {
-              size: 14,
-              weight: 'bold'
-            },
-            color: '#333'
-          }
-        },
-        x: {
-          title: {
-            display: true,
-            text: 'Project Status',
-            font: {
-              size: 14,
-              weight: 'bold'
-            },
-            color: '#333'
-          }
-        }
-      },
-      plugins: {
-        tooltip: {
-          backgroundColor: '#333',
-          titleColor: '#fff',
-          bodyColor: '#fff',
-          bodyFont: {
-            size: 14
-          },
-          displayColors: false
-        },
-        legend: {
-          display: false
-        }
-      },
-      animation: {
-        duration: 1000,
-        easing: 'easeInOutQuad',
-      }
-    }
-  };
-
-  const uniqueProjectChart = new Chart(ctx, config);
-
-  // Sample data population - you can use AJAX or fetch requests to get real data
-  document.getElementById('uniqueTotalProjects').innerText = 22;
-  document.getElementById('uniqueCompletedProjects').innerText = 10;
-  document.getElementById('uniqueInProgressProjects').innerText = 5;
-});
-
-
-
     </script>
       
     <script>
