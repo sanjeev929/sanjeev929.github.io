@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
@@ -28,298 +29,40 @@
                 <ul>
                     <li><a href="#Builds">BUILDS</a></li>
                     <li><a href="uderconstruction.html">BLOGS</a></li>
-                    <li><a href="getintouch.html.html">CONTACT</a></li>
+                    <li><a href="uderconstruction.html">CONTACT</a></li>
                 </ul>
-                <a href="resume.html" class="btn">VIRTUAL CV</a>
+                <a href="uderconstruction.html" target="_blank">
+                    <i class="fab fa-youtube" style="color: #FF0000;"></i>
+                  </a>
+                  <a href="uderconstruction.html" target="_blank">
+                    <i class="fab fa-twitter" style="color: #1DA1F2;"></i>
+                  </a>
+                  <a href="uderconstruction.html" target="_blank">
+                    <i class="fab fa-linkedin" style="color: #0077B5;"></i>
+                  </a>
             </div>
             <div class="hamburger" id="hamburger">
                 &#9776;
             </div>
         </div>
     </nav>
+    <section class="about-section">
+        <div class="container">
+            <div class="text-content">
+                <h2 class="greeting">Hey 👋,</h2>
+                <h3 class="developer-text">
+                    <span class="color1">I am</span>
+                    <span class="color2">Python </span>
+                    <span class="color3">Developer</span>
+                </h3>
+                <p>I specialize in Python, creating efficient and scalable applications. I'm always eager to explore new technologies and enhance my software development skills.</p>
+                <p>Outside of coding, I love solving problems and collaborating with teams to turn innovative ideas into reality.</p>
 
-    <aside class="sidebar" id="sidebar">
-        <div class="section-title">Touch the words</div>
-        <ul>
-            <li>
-                <i class="icon-class"></i>
-                <a href="#Builds">Builds</a> <!-- Only the text is wrapped -->
-            </li>
-            <li>
-                <i class="icon-class"></i>
-                <a href="uderconstruction.html">Blog</a> <!-- Only the text is wrapped -->
-            </li>
-            <li>
-                <i class="icon-class"></i>
-                <a href="getintouch.html">Contact</a> <!-- Only the text is wrapped -->
-            </li>
-            <li>
-                <i class="icon-class"></i>
-                <a href="resume.pdf" download="resume.pdf">Virtual CV</a> <!-- Only the text is wrapped -->
-            </li>
-        </ul>
-        <!-- <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul> -->
-    </aside>
-    <div class="overlay" id="overlay"></div>
-    <br>
-    <br>
-    <br>
-    <button id="toggleChat" onclick="toggleChat()">✨AI ChatBot</button>
-    <section id="bot" style="display: none;">
-        <div id="chatbox">
-        </div>
-        <div id="inputSection">
-            <input type="text" id="userInput" placeholder="Type your message...">
-            <button id="sendButton" onclick="sendMessage()">Send</button>
-            <button id="closeChat" onclick="toggleChat()">X</button>
+            </div>
+            <div class="image-content">
+                <img src="image/profile/background.jpg" alt="Profile Picture">
+            </div>
         </div>
     </section>
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>
-            I'm a Python developer passionate about building clean, scalable web apps with a focus on exceptional user experiences. I specialize in FastAPI, Django, and Flask, always striving to deepen my expertise.
-            I’ve worked with AI technologies like OpenAI and Gemini, integrating smart solutions into applications. I’m eager to collaborate on projects that fuse AI with web development—let’s build something amazing.
-            I've crafted Alexa Skills and Google Actions, integrating them with custom OAuth2 servers, sparking my interest in authorization and conversational interfaces.
-            </p>
-            <h3>Skills</h3>
-            <ul>
-                <li><i class="fab fa-python"></i><strong>Programming Languages:</strong> Python</li>
-                <li><i class="fas fa-code"></i><strong>Frameworks:</strong> FastAPI, Django, Flask</li>
-                <li><i class="fas fa-brain"></i> <strong>AI Technologies:</strong>OpenAI, Gemini</li>
-                <li><i class="fas fa-database"></i><strong>Database Management:</strong> PostgreSQL, MongoDB, Firebase</li>
-                <li><i class="fab fa-aws"></i><i class="fab fa-docker"></i><i class="fas fa-server"></i><strong>Server Deployment:</strong> AWS LightSail, Docker, EC2, Rendar</li>
-                <li><i class="fas fa-tools"></i><strong>Tools and Platforms:</strong> Git, Visual Studio Code, AWS</li>
-                <li><i class="fas fa-vial"></i><strong>Testing:</strong> pytest</li>
-                <li><i class="fas fa-check-circle"></i><strong>Principles:</strong> SOLID, DRY, Clean Code</li>
-            </ul>
-        </div>
-    </section>
-
-    <div class="card-section">
-        <!-- Section Heading -->
-        <h2 class="card-section-heading">Projects</h2>
-        <p class="card-section-description">Explore some of my best projects and recent works that showcase our expertise.</p>
-        
-        <div class="card-container">
-          <!-- Card 1 -->
-          <div class="card">
-            <div class="card-topic">Project</div>
-            <img src="image/projects/ecommerce-vs-online-marketplace1603983748724190.jpg" alt="Project Image" class="card-image">
-            <div class="card-content">
-              <h3 class="card-title">Project Title 1</h3>
-              <p class="card-description">This is a brief description of the project.</p>
-              <a href="#" class="card-button">View More</a>
-            </div>
-          </div>
-          
-          <!-- Card 2 -->
-          <div class="card">
-            <div class="card-topic">Project</div>
-            <img src="image/projects/ecommerce-vs-online-marketplace1603983748724190.jpg" alt="Project Image" class="card-image">
-            <div class="card-content">
-              <h3 class="card-title">Project Title 2</h3>
-              <p class="card-description">This is a brief description of the project.</p>
-              <a href="#" class="card-button">View More</a>
-            </div>
-          </div>
-          
-          <!-- Card 3 -->
-          <div class="card">
-            <div class="card-topic">Project</div>
-            <img src="image/projects/ecommerce-vs-online-marketplace1603983748724190.jpg" alt="Project Image" class="card-image">
-            <div class="card-content">
-              <h3 class="card-title">Project Title 3</h3>
-              <p class="card-description">This is a brief description of the project.</p>
-              <a href="#" class="card-button">View More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-
-      
-      
-      
-
-    <!-- Footer Section -->
-    <footer>
-        <div class="container">
-            <!-- Section 1: Privacy Policy & Terms and Conditions -->
-            <div class="footer-section">
-                <h3>Policies</h3>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Accessibility Statement</a></li>
-                </ul>
-            </div>
-    
-            <!-- Section 2: Contact Info & Social Media Links -->
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <ul>
-                    <li><a href="mailto:contact@example.com">Email Us</a></li>
-                    <li><a href="#">Phone: +1234567890</a></li>
-                    <li>
-                        <a href="#" target="_blank">Facebook</a> |
-                        <a href="#" target="_blank">Instagram</a> |
-                        <a href="#" target="_blank">LinkedIn</a>
-                    </li>
-                </ul>
-            </div>
-    
-            <!-- Section 3: Copyright & Cookie Policy -->
-            <div class="footer-section">
-                <h3>Other Info</h3>
-                <ul>
-                    <li><a href="#">Cookie Policy</a></li>
-                    <li>&copy; 2024 SANJEEV. All Rights Reserved.</li>
-                    <li><a href="#">Subscribe to Newsletter</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-       const swiper = new Swiper('.slider-wrapper', {
-  loop: true,
-  grabCursor: true,
-  spaceBetween: 30,
-
-  // Pagination bullets
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-    dynamicBullets: true
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  // Responsive breakpoints
-  breakpoints: {
-    0: {
-      slidesPerView: 1
-    },
-    768: {
-      slidesPerView: 2
-    },
-    1024: {
-      slidesPerView: 3
-    }
-  }
-});
-    </script>
-      
-    <script>
-        async function sendMessage() {
-            const userInput = document.getElementById('userInput').value.trim();
-            const chatbox = document.getElementById('chatbox');
-    
-            if (userInput === "") return;
-            chatbox.innerHTML += `<div class="user-message"><strong>You:</strong> ${userInput}</div>`;
-            document.getElementById('userInput').value = '';
-            const response = await fetchGeminiAI(userInput);
-            const botResponse = response || "Sorry, I couldn't understand that.";
-            chatbox.innerHTML += `<div class="bot-message"><strong>Bot:</strong> ${botResponse}</div>`;
-            chatbox.scrollTop = chatbox.scrollHeight;
-        }
-        async function fetchGeminiAI(userInput, retries = 3, delay = 2000) {
-            try {
-                const apiKey = 'AIzaSyCJ4oX5iXAS6g59yb-OLQab1czXShMBOTU';
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
-    
-                const requestBody = {
-                    contents: [{
-                        parts: [{
-                            text: userInput
-                        }]
-                    }]
-                };
-    
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(requestBody)
-                });
-                if (!response.ok) {
-                    if (retries > 0) {
-                        console.log('API is overloaded. Retrying...');
-                        await new Promise(resolve => setTimeout(resolve, delay));
-                        return await fetchGeminiAI(userInput, retries - 1, delay);
-                    } else {
-                        console.error('Max retries reached.',response);
-                        return "Sorry, the AI service is unavailable. Please try again later.";
-                    }
-                }
-                const data = await response.json();
-                console.log('Gemini API Response:', data);
-                const aiResponse = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-                if (aiResponse) {
-                    return aiResponse;
-                } else {
-                    return "Sorry, I couldn't generate a response.";
-                }
-            } catch (error) {
-                console.error('Error during fetch:', error);
-                return "Sorry, there was an error processing your request.";
-            }
-        }
-    </script>
-    <script>
-        function toggleChat() {
-            const bot = document.getElementById('bot');
-            const toggleButton = document.getElementById('toggleChat');
-
-            if (bot.style.display === 'none' || bot.style.display === '') {
-                bot.style.display = 'flex'; // Show chatbot
-                toggleButton.style.display = 'none'; // Hide toggle button
-            } else {
-                bot.style.display = 'none'; // Hide chatbot
-                toggleButton.style.display = 'block'; // Show toggle button
-            }
-        }
-
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.getElementById('hamburger');
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('overlay');
-    const sidebarLinks = sidebar.querySelectorAll('ul li a');
-
-    // Open sidebar and show overlay
-    hamburger.addEventListener('click', () => {
-        sidebar.style.width = '250px';
-        overlay.classList.add('show');
-    });
-
-    // Close sidebar and hide overlay
-    function closeSidebar() {
-        sidebar.style.width = '0';
-        overlay.classList.remove('show');
-    }
-
-    // Close sidebar when clicking overlay
-    overlay.addEventListener('click', closeSidebar);
-
-    // Close sidebar when clicking any sidebar navigation link
-    sidebarLinks.forEach(link => {
-        link.addEventListener('click', closeSidebar);
-    });
-    });
-    </script>
 </body>
 </html>
