@@ -31,6 +31,16 @@ nav {
   animation: fadeIn 2.5s ease-in-out;
 }
 
+nav::after {
+  content: "";
+  display: block;
+  width: 90%; 
+  height: 2px;
+  background-color: #21a8e2; 
+  margin: 20px auto 0; 
+}
+
+
 nav h1 {
   font-size: 24px;
   background: linear-gradient(135deg, #000000, #000000);
@@ -131,7 +141,7 @@ nav .nav-links-container a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 120px;
+  margin-top: 50px;
   padding: 50px 0;
 }
 
@@ -204,6 +214,7 @@ nav .nav-links-container a:hover {
 .skills-section {
   text-align: center;
   padding: 50px 0;
+  margin-top: -120px;
   background-color: #ffffff;
 }
 
