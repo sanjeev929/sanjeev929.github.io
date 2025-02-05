@@ -165,7 +165,7 @@ nav .nav-links-container a:hover {
 }
 
 .text-content .color2 {
-  color: #4682B4;
+  color: #3a85c2;
 }
 
 .text-content .color3 {
@@ -298,6 +298,23 @@ nav .nav-links-container a:hover {
 .project-card:hover {
   transform: scale(1.05);
 }
+.project-btn {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #ffffff;
+  background: #000000;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.project-btn:hover {
+  transform: scale(1.05); 
+}
+
+
 
 /* Responsive: Stack on smaller screens */
 @media (max-width: 900px) {
