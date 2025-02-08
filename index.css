@@ -259,6 +259,86 @@ nav .nav-links-container a:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+.image-buttons-section .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+  max-width: 100%;
+  margin: auto;
+  padding: 40px;
+}
+
+.image-container {
+  flex: 0 0 50%;
+}
+
+.image-container img {
+  width: 90%; 
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.text-content {
+  flex: 1; 
+}
+
+.text-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  background: #000;
+  color: white;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out, background 0.3s;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.btn:hover {
+  background: #000000;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .image-buttons-section .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .image-container {
+    width: 100%;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+  }
+
+  .buttons-container {
+    justify-content: center;
+  }
+}
+
 .projects-section {
   text-align: center;
   padding: 50px 0;
