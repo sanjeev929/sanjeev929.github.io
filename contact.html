@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h1>SANJEEV</h1>
+            <div class="nav-links-container">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="uderconstruction.html">BLOGS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+                <a href="https://www.youtube.com/@codemeg" target="_blank">
+                    <i class="fab fa-youtube" style="color: #FF0000;"></i>
+                  </a>
+                  <a href="https://x.com/sanjeevc2001" target="_blank">
+                    <i class="fab fa-twitter" style="color: #3b9dff;"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/in/sanjeev-c-44a035252/" target="_blank">
+                    <i class="fab fa-linkedin" style="color:  #3b9dff;"></i>
+                  </a>
+            </div>
+        </div>
+    </nav>
+    <div class="contact-container">
+        <!-- Left Image Section -->
+        <div class="contact-image">
+            <img src="image/profile/contact.jpg" alt="Contact Us">
+        </div>
+
+        <!-- Right Form Section -->
+        <div class="contact-form">
+            <h2>Get in Touch</h2>
+            <p>Feel free to reach out for any inquiries or collaborations.</p>
+
+            <form id="contact-form">
+                <div class="input-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" placeholder="Type your message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+                <p id="status-message"></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            emailjs.init("AN0Y7who_NrHI-Clj"); // Your Public Key
+
+            document.getElementById("contact-form").addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                let serviceID = "service_3c7cgkm";  // Your EmailJS Service ID
+                let templateID = "template_eap3r9q"; // Your EmailJS Template ID
+
+                let userName = document.getElementById("name").value;
+                let userEmail = document.getElementById("email").value;
+                let userMessage = document.getElementById("message").value;
+
+                let emailParams = {
+                    name: userName,
+                    email: userEmail,
+                    message: userMessage
+                };
+
+                emailjs.send(serviceID, templateID, emailParams)
+                    .then(function(response) {
+                        let statusMessage = document.getElementById("status-message");
+                        statusMessage.textContent = "Message sent successfully!";
+                        statusMessage.style.color = "green";
+                        statusMessage.style.opacity = "1";
+
+                        document.getElementById("contact-form").reset();
+
+                        setTimeout(() => {
+                            statusMessage.style.opacity = "0";
+                        }, 3000);
+                    }, function(error) {
+                        let statusMessage = document.getElementById("status-message");
+                        statusMessage.textContent = "Failed to send message. Try again.";
+                        statusMessage.style.color = "red";
+                        statusMessage.style.opacity = "1";
+
+                        setTimeout(() => {
+                            statusMessage.style.opacity = "0";
+                        }, 3000);
+                    });
+            });
+        });
+    </script>
+
+</body>
+</html>

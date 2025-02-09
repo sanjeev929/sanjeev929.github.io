@@ -293,8 +293,9 @@ nav .nav-links-container a:hover {
 .buttons-container {
   display: flex;
   gap: 15px;
-  margin-top: 10px;
+  margin-top: 15px;
 }
+
 
 .btn {
   display: inline-block;
