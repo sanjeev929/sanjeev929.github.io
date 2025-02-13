@@ -69,49 +69,57 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            emailjs.init("AN0Y7who_NrHI-Clj"); // Your Public Key
+    emailjs.init("AN0Y7who_NrHI-Clj"); // Your Public Key
 
-            document.getElementById("contact-form").addEventListener("submit", function(event) {
-                event.preventDefault();
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+        event.preventDefault();
 
-                let serviceID = "service_3c7cgkm";  // Your EmailJS Service ID
-                let templateID = "template_eap3r9q"; // Your EmailJS Template ID
+        let submitButton = document.querySelector("button[type='submit']");
+        let statusMessage = document.getElementById("status-message");
 
-                let userName = document.getElementById("name").value;
-                let userEmail = document.getElementById("email").value;
-                let userMessage = document.getElementById("message").value;
+        // Change button text to 'Submitting...' and disable it
+        submitButton.textContent = "Submitting...";
+        submitButton.disabled = true;
 
-                let emailParams = {
-                    name: userName,
-                    email: userEmail,
-                    message: userMessage
-                };
+        let serviceID = "service_3c7cgkm";  // Your EmailJS Service ID
+        let templateID = "template_eap3r9q"; // Your EmailJS Template ID
 
-                emailjs.send(serviceID, templateID, emailParams)
-                    .then(function(response) {
-                        let statusMessage = document.getElementById("status-message");
-                        statusMessage.textContent = "Message sent successfully!";
-                        statusMessage.style.color = "green";
-                        statusMessage.style.opacity = "1";
+        let userName = document.getElementById("name").value;
+        let userEmail = document.getElementById("email").value;
+        let userMessage = document.getElementById("message").value;
 
-                        document.getElementById("contact-form").reset();
+        let emailParams = {
+            name: userName,
+            email: userEmail,
+            message: userMessage
+        };
 
-                        setTimeout(() => {
-                            statusMessage.style.opacity = "0";
-                        }, 3000);
-                    }, function(error) {
-                        let statusMessage = document.getElementById("status-message");
-                        statusMessage.textContent = "Failed to send message. Try again.";
-                        statusMessage.style.color = "red";
-                        statusMessage.style.opacity = "1";
+        emailjs.send(serviceID, templateID, emailParams)
+            .then(function(response) {
+                statusMessage.textContent = "Message sent successfully!";
+                statusMessage.style.color = "green";
+                statusMessage.style.opacity = "1";
 
-                        setTimeout(() => {
-                            statusMessage.style.opacity = "0";
-                        }, 3000);
-                    });
+                // Reset form
+                document.getElementById("contact-form").reset();
+            })
+            .catch(function(error) {
+                statusMessage.textContent = "Failed to send message. Try again.";
+                statusMessage.style.color = "red";
+                statusMessage.style.opacity = "1";
+            })
+            .finally(() => {
+                // Restore button text and re-enable it
+                submitButton.textContent = "Send Message";
+                submitButton.disabled = false;
+
+                setTimeout(() => {
+                    statusMessage.style.opacity = "0";
+                }, 3000);
             });
-        });
-    </script>
+    });
+});
 
+</script>
 </body>
 </html>
