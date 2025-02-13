@@ -164,6 +164,10 @@ nav .nav-links-container a:hover {
   text-align: center;
 }
 
+.resume li {
+  margin-left:20px;
+}
+
 h3 {
   font-size: 18px;
   margin-bottom: 10px;
