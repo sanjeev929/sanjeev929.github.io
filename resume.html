@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Resume</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="resume.css">
 </head>
 <body>
@@ -14,7 +23,7 @@
                 <ul>
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="uderconstruction.html">BLOGS</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
+                    <li><a href="contact.html">GET IN TOUCH</a></li>
                 </ul>
                 <a href="https://www.youtube.com/@codemeg" target="_blank">
                     <i class="fab fa-youtube" style="color: #FF0000;"></i>
@@ -32,33 +41,46 @@
         <!-- Left Sidebar -->
         <aside class="sidebar">
             <div class="profile">
-                <h2>John Doe</h2>
-                <p>Full Stack Developer</p>
+                <h2>Sanjeev C</h2>
+                <p>Python Developer</p>
             </div>
             <br>
             <div class="skill">
-                <h3>Skill</h3>
-                <p><strong>B.Sc. in Computer Science</strong></p>
-                <p>XYZ University, 2014-2018</p>
-
-                <p><strong>M.Sc. in Software Engineering</strong></p>
-                <p>ABC University, 2018-2020</p>
+                <h3>Skills</h3>
+                <p><strong>Language</strong></p>
+                <p>Python - Js</p>
+                <br>
+                <p><strong>Frame work</strong></p>
+                <p>FastAPI - Django - Flask </p>
+                <br>
+                <p><strong>AI</strong></p>
+                <p>Gemeni - OpenAI - Claude</p>
+                <br>
+                <p><strong>Database</strong></p>
+                <p>Sql - Nosql</p>
+                <br>
+                <p><strong>Deployement</strong></p>
+                <p>Aws - Ec2, Lightsail, Lambda </p>
+                <br>
+                <p><strong>Others skills</strong></p>
+                <p>Rabbitmq , redis, Streamlit, Alexa</p>
+                <br>
             </div>
             <br>
             <div class="education">
                 <h3>Education</h3>
-                <p><strong>B.Sc. in Computer Science</strong></p>
-                <p>XYZ University, 2014-2018</p>
-
-                <p><strong>M.Sc. in Software Engineering</strong></p>
-                <p>ABC University, 2018-2020</p>
+                <p><strong>BE Computer Science and Engineering</strong></p>
+                <p>Dr Mahalingam College of Engineering & Technology - Pollachi</p>
+                <br>
+                <p><strong>Diploma Computer Science and Engineering</strong></p>
+                <p>Nachimuthu Polytechnic College - Pollachi</p>
             </div>
         </aside>
 
         <!-- Right Content -->
         <main class="content">
             <section class="experience">
-                <h2>Experience</h2>
+                <h2>Experience and projects</h2>
                 <div class="timeline">
                     <div class="track"></div>
 
@@ -67,9 +89,20 @@
                         <div class="details">
                             <h3>Python Developer - Menem</h3>
                             <p>Jan 2024 - Present</p>
+                            <br>
                             <ul>
-                                <li>Developed and maintained web applications.</li>
-                                <li>Integrated APIs and optimized performance.</li>
+                                <li>Restuarnt - Ongoing</li>
+                                <li>Agritech - Ongoing</li>
+                                <li>Mutual Fund -Ongoing</li>
+                                <li>CampaignX Message service(whatsapp,SMS,mail)</li>
+                                <li>Sales dashboard with AI analytics</li>
+                                <li>Ecommerce website</li>
+                                <li>Verb Note audio to text</li>
+                                <li>Expensive Tracker</li>
+                                <li>BlogBurst - Blog writing</li>
+                                <li>Website for another company</li>
+                                <li>Chatapp for company</li>
+                                <li>Invice and vehicle document parser</li>
                             </ul>
                         </div>
                     </div>
@@ -79,28 +112,15 @@
                         <div class="details">
                             <h3>Backend Developer - Onwords smart solution</h3>
                             <p>May 2023 - Dec 2023</p>
+                            <br>
                             <ul>
-                                <li>Built responsive UI components.</li>
-                                <li>Developed database-driven applications.</li>
-                                <li>Built responsive UI components.</li>
-                                <li>Developed database-driven applications.</li>
-                                <li>Built responsive UI components.</li>
-                                <li>Developed database-driven applications.</li>
-                                <li>Built responsive UI components.</li>
-                                <li>Developed database-driven applications.</li>
-                                <li>Built responsive UI components.</li>
-                                <li>Developed database-driven applications.</li>
-                                <li>Built responsive UI components.</li>
-                                <li>Developed database-driven applications.</li>
-                                <li>Built responsive UI components.</li>
-                                <li>Developed database-driven applications.</li>
-                                <li>Built responsive UI components.</li>
-                                <li>Developed database-driven applications.</li>
-                                <li>Built responsive UI components.</li>
-                                <li>Developed database-driven applications.</li>
-                                <li>Built responsive UI components.</li>
-                                <li>Developed database-driven applications.</li>
-
+                                <li>SmartHome server with Installation in Intel nuc</li>
+                                <li>Mqqt server for Smarthome</li>
+                                <li>Whatsapp Messaging with twillio</li>
+                                <li>Alexa skills and Google home for controlling devices</li>
+                                <li>Pscastler website for house sales</li>
+                                <li>PR Monitoring Dashboard live updates</li>
+                                <li>Schedule server for Smarthome</li>
                             </ul>
                         </div>
                     </div>
@@ -112,10 +132,9 @@
                             <p>Jan 2023 - May 2023</p>
                             <br>
                             <ul>
-                                <li>Built responsive UI components.</li>
-                                <li>Developed database-driven applications.</li>
-                                <li>Developed database-driven applications.</li>
-
+                                <li>Learning Basics architecture of company website and DB</li>
+                                <li>Company website Features</li>
+                                <li>Attendance Monitoring System</li>
                             </ul>
                         </div>
                     </div>
