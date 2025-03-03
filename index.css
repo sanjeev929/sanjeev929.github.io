@@ -341,6 +341,64 @@ nav .nav-links-container a:hover {
 }
 
 .projects-section {
+  padding: 60px 20px;
+  margin-top: -10px;
+  background: #121212; /* Dark theme */
+  color: #fff;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+  margin-left: 300px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-item img {
+  width: 70px;
+  filter: drop-shadow(2px 4px 6px rgba(15, 145, 245, 0.989)); /* Adds a soft glow effect */
+  transition: transform 0.3s ease-in-out;
+}
+
+.stat-item:hover img {
+  transform: scale(1.1);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #44a0eb; /* Accent color */
+  margin-top: 10px;
+}
+
+.stat-label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #4c90c7;
+  margin-top: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .stats-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+  }
+}
+
+.projects-section {
   text-align: center;
   padding: 50px 0;
   background-color: #ffffff;
