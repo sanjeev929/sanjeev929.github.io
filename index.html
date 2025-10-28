@@ -77,12 +77,12 @@
                 <span>FastAPI</span>
             </div>
             <div class="skill">
-                <img src="image/profile/django.png" alt="FastAPI">
-                <span>Django</span>
-            </div>
-            <div class="skill">
                 <img src="image/profile/ai.png" alt="PostgreSQL">
                 <span>AI</span>
+            </div>
+            <div class="skill">
+                <img src="image/profile/django.png" alt="FastAPI">
+                <span>Django</span>
             </div>
             <div class="skill">
                 <img src="image/profile/streamlit.png" alt="MongoDB">
@@ -136,16 +136,42 @@
             </div>  
         </div>
     </section> 
+    <section id="ai-showcase" class="ai-showcase">
+  <h2>🤖 AI Chat Demo</h2>
+
+  <div class="ai-layout">
+    <!-- Left: Chat Area -->
+    <div class="chat-area">
+      <div id="chat-window" class="chat-window" aria-live="polite"></div>
+
+      <div class="chat-controls">
+        <input id="user-input" type="text" placeholder="Ask me something..." />
+        <button id="send-btn">Send</button>
+        <button id="clear-btn">Clear</button>
+      </div>
+
+      <p class="chat-hint">Chat history will reset on refresh.</p>
+    </div>
+
+    <!-- Right: Image / Illustration -->
+    <div class="ai-image">
+      <img src="image/profile/AI2.jpg" alt="AI Illustration">
+    </div>
+  </div>
+</section>
+
     <footer class="footer">
         <div class="container">
             <hr class="footer-divider">
+
             <p>&copy; 2025 All Rights Reserved.</p>
-            <ul class="footer-links">
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="copyright.html">Copy Rights</a></li>
-                <li><a href="terms.html">Terms of Service</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
+
+            <div class="footer-social">
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
         </div>
     </footer>
 
@@ -178,5 +204,138 @@
             </div>
         </div>
     </section> -->
+  <script>
+function isReload() {
+  try {
+    const nav = performance.getEntriesByType('navigation')[0];
+    return nav && nav.type === 'reload';
+  } catch (e) {
+    return false;
+  }
+}
+
+// Clear stored conversation if page is reloaded
+if (isReload()) {
+  sessionStorage.removeItem('ai_chat_history');
+}
+
+const chatWindow = document.getElementById('chat-window');
+const inputEl = document.getElementById('user-input');
+const sendBtn = document.getElementById('send-btn');
+const clearBtn = document.getElementById('clear-btn');
+const MODEL_NAME = 'google/gemini-2.5-pro';
+
+// Load chat history (if any)
+let history = JSON.parse(sessionStorage.getItem('ai_chat_history') || '[]');
+renderHistory();
+
+// Helper — append message to chat
+function appendMessage(role, text) {
+  const el = document.createElement('div');
+  el.className = 'msg ' + (role === 'user' ? 'user' : 'bot');
+  el.textContent = (role === 'user' ? 'You: ' : 'AI: ') + text;
+  chatWindow.appendChild(el);
+  chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+
+// Re-render saved history
+function renderHistory() {
+  chatWindow.innerHTML = '';
+  for (const m of history) appendMessage(m.role, m.content);
+}
+
+// Prepare API-compatible messages
+function buildMessagesForAPI() {
+  return history.map(m => ({ role: m.role, content: m.content }));
+}
+
+// Typing indicator helpers
+function showTyping() {
+  const span = document.createElement('div');
+  span.className = 'msg bot typing';
+  span.id = 'typing-indicator';
+  span.textContent = 'AI is typing...';
+  chatWindow.appendChild(span);
+  chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+
+function hideTyping() {
+  const t = document.getElementById('typing-indicator');
+  if (t) t.remove();
+}
+
+// Send user message
+async function sendMessage(text) {
+  if (!text.trim()) return;
+
+  // Save user message
+  history.push({ role: 'user', content: text });
+  sessionStorage.setItem('ai_chat_history', JSON.stringify(history));
+  appendMessage('user', text);
+  inputEl.value = '';
+  showTyping();
+
+  const payload = {
+    model: MODEL_NAME,
+    messages: buildMessagesForAPI(),
+    max_tokens: 512
+  };
+
+  try {
+    // 🔹 If you have backend proxy (recommended)
+    // const resp = await fetch('/api/chat', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify(payload)
+    // });
+
+    // 🔹 OR use this direct call (replace above block) if no backend:
+    const resp = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer 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',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (!resp.ok) {
+      const err = await resp.text();
+      hideTyping();
+      appendMessage('bot', 'Error: ' + err);
+      return;
+    }
+
+    const data = await resp.json();
+    const botText =
+      (data?.choices && data.choices[0]?.message?.content) ||
+      (data?.output?.[0]?.content) ||
+      'No response';
+
+    // Save assistant response
+    history.push({ role: 'assistant', content: botText });
+    sessionStorage.setItem('ai_chat_history', JSON.stringify(history));
+    hideTyping();
+    appendMessage('bot', botText);
+
+  } catch (err) {
+    hideTyping();
+    appendMessage('bot', 'Network error: ' + err.message);
+  }
+}
+
+// UI Event Listeners
+sendBtn.addEventListener('click', () => sendMessage(inputEl.value));
+inputEl.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') sendMessage(inputEl.value);
+});
+
+clearBtn.addEventListener('click', () => {
+  history = [];
+  sessionStorage.removeItem('ai_chat_history');
+  renderHistory();
+});
+</script>
+
 </body>
 </html>
