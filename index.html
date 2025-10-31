@@ -302,6 +302,17 @@
     renderHistory();
   });
 </script>
+<script>
+window.addEventListener('load', () => {
+  if (window.location.hash === '#ai-showcase') {
+    const section = document.querySelector('#ai-showcase');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+});
+</script>
+
 
 
 </body>

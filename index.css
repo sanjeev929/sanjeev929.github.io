@@ -19,7 +19,9 @@ body {
   display: flex;
   align-items: center;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 nav {
   background-color: #ffffff;
   background: linear-gradient(90deg, #ffffff, #ffffff);
