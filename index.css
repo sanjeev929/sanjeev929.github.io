@@ -521,28 +521,30 @@ nav .nav-links-container a:hover {
   margin-top: 30px;
 }
 
-/* AI Image Section */
+/* =================== AI Image Section =================== */
 .ai-image {
   flex: 1;
   max-width: 420px;
   text-align: center;
   display: flex;
-  align-items: center; /* ✅ vertical center alignment */
-  justify-content: center; /* ✅ horizontal center alignment */
-  height: 100%; /* ensures even height alignment with chat area */
+  align-items: center; /* centers vertically */
+  justify-content: center; /* centers horizontally */
+  height: 100%; /* aligns with chat area height */
 }
 
 .ai-image img {
   width: 100%;
-  border-radius: 18px;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  max-width: 420px;
+  height: auto;
+  border: none; /* ✅ removed border */
+  background: transparent; /* ✅ no background */
+  border-radius: 0; /* ✅ keep original shape */
+  box-shadow: none; /* ✅ no artificial shadow for clean PNG look */
+  transition: transform 0.4s ease;
 }
 
 .ai-image img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  transform: scale(1.03); /* slight zoom effect only */
 }
 
 
