@@ -3,316 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanjeev</title>
-    <meta name="google-site-verification" content="bbW5R8gHE6YUwTFsM7noCEeCnpO1Pr8oraRCvsjGE4w" />
-    <link rel="apple-touch-icon" sizes="180x180" href="image/profile/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="image/profile/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="image/profile/favicon-16x16.png">
-    <link rel="manifest" href="image/profile/site.webmanifest">
-    <link rel="mask-icon" href="image/profile/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+    <title>Sanjeev — Portfolio</title>
     <link rel="stylesheet" href="index.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
-    <nav>
+    <header class="header">
         <div class="container">
-            <h1>SANJEEV</h1>
-            <div class="nav-links-container">
-                <ul>
-                    <li><a href="#Builds">BUILDS</a></li>
-                    <li><a href="uderconstruction.html">BLOGS</a></li>
-                    <li><a href="resume.html">ONLINE CV</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <section class="about-section">
-        <div class="container">
-            <div class="text-content">
-                <h2 class="greeting">Hey 👋,</h2>
-                <h3 class="developer-text">
-                    <span class="color1">I am</span>
-                    <span class="color2">Python </span>
-                    <span class="color3">Developer</span>
-                </h3>
-                <p>I specialize in Python, creating efficient and scalable applications. I'm always eager to explore new technologies and enhance my software development skills.</p>
-                <p>Outside of coding, I love solving problems and collaborating with teams to turn innovative ideas into reality.</p>
+            <h1 class="logo">Sanjeev</h1>
 
-            </div>
-            <div class="image-content">
-                <img src="image/profile/background.jpg" alt="Profile Picture">
-            </div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#chatbot">AI Chatbot</a>
+            </nav>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+            
         </div>
-    </section>
-    
-    <section class="skills-section">
-        <h2>Expertise</h2>
-        <div class="skills-container">
-            <div class="skill">
-                <img src="image/profile/python.png" alt="Python">
-                <span>Python</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/fastapi.png" alt="FastAPI">
-                <span>FastAPI</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/ai.png" alt="PostgreSQL">
-                <span>AI</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/django.png" alt="FastAPI">
-                <span>Django</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/streamlit.png" alt="MongoDB">
-                <span>Streamlit</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/postgresql.png" alt="PostgreSQL">
-                <span>PostgreSQL</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/mongodb.png" alt="MongoDB">
-                <span>MongoDB</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/firebase.png" alt="PostgreSQL">
-                <span>Firebase</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/aws.png" alt="PostgreSQL">
-                <span>AWS</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/alexa.png" alt="PostgreSQL">
-                <span>Alexa</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/github.png" alt="PostgreSQL">
-                <span>GitHub</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/html.png" alt="PostgreSQL">
-                <span>HTML</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/css.png" alt="PostgreSQL">
-                <span>CSS</span>
-            </div>
+    </header>
+    <section id="about" class="hero merged-section">
+    <div>
+        <h2 class="main-title">Here’s something worth your time</h2>
+
+        <p class="subtitle">
+            • Python & AI Developer • API & Database Engineer
+        </p>
+
+        <p class="about-text">
+            I create high-performance backend systems, automation pipelines, and 
+            AI-powered applications. My work focuses on clean architecture, efficient 
+            APIs, and real-world solutions like face recognition, document intelligence, 
+            and full-stack platforms — built for speed, scale, and reliability.
+        </p>
+
+        <div class="about-buttons">
+            <a href="resume.pdf" class="about-btn" target="_blank">Download Resume</a>
+            <a href="#contact" class="about-btn">Contact Me</a>
         </div>
-    </section>
-    <section class="image-buttons-section">
-        <div class="container">
-            <div class="image-container">
-                <img src="image/profile/background1.jpg" alt="Profile Picture">
-            </div>
-            <div class="text-content">
-                <p>Check out my projects on GitHub, where I build efficient and scalable applications. Have a project in mind or want to collaborate? Feel free to get in touch!</p>
-                <div class="buttons-container">
-                    <a href="https://github.com/sanjeev929" target="_blank" class="btn">GitHub</a>
-                    <a href="contact.html" target="_blank" class="btn">Get in Touch</a>
-                </div>  
-            </div>  
-        </div>
-    </section> 
-    <section id="ai-showcase" class="ai-showcase">
-  <h2>AI Chat Demo</h2>
-
-  <div class="ai-layout">
-    <!-- Left: Chat Area -->
-    <div class="chat-area">
-      <div id="chat-window" class="chat-window" aria-live="polite"></div>
-
-      <div class="chat-controls">
-        <input id="user-input" type="text" placeholder="Ask me something..." />
-        <button id="send-btn">Send</button>
-        <button id="clear-btn">Clear</button>
-      </div>
-
-      <p class="chat-hint">Chat history will reset on refresh.</p>
     </div>
-
-    <!-- Right: Image / Illustration -->
-    <div class="ai-image">
-      <img src="image/profile/AI6.png" alt="AI Illustration">
-    </div>
-  </div>
 </section>
-    <footer class="footer">
-        <div class="container">
-            <hr class="footer-divider">
 
-            <p>&copy; 2025 All Rights Reserved.</p>
+    <section id="skills" class="skills-section">
+    <h2 class="section-title">Skills & Expertise</h2>
+    <p class="section-subtitle">Technologies I work with to build scalable and intelligent systems</p>
 
-            <div class="footer-social">
-            <a href="https://x.com/sanjeevc2001" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="linkedin.com/in/sanjeev-c-44a035252" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="www.youtube.com/@codemeg" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://github.com/sanjeev929" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            </div>
+    <div class="skills-text-strips">
+
+        <div class="skill-line">
+            <span class="skill-title">Python 🐍</span>
+            <p>Fast backend development</p>
         </div>
-    </footer>
 
-
-    <!-- blog © 2025 by sanjeev is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0/ -->
-    
-
-      
-    <!-- <section class="projects-section" id="Builds">
-        <h2>Projects</h2>
-        <div class="projects-container">
-            <div class="project-card">
-                <img src="image/projects/whatsapp.jpg" alt="Project 1">
-                <h3>CampaignX </h3>
-                <p>A powerful multi-channel messaging platform for seamless SMS, WhatsApp, and email campaigns. 🚀</p>
-                <a href="uderconstruction.html" class="project-btn" target="_blank">Read More</a>
-            </div>
-            <div class="project-card">
-                <img src="image/projects/ecommerce.jpg" alt="Project 2">
-                <h3>E commerce</h3>
-                <p>A smart eCommerce platform for seamless shopping, cart management, wish lists, and order tracking. 🛍️</p>
-                <a href="uderconstruction.html" class="project-btn" target="_blank">Read More</a>
-
-            </div>
-            <div class="project-card">
-                <img src="image/projects/speech to text.jpg" alt="Project 3">
-                <h3>VerbNote</h3>
-                <p>Smart speech-to-text tool for recording and transcribing meetings, interviews, and reports across various industries. 📝🎤</p>
-                <a href="uderconstruction.html" class="project-btn" target="_blank">Read More</a>
-            </div>
+        <div class="skill-line">
+            <span class="skill-title">FastAPI ⚡</span>
+            <p>High-speed API engineering</p>
         </div>
-    </section> -->
- <script>
-  // Generate a unique session ID if not already set
-  if (!sessionStorage.getItem('chat_session_id')) {
-    sessionStorage.setItem('chat_session_id', 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 6));
-  }
 
-  const sessionId = sessionStorage.getItem('chat_session_id');
-  const storageKey = 'ai_chat_history_' + sessionId;
+        <div class="skill-line">
+            <span class="skill-title">AI / ML 🤖</span>
+            <p>Automation & intelligent systems</p>
+        </div>
 
-  function isReload() {
-    try {
-      const nav = performance.getEntriesByType('navigation')[0];
-      return nav && nav.type === 'reload';
-    } catch (e) {
-      return false;
-    }
-  }
+        <div class="skill-line">
+            <span class="skill-title">Django 🟩</span>
+            <p>Enterprise-grade backend apps</p>
+        </div>
 
-  // Clear session-specific chat on reload (optional — can remove this if you want persistence)
-  if (isReload()) sessionStorage.removeItem(storageKey);
+        <div class="skill-line">
+            <span class="skill-title">Streamlit 📊</span>
+            <p>Interactive dashboards & AI tools</p>
+        </div>
 
-  const chatWindow = document.getElementById('chat-window');
-  const inputEl = document.getElementById('user-input');
-  const sendBtn = document.getElementById('send-btn');
-  const clearBtn = document.getElementById('clear-btn');
+        <div class="skill-line">
+            <span class="skill-title">PostgreSQL 🐘</span>
+            <p>Reliable relational database design</p>
+        </div>
 
-  let history = JSON.parse(sessionStorage.getItem(storageKey) || '[]');
-  renderHistory();
+        <div class="skill-line">
+            <span class="skill-title">MongoDB 🍃</span>
+            <p>NoSQL & scalable data modelling</p>
+        </div>
 
-  function appendMessage(role, text) {
-    const el = document.createElement('div');
-    el.className = 'msg ' + (role === 'user' ? 'user' : 'bot');
-    el.textContent = (role === 'user' ? 'You: ' : 'AI: ') + text;
-    chatWindow.appendChild(el);
-    chatWindow.scrollTop = chatWindow.scrollHeight;
-  }
+        <div class="skill-line">
+            <span class="skill-title">Firebase 🔥</span>
+            <p>Real-time apps & authentication</p>
+        </div>
 
-  function renderHistory() {
-    chatWindow.innerHTML = '';
-    for (const m of history) appendMessage(m.role, m.content);
-  }
+        <div class="skill-line">
+            <span class="skill-title">AWS ☁️</span>
+            <p>Cloud deployment & infrastructure</p>
+        </div>
 
-  function showTyping() {
-    const span = document.createElement('div');
-    span.className = 'msg bot typing';
-    span.id = 'typing-indicator';
-    span.textContent = 'AI is typing...';
-    chatWindow.appendChild(span);
-    chatWindow.scrollTop = chatWindow.scrollHeight;
-  }
+        <div class="skill-line">
+            <span class="skill-title">Alexa 🔊</span>
+            <p>Voice-enabled application development</p>
+        </div>
 
-  function hideTyping() {
-    const t = document.getElementById('typing-indicator');
-    if (t) t.remove();
-  }
+        <div class="skill-line">
+            <span class="skill-title">GitHub 🛠️</span>
+            <p>Version control & CI/CD workflows</p>
+        </div>
 
-  async function sendMessage(text) {
-    if (!text.trim()) return;
+        <div class="skill-line">
+            <span class="skill-title">HTML / CSS 🎨</span>
+            <p>Clean and responsive UI development</p>
+        </div>
 
-    history.push({ role: 'user', content: text });
-    sessionStorage.setItem(storageKey, JSON.stringify(history));
-    appendMessage('user', text);
-    inputEl.value = '';
-    showTyping();
-
-    try {
-      const resp = await fetch('https://blog-ai-w22y.onrender.com/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          message: text,
-          history: history.filter(m => m.role === 'user').map(m => m.content)
-        })
-      });
-
-      if (!resp.ok) {
-        const err = await resp.text();
-        hideTyping();
-        appendMessage('bot', 'Error: ' + err);
-        return;
-      }
-
-      const data = await resp.json();
-      const botText = data.reply || 'No response';
-
-      history.push({ role: 'assistant', content: botText });
-      sessionStorage.setItem(storageKey, JSON.stringify(history));
-      hideTyping();
-      appendMessage('bot', botText);
-
-    } catch (err) {
-      hideTyping();
-      appendMessage('bot', 'Network error: ' + err.message);
-    }
-  }
-
-  sendBtn.addEventListener('click', () => sendMessage(inputEl.value));
-  inputEl.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') sendMessage(inputEl.value);
-  });
-
-  clearBtn.addEventListener('click', () => {
-    history = [];
-    sessionStorage.removeItem(storageKey);
-    renderHistory();
-  });
-</script>
+    </div>
+</section>
 <script>
-window.addEventListener('load', () => {
-  if (window.location.hash === '#ai-showcase') {
-    const section = document.querySelector('#ai-showcase');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+function toggleChatbot() {
+    const chat = document.getElementById("chatWindow");
+    chat.style.display = chat.style.display === "block" ? "none" : "block";
+}
+
+function sendMessage() {
+    const input = document.getElementById("userInput");
+    const msgBox = document.getElementById("chatMessages");
+
+    if (!input.value.trim()) return;
+
+    msgBox.innerHTML += `<div class='msg user'>${input.value}</div>`;
+
+    setTimeout(() => {
+        msgBox.innerHTML += `<div class='msg ai'>AI response for: ${input.value}</div>`;
+        msgBox.scrollTop = msgBox.scrollHeight;
+    }, 600);
+
+    input.value = "";
+}
+function toggleTheme() {
+    document.body.classList.toggle("dark");
+
+    const isDark = document.body.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    document.querySelector(".theme-toggle").textContent = isDark ? "☀️" : "🌙";
+}
+
+window.onload = () => {
+    const saved = localStorage.getItem("theme");
+
+    if (saved === "dark") {
+        document.body.classList.add("dark");
+        document.querySelector(".theme-toggle").textContent = "☀️";
     }
-  }
-});
+};
 </script>
-
-
 
 </body>
 </html>
