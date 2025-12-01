@@ -4,314 +4,401 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanjeev</title>
-    <meta name="google-site-verification" content="bbW5R8gHE6YUwTFsM7noCEeCnpO1Pr8oraRCvsjGE4w" />
-    <link rel="apple-touch-icon" sizes="180x180" href="image/profile/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="image/profile/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="image/profile/favicon-16x16.png">
-    <link rel="manifest" href="image/profile/site.webmanifest">
-    <link rel="mask-icon" href="image/profile/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="index.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
-    <nav>
+    <header class="header">
         <div class="container">
-            <h1>SANJEEV</h1>
-            <div class="nav-links-container">
-                <ul>
-                    <li><a href="#Builds">BUILDS</a></li>
-                    <li><a href="uderconstruction.html">BLOGS</a></li>
-                    <li><a href="resume.html">ONLINE CV</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <section class="about-section">
-        <div class="container">
-            <div class="text-content">
-                <h2 class="greeting">Hey 👋,</h2>
-                <h3 class="developer-text">
-                    <span class="color1">I am</span>
-                    <span class="color2">Python </span>
-                    <span class="color3">Developer</span>
-                </h3>
-                <p>I specialize in Python, creating efficient and scalable applications. I'm always eager to explore new technologies and enhance my software development skills.</p>
-                <p>Outside of coding, I love solving problems and collaborating with teams to turn innovative ideas into reality.</p>
+            <h1 class="logo">Sanjeev</h1>
 
-            </div>
-            <div class="image-content">
-                <img src="image/profile/background.jpg" alt="Profile Picture">
-            </div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+            </nav>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+            
         </div>
-    </section>
-    
-    <section class="skills-section">
-        <h2>Expertise</h2>
-        <div class="skills-container">
-            <div class="skill">
-                <img src="image/profile/python.png" alt="Python">
-                <span>Python</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/fastapi.png" alt="FastAPI">
-                <span>FastAPI</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/ai.png" alt="PostgreSQL">
-                <span>AI</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/django.png" alt="FastAPI">
-                <span>Django</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/streamlit.png" alt="MongoDB">
-                <span>Streamlit</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/postgresql.png" alt="PostgreSQL">
-                <span>PostgreSQL</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/mongodb.png" alt="MongoDB">
-                <span>MongoDB</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/firebase.png" alt="PostgreSQL">
-                <span>Firebase</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/aws.png" alt="PostgreSQL">
-                <span>AWS</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/alexa.png" alt="PostgreSQL">
-                <span>Alexa</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/github.png" alt="PostgreSQL">
-                <span>GitHub</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/html.png" alt="PostgreSQL">
-                <span>HTML</span>
-            </div>
-            <div class="skill">
-                <img src="image/profile/css.png" alt="PostgreSQL">
-                <span>CSS</span>
-            </div>
-        </div>
-    </section>
-    <section class="image-buttons-section">
-        <div class="container">
-            <div class="image-container">
-                <img src="image/profile/background1.jpg" alt="Profile Picture">
-            </div>
-            <div class="text-content">
-                <p>Check out my projects on GitHub, where I build efficient and scalable applications. Have a project in mind or want to collaborate? Feel free to get in touch!</p>
-                <div class="buttons-container">
-                    <a href="https://github.com/sanjeev929" target="_blank" class="btn">GitHub</a>
-                    <a href="contact.html" target="_blank" class="btn">Get in Touch</a>
-                </div>  
-            </div>  
-        </div>
-    </section> 
-    <section id="ai-showcase" class="ai-showcase">
-  <h2>AI Chat Demo</h2>
+    </header>
+    <section id="about" class="hero merged-section">
+    <div>
+        <h2 class="main-title">Here’s something worth your time</h2>
 
-  <div class="ai-layout">
-    <!-- Left: Chat Area -->
-    <div class="chat-area">
-      <div id="chat-window" class="chat-window" aria-live="polite"></div>
+        <p class="subtitle">
+            • Python & AI Developer • API & Database Engineer
+        </p>
 
-      <div class="chat-controls">
-        <input id="user-input" type="text" placeholder="Ask me something..." />
-        <button id="send-btn">Send</button>
-        <button id="clear-btn">Clear</button>
+        <p class="about-text">
+            I create high-performance backend systems, automation pipelines, and 
+            AI-powered applications. My work focuses on clean architecture, efficient 
+            APIs, and real-world solutions like face recognition, document intelligence, 
+            and full-stack platforms — built for speed, scale, and reliability.
+        </p>
+
+        <div class="about-buttons">
+            <a href="resume.pdf" class="about-btn" target="_blank">Download Resume</a>
+            <a href="#contact" class="about-btn">Contact Me</a>
+        </div>
+    </div>
+</section>
+
+    <section id="skills" class="skills-section">
+    <h2 class="section-title">Skills & Expertise</h2>
+    <p class="section-subtitle">Technologies I work with to build scalable and intelligent systems</p>
+
+    <div class="skills-text-strips">
+
+        <div class="skill-line">
+            <span class="skill-title">Python 🐍</span>
+            <p>Fast backend development</p>
+        </div>
+
+        <div class="skill-line">
+            <span class="skill-title">FastAPI ⚡</span>
+            <p>High-speed API engineering</p>
+        </div>
+
+        <div class="skill-line">
+            <span class="skill-title">AI / ML 🤖</span>
+            <p>Automation & intelligent systems</p>
+        </div>
+
+        <div class="skill-line">
+            <span class="skill-title">Agno AI Frame Work ⚙️</span>
+            <p>Agent-based automation & intelligent workflows</p>
+        </div>
+
+        <div class="skill-line">
+            <span class="skill-title">Django 🟩</span>
+            <p>Enterprise-grade backend apps</p>
+        </div>
+
+        <div class="skill-line">
+            <span class="skill-title">Streamlit 📊</span>
+            <p>Interactive dashboards & AI tools</p>
+        </div>
+
+        <div class="skill-line">
+            <span class="skill-title">PostgreSQL 🐘</span>
+            <p>Reliable relational database design</p>
+        </div>
+
+        <div class="skill-line">
+            <span class="skill-title">MongoDB 🍃</span>
+            <p>NoSQL & scalable data modelling</p>
+        </div>
+
+        <div class="skill-line">
+            <span class="skill-title">Firebase 🔥</span>
+            <p>Real-time apps & authentication</p>
+        </div>
+
+        <div class="skill-line">
+            <span class="skill-title">AWS ☁️</span>
+            <p>Cloud deployment & infrastructure</p>
+        </div>
+
+        <div class="skill-line">
+            <span class="skill-title">Alexa 🔊</span>
+            <p>Voice-enabled application development</p>
+        </div>
+
+        <div class="skill-line">
+            <span class="skill-title">GitHub 🛠️</span>
+            <p>Version control & CI/CD workflows</p>
+        </div>
+
+        <div class="skill-line">
+            <span class="skill-title">HTML / CSS 🎨</span>
+            <p>Clean and responsive UI development</p>
+        </div>
+
+    </div>
+</section>
+
+<div class="project-section">
+  <h2 class="section-title">Projects</h2>
+
+  <div class="project-slider-wrap">
+    <button class="slider-btn left" aria-label="Scroll left">❮</button>
+
+    <div class="project-slider" id="projectSlider">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <img src="image/projects/ecommerce.jpg" class="project-img" alt="Ecommerce Project">
+        <h3 class="project-title">Ecommerce</h3>
+        <p class="project-desc">Built a high-performance E-Commerce API with products, carts, orders, payments, and secure JWT auth.</p>
+        <div class="tags"><span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>AWS</span></div>
+        <button class="view-btn">View</button>
       </div>
 
-      <p class="chat-hint">Chat history will reset on refresh.</p>
+      <!-- Project 2 -->
+      <div class="project-card">
+        <img src="image/projects/speech to text.jpg" class="project-img" alt="Speech to Text">
+        <h3 class="project-title">Speech-to-Text App</h3>
+        <p class="project-desc">Converts audio files to text with Whisper AI, supports cloud and local execution.</p>
+        <div class="tags"><span>Python</span><span>FastAPI</span><span>Whisper</span><span>AWS</span></div>
+        <button class="view-btn">View</button>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <img src="image/projects/whatsapp.jpg" class="project-img" alt="WhatsApp Automation">
+        <h3 class="project-title">Message Automation Service</h3>
+        <p class="project-desc">Sends WhatsApp & email messages using dynamic templates for notifications and alerts.</p>
+        <div class="tags"><span>Python</span><span>FastAPI</span><span>WhatsApp API</span><span>SMTP</span></div>
+        <button class="view-btn">View</button>
+      </div>
+
+      <div class="project-card">
+        <img src="image/projects/whatsapp.jpg" class="project-img" alt="WhatsApp Automation">
+        <h3 class="project-title">Message Automation Service</h3>
+        <p class="project-desc">Sends WhatsApp & email messages using dynamic templates for notifications and alerts.</p>
+        <div class="tags"><span>Python</span><span>FastAPI</span><span>WhatsApp API</span><span>SMTP</span></div>
+        <button class="view-btn">View</button>
+      </div>
+
+      <div class="project-card">
+        <img src="image/projects/whatsapp.jpg" class="project-img" alt="WhatsApp Automation">
+        <h3 class="project-title">Message Automation Service</h3>
+        <p class="project-desc">Sends WhatsApp & email messages using dynamic templates for notifications and alerts.</p>
+        <div class="tags"><span>Python</span><span>FastAPI</span><span>WhatsApp API</span><span>SMTP</span></div>
+        <button class="view-btn">View</button>
+      </div>
+
+      <!-- Add more .project-card items here -->
     </div>
 
-    <!-- Right: Image / Illustration -->
-    <div class="ai-image">
-      <img src="image/profile/AI6.png" alt="AI Illustration">
+    <button class="slider-btn right" aria-label="Scroll right">❯</button>
+  </div>
+</div>
+
+
+
+ <div id="ai-sidebar" aria-hidden="true" role="dialog" aria-label="AI assistant">
+    <div class="ai-header">
+      My AI Assistant
+      <button id="closeChat" class="close-chat" aria-label="Close chat">✖</button>
+    </div>
+    <div id="chatBox" class="ai-messages" aria-live="polite">
+      <div class="ai-msg">Hi — ask me about projects, skills or APIs.</div>
+    </div>
+    <div class="ai-input">
+      <input id="chatInput" type="text" placeholder="Ask my AI…" aria-label="Chat input">
+      <button id="sendBtn" class="send-btn" aria-label="Send">Send</button>
     </div>
   </div>
-</section>
-    <footer class="footer">
-        <div class="container">
-            <hr class="footer-divider">
+  <button id="chat-toggle-btn" class="chat-launch" aria-label="Open chat">🤖</button>
 
-            <p>&copy; 2025 All Rights Reserved.</p>
-
-            <div class="footer-social">
-            <a href="https://x.com/sanjeevc2001" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="linkedin.com/in/sanjeev-c-44a035252" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="www.youtube.com/@codemeg" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://github.com/sanjeev929" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Connect Column -->
+        <div class="footer-column connect-column">
+            <div class="social-row">
+                <a href="#"><img src="image/profile/gmail.png" class="icon-img" alt="Email"></a>
+                <a href="#"><img src="image/profile/linkedin.png" class="icon-img" alt="LinkedIn"></a>
+                <a href="#"><img src="image/profile/github.png" class="icon-img" alt="GitHub"></a>
+                <a href="#"><img src="image/profile/twitter.png" class="icon-img" alt="X"></a>
+                <a href="#"><img src="image/profile/play.png" class="icon-img" alt="YouTube"></a>
             </div>
         </div>
-    </footer>
 
-
-    <!-- blog © 2025 by sanjeev is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0/ -->
-    
-
-      
-    <!-- <section class="projects-section" id="Builds">
-        <h2>Projects</h2>
-        <div class="projects-container">
-            <div class="project-card">
-                <img src="image/projects/whatsapp.jpg" alt="Project 1">
-                <h3>CampaignX </h3>
-                <p>A powerful multi-channel messaging platform for seamless SMS, WhatsApp, and email campaigns. 🚀</p>
-                <a href="uderconstruction.html" class="project-btn" target="_blank">Read More</a>
+        <!-- Right wrapper for middle + right -->
+        <div class="footer-right-wrapper">
+            <!-- Legal Column -->
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Cookie Policy</a>
             </div>
-            <div class="project-card">
-                <img src="image/projects/ecommerce.jpg" alt="Project 2">
-                <h3>E commerce</h3>
-                <p>A smart eCommerce platform for seamless shopping, cart management, wish lists, and order tracking. 🛍️</p>
-                <a href="uderconstruction.html" class="project-btn" target="_blank">Read More</a>
 
-            </div>
-            <div class="project-card">
-                <img src="image/projects/speech to text.jpg" alt="Project 3">
-                <h3>VerbNote</h3>
-                <p>Smart speech-to-text tool for recording and transcribing meetings, interviews, and reports across various industries. 📝🎤</p>
-                <a href="uderconstruction.html" class="project-btn" target="_blank">Read More</a>
+            <!-- Developer/Info Column -->
+            <div class="footer-column">
+                <h3>Info</h3>
+                <a href="#">About Me</a>
+                <a href="#">Copy Rights</a>
+                <a href="#">Contact</a>
             </div>
         </div>
-    </section> -->
- <script>
-  // Generate a unique session ID if not already set
-  if (!sessionStorage.getItem('chat_session_id')) {
-    sessionStorage.setItem('chat_session_id', 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 6));
-  }
+    </div>
 
-  const sessionId = sessionStorage.getItem('chat_session_id');
-  const storageKey = 'ai_chat_history_' + sessionId;
+    <div class="footer-bottom">
+        © 2025 Sanjeev. All rights reserved.
+    </div>
+</footer>
 
-  function isReload() {
-    try {
-      const nav = performance.getEntriesByType('navigation')[0];
-      return nav && nav.type === 'reload';
-    } catch (e) {
-      return false;
-    }
-  }
 
-  // Clear session-specific chat on reload (optional — can remove this if you want persistence)
-  if (isReload()) sessionStorage.removeItem(storageKey);
-
-  const chatWindow = document.getElementById('chat-window');
-  const inputEl = document.getElementById('user-input');
-  const sendBtn = document.getElementById('send-btn');
-  const clearBtn = document.getElementById('clear-btn');
-
-  let history = JSON.parse(sessionStorage.getItem(storageKey) || '[]');
-  renderHistory();
-
-  function appendMessage(role, text) {
-    const el = document.createElement('div');
-    el.className = 'msg ' + (role === 'user' ? 'user' : 'bot');
-    el.textContent = (role === 'user' ? 'You: ' : 'AI: ') + text;
-    chatWindow.appendChild(el);
-    chatWindow.scrollTop = chatWindow.scrollHeight;
-  }
-
-  function renderHistory() {
-    chatWindow.innerHTML = '';
-    for (const m of history) appendMessage(m.role, m.content);
-  }
-
-  function showTyping() {
-    const span = document.createElement('div');
-    span.className = 'msg bot typing';
-    span.id = 'typing-indicator';
-    span.textContent = 'AI is typing...';
-    chatWindow.appendChild(span);
-    chatWindow.scrollTop = chatWindow.scrollHeight;
-  }
-
-  function hideTyping() {
-    const t = document.getElementById('typing-indicator');
-    if (t) t.remove();
-  }
-
-  async function sendMessage(text) {
-    if (!text.trim()) return;
-
-    history.push({ role: 'user', content: text });
-    sessionStorage.setItem(storageKey, JSON.stringify(history));
-    appendMessage('user', text);
-    inputEl.value = '';
-    showTyping();
-
-    try {
-      const resp = await fetch('https://blog-ai-w22y.onrender.com/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          message: text,
-          history: history.filter(m => m.role === 'user').map(m => m.content)
-        })
-      });
-
-      if (!resp.ok) {
-        const err = await resp.text();
-        hideTyping();
-        appendMessage('bot', 'Error: ' + err);
-        return;
-      }
-
-      const data = await resp.json();
-      const botText = data.reply || 'No response';
-
-      history.push({ role: 'assistant', content: botText });
-      sessionStorage.setItem(storageKey, JSON.stringify(history));
-      hideTyping();
-      appendMessage('bot', botText);
-
-    } catch (err) {
-      hideTyping();
-      appendMessage('bot', 'Network error: ' + err.message);
-    }
-  }
-
-  sendBtn.addEventListener('click', () => sendMessage(inputEl.value));
-  inputEl.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') sendMessage(inputEl.value);
-  });
-
-  clearBtn.addEventListener('click', () => {
-    history = [];
-    sessionStorage.removeItem(storageKey);
-    renderHistory();
-  });
-</script>
 <script>
-window.addEventListener('load', () => {
-  if (window.location.hash === '#ai-showcase') {
-    const section = document.querySelector('#ai-showcase');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-});
-</script>
+const API_URL = "https://blog-ai-w22y.onrender.com/chat";
 
+const chatToggle = document.getElementById("chat-toggle-btn");
+const sidebar = document.getElementById("ai-sidebar");
+const closeBtn = document.getElementById("closeChat");
+const sendBtn = document.getElementById("sendBtn");
+const chatInput = document.getElementById("chatInput");
+const chatBox = document.getElementById("chatBox");
+
+// Toggle chat sidebar
+function toggleChat() {
+    const isOpen = sidebar.classList.contains("open");
+
+    if (isOpen) {
+        sidebar.classList.remove("open");
+        chatToggle.style.display = "flex";
+    } else {
+        sidebar.classList.add("open");
+        chatToggle.style.display = "none";
+        chatInput.focus();
+    }
+}
+
+chatToggle.addEventListener("click", toggleChat);
+closeBtn.addEventListener("click", toggleChat);
+
+// Send message
+async function sendMessage() {
+    const text = chatInput.value.trim();
+    if (!text) return;
+
+    const userMsg = document.createElement("div");
+    userMsg.className = "user-msg";
+    userMsg.textContent = text;
+    chatBox.appendChild(userMsg);
+    chatInput.value = "";
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    // typing...
+    const typing = document.createElement("div");
+    typing.className = "ai-msg";
+    typing.textContent = "AI is typing…";
+    chatBox.appendChild(typing);
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    try {
+        const resp = await fetch(API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: text, history: [] })
+        });
+
+        typing.remove();
+
+        const data = await resp.json();
+        const reply = data.reply || "No response";
+
+        const aiMsg = document.createElement("div");
+        aiMsg.className = "ai-msg";
+        aiMsg.textContent = reply;
+        chatBox.appendChild(aiMsg);
+
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+    } catch (e) {
+        typing.remove();
+        const errMsg = document.createElement("div");
+        errMsg.className = "ai-msg";
+        errMsg.textContent = "⚠️ Server error.";
+        chatBox.appendChild(errMsg);
+    }
+}
+
+sendBtn.addEventListener("click", sendMessage);
+chatInput.addEventListener("keydown", e => {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        sendMessage();
+    }
+});
+
+// Theme toggle
+function toggleTheme() {
+    document.body.classList.toggle("dark");
+    const isDark = document.body.classList.contains("dark");
+    document.querySelector(".theme-toggle").textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+}
+
+window.onload = () => {
+    const saved = localStorage.getItem("theme");
+    if (saved === "dark") document.body.classList.add("dark");
+    document.querySelector(".theme-toggle").textContent =
+        document.body.classList.contains("dark") ? "☀️" : "🌙";
+};
+
+(function () {
+  const slider = document.getElementById('projectSlider');
+  const btnLeft = document.querySelector('.slider-btn.left');
+  const btnRight = document.querySelector('.slider-btn.right');
+
+  // Arrow scroll amount: width of one card + gap
+  function cardScrollAmount() {
+    const card = slider.querySelector('.project-card');
+    if (!card) return 320;
+    const style = getComputedStyle(slider);
+    const gap = parseInt(style.gap || 22, 10) || 22;
+    return Math.round(card.getBoundingClientRect().width + gap);
+  }
+
+  btnLeft && btnLeft.addEventListener('click', () => {
+    slider.scrollBy({ left: -cardScrollAmount(), behavior: 'smooth' });
+  });
+  btnRight && btnRight.addEventListener('click', () => {
+    slider.scrollBy({ left: cardScrollAmount(), behavior: 'smooth' });
+  });
+
+  // Drag to scroll (mouse + touch)
+  let isDown = false, startX, scrollLeft;
+  slider.addEventListener('mousedown', e => {
+    isDown = true;
+    slider.classList.add('dragging');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  slider.addEventListener('mouseleave', () => { isDown = false; slider.classList.remove('dragging'); });
+  slider.addEventListener('mouseup', () => { isDown = false; slider.classList.remove('dragging'); });
+  slider.addEventListener('mousemove', e => {
+    if(!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 1; // scroll-fast factor
+    slider.scrollLeft = scrollLeft - walk;
+  });
+
+  // touch events
+  slider.addEventListener('touchstart', e => {
+    startX = e.touches[0].pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  slider.addEventListener('touchmove', e => {
+    const x = e.touches[0].pageX - slider.offsetLeft;
+    const walk = (x - startX) * 1;
+    slider.scrollLeft = scrollLeft - walk;
+  });
+
+  // Optional: snap to nearest card after scroll ends (improves desktop)
+  let isScrolling;
+  slider.addEventListener('scroll', () => {
+    window.clearTimeout(isScrolling);
+    isScrolling = setTimeout(() => {
+      // snap to nearest card
+      const cards = Array.from(slider.querySelectorAll('.project-card'));
+      if (!cards.length) return;
+      const sliderLeft = slider.getBoundingClientRect().left;
+      let closest = cards[0], closestDist = Infinity;
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const dist = Math.abs(rect.left - sliderLeft - parseInt(getComputedStyle(slider).paddingLeft || 28));
+        if (dist < closestDist) { closestDist = dist; closest = card; }
+      });
+      // smooth scroll to that card
+      slider.scrollTo({ left: closest.offsetLeft - parseInt(getComputedStyle(slider).paddingLeft || 28), behavior: 'smooth' });
+    }, 120);
+  });
+})();
+
+</script>
 
 
 </body>
