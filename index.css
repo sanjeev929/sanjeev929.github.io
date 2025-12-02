@@ -301,7 +301,7 @@ body.dark .skill-line {
 .project-slider-wrap {
     position: relative;
     width: 100%;
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 40px auto;
     padding: 0 50px;
 }
@@ -468,7 +468,7 @@ body.dark .slider-btn:hover {
 }
 
 .slider-btn.right {
-    right: 30px;
+    right: 5px;
 }
 
 /* MOBILE -------------------------------------------------------*/
@@ -547,6 +547,25 @@ body.dark .slider-btn:hover {
   color:var(--text);
 }
 
+.ai-notice {
+    background: rgba(255, 193, 7, 0.12);
+    color: #b66a00;
+    padding: 10px 14px;
+    border-left: 4px solid #ffc107;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+
+/* Dark Mode */
+body.dark .ai-notice {
+    background: #3a3000;
+    color: #ffcc66;
+    border-left-color: #ffcc00;
+}
+
+
 
 .ai-messages{
   flex:1;
@@ -581,6 +600,7 @@ body.dark .slider-btn:hover {
   font-size:14.5px;
   line-height:1.45;
 }
+
 
 .ai-input {
   padding: 20px;
