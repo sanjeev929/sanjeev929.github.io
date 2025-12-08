@@ -10,6 +10,15 @@
 <body>
     <header class="header">
         <div class="container">
+          <div class="hamburger" onclick="toggleNav()">☰</div>
+
+          <!-- Sidebar menu -->
+          <div class="mobile-nav" id="mobileNav">
+            <a href="#home">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </div>
             <h1 class="logo">Sanjeev</h1>
 
             <nav>
@@ -235,6 +244,11 @@
 
 
 <script>
+  // Toggle mobile sidebar
+function toggleNav() {
+  document.getElementById("mobileNav").classList.toggle("open");
+}
+
 const API_URL = "https://blog-ai-w22y.onrender.com/chat";
 
 const chatToggle = document.getElementById("chat-toggle-btn");

@@ -789,35 +789,220 @@ body.dark .footer-bottom {
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-/* =======================
-   RESPONSIVE
-======================= */
+.hamburger {
+    display: none;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+/* ===================== MOBILE RESPONSIVE ===================== */
 @media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 35px;
-    }
 
-    .connect-column {
-        padding-left: 0;
-    }
+  /* ===================== HEADER / NAV ===================== */
+  .hamburger {
+      display: block;
+      cursor: pointer;
+      font-size: 28px;
+      margin-right: 15px;
+  }
 
-    .footer-right-wrapper {
-        flex-direction: column;
-        margin-left: 0;
-        gap: 20px;
-    }
+  .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: #fff; /* Or var(--card) */
+      position: absolute;
+      top: 60px; /* adjust based on header height */
+      left: 0;
+      width: 100%;
+      padding: 10px 0;
+      border-bottom: 1px solid #ccc; /* Or var(--border) */
+      z-index: 100;
+  }
 
-    .social-row {
-        justify-content: center;
-    }
+  .mobile-nav.open {
+      display: flex;
+  }
 
-    .footer-column h3 {
-        margin-bottom: 12px;
-    }
+  .mobile-nav a {
+      padding: 12px 20px;
+      color: #000; /* Or var(--text) */
+      text-decoration: none;
+      font-weight: 600;
+      border-top: 1px solid #eee;
+  }
 
-    .footer-column a {
-        font-size: 13px;
-    }
+  .mobile-nav a:first-child {
+      border-top: none;
+  }
+
+  .mobile-nav a:hover {
+      background: #000;
+      color: #fff;
+      transition: 0.2s ease;
+  }
+
+  /* Hide desktop nav on mobile */
+  nav {
+      display: none;
+  }
+
+  /* ===================== HERO / MERGED SECTION ===================== */
+  .merged-section {
+      padding: 50px 15px;
+      text-align: center;
+      max-width: 100%;
+      margin: auto;
+  }
+  .merged-section h2 {
+      font-size: 28px;
+  }
+  .merged-section .subtitle {
+      font-size: 16px;
+  }
+  .merged-section .about-text {
+      font-size: 14px;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .about-buttons {
+      flex-direction: column;
+      gap: 12px;
+  }
+  .about-btn {
+      width: 100%;
+      text-align: center;
+      padding: 10px 26px;
+      border-radius: 0;
+      font-weight: 700;
+      background: #000;
+      color: #fff;
+      border: 1px solid #000;
+      text-decoration: none;
+      transition: 0.25s ease;
+  }
+  .about-btn:hover {
+      background: #fff;
+      color: #000;
+      border-color: #000;
+      transform: translateY(-2px);
+  }
+
+  /* ===================== SKILLS SECTION ===================== */
+  .skills-section {
+      padding: 25px 15px;
+      max-width: 100%;
+      margin: auto;
+      text-align: center;
+  }
+  .section-title {
+      font-size: 28px;
+  }
+  .section-subtitle {
+      font-size: 16px;
+  }
+  .skills-text-strips {
+      max-width: 100%;
+      padding: 0 5px;
+      margin: 40px 0;
+  }
+  .skill-line {
+      font-size: 14px;
+  }
+  .skill-title {
+      font-size: 18px;
+  }
+  .skill-line p {
+      font-size: 13px;
+  }
+
+  /* ===================== PROJECT SLIDER ===================== */
+  .project-slider-wrap {
+      padding: 0 15px;
+      max-width: 100%;
+  }
+  .project-card {
+      min-width: 200px;
+      max-width: 200px;
+      padding: 12px;
+  }
+  .project-title {
+      font-size: 16px;
+  }
+  .project-desc {
+      font-size: 12px;
+  }
+  .tags span {
+      font-size: 10px;
+      padding: 4px 8px;
+  }
+  .view-btn {
+      font-size: 12px;
+      padding: 8px;
+  }
+  .slider-btn {
+      width: 36px;
+      height: 36px;
+      font-size: 18px;
+  }
+
+  /* ===================== CHAT SIDEBAR ===================== */
+  #ai-sidebar {
+      width: 90%;
+      max-width: 320px;
+      right: 20px;  
+      transform: translateX(50%);
+      bottom: 70px;
+      top: auto;
+      margin-left: 100px;
+      height: 450px;
+      position: fixed;
+      z-index: 200;
+  }
+  .ai-messages {
+      padding: 12px;
+      gap: 8px;
+  }
+  .ai-input {
+      padding: 14px;
+      flex-direction: column;
+  }
+  .ai-input input {
+      width: 100%;
+      margin-bottom: 8px;
+  }
+  .send-btn {
+      width: 100%;
+      padding: 10px;
+      font-size: 13px;
+  }
+
+  /* ===================== FOOTER ===================== */
+  .footer-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+  }
+  .footer-right-wrapper {
+      flex-direction: column;
+      margin-left: 0;
+      gap: 20px;
+  }
+  .footer-column h3 {
+      font-size: 16px;
+  }
+  .footer-column a {
+      font-size: 13px;
+  }
+  .social-row {
+      justify-content: center;
+  }
+  .footer-bottom {
+      font-size: 12px;
+      margin-top: 35px;
+  }
+
 }
