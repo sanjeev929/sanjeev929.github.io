@@ -800,25 +800,28 @@ body.dark .footer-bottom {
 /* ===================== MOBILE RESPONSIVE ===================== */
 @media (max-width: 768px) {
 
-  /* ===================== HEADER / NAV ===================== */
-  .hamburger {
+   .hamburger {
       display: block;
       cursor: pointer;
       font-size: 28px;
       margin-right: 15px;
   }
 
+  nav, .nav-right nav {
+      display: none !important;
+  }
+
   .mobile-nav {
       display: none;
       flex-direction: column;
-      background: #fff; /* Or var(--card) */
-      position: absolute;
-      top: 60px; /* adjust based on header height */
+      background: #fff;
+      position: fixed;
+      top: 60px;
       left: 0;
       width: 100%;
       padding: 10px 0;
-      border-bottom: 1px solid #ccc; /* Or var(--border) */
-      z-index: 100;
+      border-bottom: 1px solid #ccc;
+      z-index: 9999 !important;
   }
 
   .mobile-nav.open {
@@ -827,20 +830,14 @@ body.dark .footer-bottom {
 
   .mobile-nav a {
       padding: 12px 20px;
-      color: #000; /* Or var(--text) */
-      text-decoration: none;
+      color: #000;
       font-weight: 600;
+      text-decoration: none;
       border-top: 1px solid #eee;
   }
 
   .mobile-nav a:first-child {
       border-top: none;
-  }
-
-  .mobile-nav a:hover {
-      background: #000;
-      color: #fff;
-      transition: 0.2s ease;
   }
 
   /* Hide desktop nav on mobile */
