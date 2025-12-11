@@ -797,20 +797,47 @@ body.dark .footer-bottom {
     display: none;
 }
 
-/* ===================== MOBILE RESPONSIVE ===================== */
 @media (max-width: 768px) {
 
-   .hamburger {
+  /* ===================== MOBILE HEADER / NAV ===================== */
+
+  .hamburger {
       display: block;
       cursor: pointer;
       font-size: 28px;
       margin-right: 15px;
   }
 
-  nav, .nav-right nav {
+  /* Hide Desktop Nav */
+  nav, 
+  .nav-right nav {
       display: none !important;
   }
+  /* -------------------------------
+   MOBILE DARK MODE NAV
+    ---------------------------------*/
+    body.dark .mobile-nav {
+        background: var(--card); /* dark background */
+    }
 
+    body.dark .mobile-nav a {
+        color: var(--text); /* white text */
+    }
+
+    body.dark .mobile-nav a:hover {
+        background: var(--accent); /* hover background in dark mode */
+        color: var(--bg);           /* hover text in dark mode */
+    }
+
+    body.dark .mobile-close {
+        color: var(--text); /* close button white */
+    }
+
+    body.dark .mobile-close:hover {
+        color: var(--accent); /* hover color for close button */
+    }
+
+  /* Mobile Nav Dropdown */
   .mobile-nav {
       display: none;
       flex-direction: column;
@@ -840,10 +867,26 @@ body.dark .footer-bottom {
       border-top: none;
   }
 
-  /* Hide desktop nav on mobile */
-  nav {
-      display: none;
+  .mobile-nav a:hover {
+      background: #000;
+      color: #fff;
+      transition: 0.2s ease;
   }
+
+  .mobile-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--text);
+    text-align: right;
+    width: 100%;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.mobile-close:hover {
+    color: var(--accent);
+}
 
   /* ===================== HERO / MERGED SECTION ===================== */
   .merged-section {
@@ -852,23 +895,30 @@ body.dark .footer-bottom {
       max-width: 100%;
       margin: auto;
   }
+
   .merged-section h2 {
       font-size: 28px;
   }
+
   .merged-section .subtitle {
       font-size: 16px;
   }
+
   .merged-section .about-text {
       font-size: 14px;
       max-width: 100%;
-      margin-left: auto;
-      margin-right: auto;
+      margin: auto;
+  }
+    
+  .project-card {
+    min-width: 160px;
   }
 
   .about-buttons {
       flex-direction: column;
       gap: 12px;
   }
+
   .about-btn {
       width: 100%;
       text-align: center;
@@ -881,6 +931,7 @@ body.dark .footer-bottom {
       text-decoration: none;
       transition: 0.25s ease;
   }
+
   .about-btn:hover {
       background: #fff;
       color: #000;
@@ -892,26 +943,31 @@ body.dark .footer-bottom {
   .skills-section {
       padding: 25px 15px;
       max-width: 100%;
-      margin: auto;
       text-align: center;
   }
+
   .section-title {
       font-size: 28px;
   }
+
   .section-subtitle {
       font-size: 16px;
   }
+
   .skills-text-strips {
       max-width: 100%;
       padding: 0 5px;
       margin: 40px 0;
   }
+
   .skill-line {
       font-size: 14px;
   }
+
   .skill-title {
       font-size: 18px;
   }
+
   .skill-line p {
       font-size: 13px;
   }
@@ -921,56 +977,65 @@ body.dark .footer-bottom {
       padding: 0 15px;
       max-width: 100%;
   }
+
   .project-card {
       min-width: 200px;
       max-width: 200px;
       padding: 12px;
   }
+
   .project-title {
       font-size: 16px;
   }
+
   .project-desc {
       font-size: 12px;
   }
+
   .tags span {
       font-size: 10px;
       padding: 4px 8px;
   }
+
   .view-btn {
       font-size: 12px;
       padding: 8px;
   }
+
   .slider-btn {
       width: 36px;
       height: 36px;
       font-size: 18px;
   }
 
-  /* ===================== CHAT SIDEBAR ===================== */
+  /* ===================== AI CHAT SIDEBAR ===================== */
   #ai-sidebar {
       width: 90%;
       max-width: 320px;
-      right: 20px;  
-      transform: translateX(50%);
+      right: 5%;            /* FIX: keep fully visible */
+      left: 5%;             /* instead of translate issues */
       bottom: 70px;
       top: auto;
-      margin-left: 100px;
       height: 450px;
       position: fixed;
       z-index: 200;
   }
+
   .ai-messages {
       padding: 12px;
       gap: 8px;
   }
+
   .ai-input {
       padding: 14px;
       flex-direction: column;
   }
+
   .ai-input input {
       width: 100%;
       margin-bottom: 8px;
   }
+
   .send-btn {
       width: 100%;
       padding: 10px;
@@ -978,28 +1043,27 @@ body.dark .footer-bottom {
   }
 
   /* ===================== FOOTER ===================== */
-  .footer-container {
-      flex-direction: column;
-      text-align: center;
-      gap: 30px;
-  }
-  .footer-right-wrapper {
-      flex-direction: column;
-      margin-left: 0;
-      gap: 20px;
-  }
-  .footer-column h3 {
-      font-size: 16px;
-  }
-  .footer-column a {
-      font-size: 13px;
-  }
-  .social-row {
-      justify-content: center;
-  }
-  .footer-bottom {
-      font-size: 12px;
-      margin-top: 35px;
-  }
+   .footer-container {
+        flex-direction: row;      /* horizontal layout */
+        justify-content: space-between; /* spread out columns */
+        flex-wrap: wrap;          /* wrap if screen is too small */
+        text-align: left;
+        gap: 20px;
+    }
 
+    .footer-right-wrapper {
+        flex-direction: row;      /* horizontal columns */
+        gap: 20px;
+        margin-left: 0;
+    }
+
+    .footer-column {
+        flex: 1;                  /* evenly distribute space */
+        min-width: 120px;         /* avoid being too narrow */
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 40px;
+    }
 }

@@ -27,27 +27,36 @@
 
 <body>
     <header class="header">
-        <div class="container">
-          <div class="hamburger" onclick="toggleNav()">☰</div>
+    <div class="container">
 
-          <!-- Sidebar menu -->
-          <div class="mobile-nav" id="mobileNav">
-            <a href="#home">Home</a>
+        <!-- Hamburger (mobile only) -->
+        <div class="hamburger" onclick="toggleNav()">☰</div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-nav" id="mobileNav">
+          <button class="mobile-close" onclick="toggleNav()">✖</button>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+
+        <!-- Logo centered always -->
+        <h1 class="logo">Sanjeev</h1>
+
+        <!-- Desktop Nav -->
+        <nav class="desktop-nav">
+            <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-          </div>
-            <h1 class="logo">Sanjeev</h1>
+        </nav>
 
-            <nav>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-            </nav>
-            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
-            
-        </div>
-    </header>
+        <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+    </div>
+</header>
+
     <section id="about" class="hero merged-section">
     <div>
         <h2 class="main-title">Here’s something worth your time</h2>
