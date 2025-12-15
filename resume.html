@@ -1,169 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Resume</title>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="resume.css">
+  <meta charset="UTF-8">
+  <title>Resume | Sanjeev</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Same CSS as site -->
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="resume.css">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
-    <nav>
-        <div class="container">
-            <h1>SANJEEV</h1>
-            <div class="nav-links-container">
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="uderconstruction.html">BLOGS</a></li>
-                    <li><a href="contact.html">GET IN TOUCH</a></li>
-                </ul>
-                <a href="https://www.youtube.com/@codemeg" target="_blank">
-                    <i class="fab fa-youtube" style="color: #FF0000;"></i>
-                  </a>
-                  <a href="https://x.com/sanjeevc2001" target="_blank">
-                    <i class="fab fa-twitter" style="color: #3b9dff;"></i>
-                  </a>
-                  <a href="https://www.linkedin.com/in/sanjeev-c-44a035252/" target="_blank">
-                    <i class="fab fa-linkedin" style="color:  #3b9dff;"></i>
-                  </a>
-            </div>
-        </div>
-    </nav>
-    <div class="resume">
-        <!-- Left Sidebar -->
-        <aside class="sidebar">
-            <div class="profile">
-                <h2>Sanjeev C</h2>
-                <p>Python Developer</p>
-            </div>
-            <br>
-            <div class="skill">
-                <h3>Skills</h3>
-                <p><strong>Language</strong></p>
-                <p>Python - Js</p>
-                <br>
-                <p><strong>Frame work</strong></p>
-                <p>FastAPI - Django - Flask </p>
-                <br>
-                <p><strong>AI</strong></p>
-                <p>Gemeni - OpenAI - Claude</p>
-                <br>
-                <p><strong>Database</strong></p>
-                <p>Sql - Nosql</p>
-                <br>
-                <p><strong>Deployement</strong></p>
-                <p>Aws - Ec2, Lightsail, Lambda </p>
-                <br>
-                <p><strong>Others skills</strong></p>
-                <p>Rabbitmq , redis, Streamlit, Alexa</p>
-                <br>
-            </div>
-            <br>
-            <div class="education">
-                <h3>Education</h3>
-                <p><strong>BE Computer Science and Engineering</strong></p>
-                <p>Dr Mahalingam College of Engineering & Technology - Pollachi</p>
-                <br>
-                <p><strong>Diploma Computer Science and Engineering</strong></p>
-                <p>Nachimuthu Polytechnic College - Pollachi</p>
-            </div>
-        </aside>
 
-        <!-- Right Content -->
-        <main class="content">
-            <section class="experience">
-                <h2>Experience and projects</h2>
-                <br>
-                <div class="timeline">
-                    <div class="track"></div>
+<!-- ================= HEADER (SAME AS HOME) ================= -->
+<header class="header">
+  <div class="container">
 
-                    <div class="milestone">
-                        <div class="marker"></div>
-                        <div class="details">
-                            <h3>Python Developer - Menem</h3>
-                            <p>Jan 2024 - Present</p>
-                            <br>
-                            <ul>
-                                <li>EV vehicle goods tracker - Ongoing</li>
-                                <li>Oraxiz AI - Ongoing</li>
-                                <li>Price tracker - Ongoing</li>
-                                <li>Restuarnt</li>
-                                <li>CampaignX Message service(whatsapp,SMS,mail)</li>
-                                <li>Sales dashboard with AI analytics</li>
-                                <li>Ecommerce website</li>
-                                <li>Verb Note audio to text</li>
-                                <li>Expensive Tracker</li>
-                                <li>BlogBurst - Blog writing</li>
-                                <li>Chatapp for menem app</li>
-                                <li>Invoice and vehicle document parser</li>
-                            </ul>
-                        </div>
-                    </div>
+    <div class="hamburger" onclick="toggleNav()">☰</div>
 
-                    <div class="milestone">
-                        <div class="marker"></div>
-                        <div class="details">
-                            <h3>Backend Developer - Onwords smart solution</h3>
-                            <p>May 2023 - Dec 2023</p>
-                            <br>
-                            <ul>
-                                <li>SmartHome server with Installation in Intel nuc</li>
-                                <li>Mqqt server for Smarthome</li>
-                                <li>Whatsapp Messaging with twillio</li>
-                                <li>Alexa skills and Google home for controlling devices</li>
-                                <li>Pscastler website for house sales</li>
-                                <li>PR Monitoring Dashboard live updates</li>
-                                <li>Schedule server for Smarthome</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="milestone">
-                        <div class="marker"></div>
-                        <div class="details">
-                            <h3>Internship - Onwords smart solution</h3>
-                            <p>Jan 2023 - May 2023</p>
-                            <br>
-                            <ul>
-                                <li>Learning Basics architecture of company website and DB</li>
-                                <li>Company website Features</li>
-                                <li>Attendance Monitoring System</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
+    <div class="mobile-nav" id="mobileNav">
+      <button class="mobile-close" onclick="toggleNav()">✖</button>
+      <a href="index.html#about">About</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Contact</a>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-    let track = document.querySelector(".track");
-    let milestones = document.querySelectorAll(".milestone");
+    <h1 class="logo">Sanjeev</h1>
 
-    function checkMilestones() {
-        let triggerBottom = window.innerHeight * 0.85;
+    <nav class="desktop-nav">
+      <a href="index.html#about">About</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="resume.html" class="active">Resume</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-        milestones.forEach((milestone) => {
-            let milestoneTop = milestone.getBoundingClientRect().top;
-            if (milestoneTop < triggerBottom) {
-                milestone.classList.add("show");
-            }
-        });
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+  </div>
+</header>
+
+<!-- ================= RESUME ================= -->
+<section class="resume-page">
+  <div class="resume-card reveal-up">
+
+    <aside class="resume-left">
+      <h2>Sanjeev C</h2>
+      <p class="role">Python Developer</p>
+
+      <h3>Skills</h3>
+      <ul>
+        <li>Python, JavaScript</li>
+        <li>FastAPI, Django, Flask</li>
+        <li>OpenAI, Gemini, Claude</li>
+        <li>SQL, NoSQL</li>
+        <li>AWS (EC2, Lambda)</li>
+      </ul>
+
+      <h3>Education</h3>
+      <p><strong>B.E – CSE</strong><br>Dr MCET, Pollachi</p><br>
+      <p><strong>Diploma – CSE</strong><br>Nachimuthu Polytechnic</p>
+    </aside>
+
+    <main class="resume-right">
+      <h2>Experience</h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item reveal-up">
+          <span class="dot"></span>
+          <div class="box">
+            <h4>Python Developer – Menem</h4>
+            <small>Jan 2024 – Present</small>
+            <ul>
+              <li>EV tracking platform</li>
+              <li>AI analytics dashboard</li>
+              <li>Chat & notification services</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-up">
+          <span class="dot"></span>
+          <div class="box">
+            <h4>Backend Developer – Onwords</h4>
+            <small>May 2023 – Dec 2023</small>
+            <ul>
+              <li>Smart Home backend</li>
+              <li>MQTT servers</li>
+              <li>Alexa & Google Home integration</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-up">
+          <span class="dot"></span>
+          <div class="box">
+            <h4>Intern – Onwords</h4>
+            <small>Jan 2023 – May 2023</small>
+            <ul>
+              <li>Attendance system</li>
+              <li>Website architecture</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+</section>
+
+<!-- ================= FOOTER (SAME AS HOME) ================= -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-column connect-column">
+      <div class="social-row">
+        <a href="mailto:sanjeevsanju929@gmail.com"><img src="image/profile/gmail.png" class="icon-img"></a>
+        <a href="https://www.linkedin.com/in/sanjeev-c-44a035252/"><img src="image/profile/linkedin.png" class="icon-img"></a>
+        <a href="https://github.com/sanjeev929"><img src="image/profile/github.png" class="icon-img"></a>
+        <a href="https://x.com/sanjeevc2001"><img src="image/profile/twitter.png" class="icon-img"></a>
+        <a href="https://www.youtube.com/@codemeg"><img src="image/profile/play.png" class="icon-img"></a>
+      </div>
+    </div>
+
+    <div class="footer-right-wrapper">
+      <div class="footer-column">
+        <h3>Legal</h3>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="termsandconditions.html">Terms & Conditions</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Info</h3>
+        <a href="index.html#about">About Me</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Sanjeev. All rights reserved.
+  </div>
+</footer>
+
+<!-- ================= JS ================= -->
+<script src="index.js"></script>
+
+<script>
+/* BOTTOM → TOP SCROLL ANIMATION */
+const revealItems = document.querySelectorAll(".reveal-up");
+
+function revealOnScroll() {
+  const trigger = window.innerHeight * 0.85;
+  revealItems.forEach(item => {
+    if (item.getBoundingClientRect().top < trigger) {
+      item.classList.add("active");
     }
+  });
+}
 
-    window.addEventListener("scroll", checkMilestones);
-    checkMilestones();
-});
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
 
-    </script>
+function toggleTheme() {
+  document.body.classList.toggle("dark");
+
+  // save preference
+  if (document.body.classList.contains("dark")) {
+    localStorage.setItem("theme", "dark");
+    document.querySelector(".theme-toggle").textContent = "☀️";
+  } else {
+    localStorage.setItem("theme", "light");
+    document.querySelector(".theme-toggle").textContent = "🌙";
+  }
+}
+
+/* Load saved theme */
+(function () {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    document.querySelector(".theme-toggle").textContent = "☀️";
+  }
+})();
+
+
+</script>
+
 </body>
 </html>

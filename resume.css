@@ -1,264 +1,160 @@
-/* General Styling */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+/* ----------------------------------
+   ROOT THEME VARIABLES
+---------------------------------- */
+:root {
+  --bg: #ffffff;
+  --text: #111;
+  --card: #ffffff;
+  --border: #ddd;
+  --accent: #000;
+  --button-bg: #000000;        /* button background (light mode) */
+  --button-text: #ffffff;      /* button text (light mode) */
+  --panel-width: 360px;
+  /* LIGHT MODE TEXTURES */
+  --texture1: rgba(0,0,0,0.04);
+  --texture2: rgba(0,0,0,0.02);
+  --footer-bg: #eaeaea;  /* light grey for contrast */
+  --footer-text: #111;
+  --footer-muted: #555;
+  --footer-border: #ccc;
 }
 
-/* Full Page Layout */
+/* ----------------------------------
+   DARK MODE VARIABLES
+---------------------------------- */
+body.dark {
+  --bg: #0d0d0d;
+  --text: #f5f5f5;
+  --card: #111111;
+  --border: #333;
+  --accent: #fff;
+  --button-bg: #ffffff;        /* button background (dark mode) */
+  --button-text: #000000;      /* button text (dark mode) */
+  --texture1: rgba(255,255,255,0.05);
+  --texture2: rgba(255,255,255,0.03);
+  --footer-bg: #111;     /* darker than project cards */
+  --footer-text: #f2f2f2;
+  --footer-muted: #aaa;
+  --footer-border: #444;
+}
+
+/* ----------------------------------
+   GLOBAL BODY
+---------------------------------- */
+/* GLOBAL BODY — SAME GRID IN BOTH MODES */
 body {
-  background: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: 0.35s ease-in-out;
+
+    /* PREMIUM GRID BOXES (APPLIED TO BOTH LIGHT & DARK) */
+    background-image:
+        linear-gradient(to right, var(--texture1) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--texture1) 1px, transparent 1px),
+        radial-gradient(circle at top, var(--texture2), transparent);
+    background-size: 45px 45px, 45px 45px, 100% 260px;
+}
+
+/* DARK MODE — ONLY COLOR VARIABLES CHANGE */
+body.dark {
+    background-image:
+        linear-gradient(to right, var(--texture1) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--texture1) 1px, transparent 1px),
+        radial-gradient(circle at top, var(--texture2), transparent);
+}
+
+
+.resume-page {
+  padding: 100px 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-  padding: 20px;
 }
 
-.container {
+.resume-card {
+  display: flex;
+  max-width: 1100px;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-  display: flex;
-  align-items: center;
+  background: var(--card);
+  border: 1px solid var(--border);
 }
 
-nav {
-  background-color: #ffffff;
-  background: linear-gradient(90deg, #ffffff, #ffffff);
-  padding: 20px 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  animation: fadeIn 2.5s ease-in-out;
-}
-
-nav::after {
-  content: "";
-  display: block;
-  width: 90%; 
-  height: 2px;
-  background-color: #000000; 
-  margin: 20px auto 0; 
-}
-
-
-nav h1 {
-  font-size: 24px;
-  background: linear-gradient(135deg, #000000, #000000);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.nav-links-container {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  padding: 0;
-  margin: 0; 
-  margin-right: 0;
-}
-
-nav ul li {
-  margin-right: 30px;
-}
-
-nav ul li a {
-  position: relative;
-  text-decoration: none;
-  color: #000000;
-  font-weight:500;
-  font-size: 16px !important;;
-  transition: color 0.4s;
-  display: inline-block;
-}
-
-nav ul li a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 100%;
-  height: 2px;
-  background-color: #000000;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.4s ease;
-}
-
-nav ul li a:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-nav ul li a:hover {
-  color: #000000;
-}
-
-nav .nav-links-container a {
-  color: #000000;
-  font-size: 20px;
-  margin-left: 20px; 
-  transition: color 0.3s;
-}
-
-nav .nav-links-container a:hover {
-  color: #000000;
-}
-
-.navbar .hamburger {
-  display: none;
-}
-
-@media screen and (max-width: 768px) {
-  nav .container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav .nav-links-container {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 20px;
-  }
-
-  nav .nav-links-container a {
-    margin-left: 0;
-    margin-bottom: 10px;
-  }
-
-  nav .btn {
-    margin-left: 0;
-    margin-top: 10px;
-  }
-}
-
-.resume {
-  margin-top: 400px;
-  display: flex;
-  width: 1100px;
-  background: #fff;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-/* Sidebar */
-.sidebar {
-  width: 50%;
-  background: #2c3e50;
-  color: #fff;
+/* LEFT */
+.resume-left {
+  width: 35%;
   padding: 30px;
+  border-right: 1px solid var(--border);
 }
 
-.profile {
-  text-align: center;
+.resume-left h3 {
+  margin-top: 25px;
 }
 
-.resume li {
-  margin-left:20px;
-}
-
-h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  border-bottom: 2px solid #fff;
-  padding-bottom: 5px;
-}
-
-/* Main Content */
-.content {
+/* RIGHT */
+.resume-right {
   width: 65%;
   padding: 30px;
 }
 
-/* Timeline */
 .timeline {
   position: relative;
-  padding-left: 40px;
+  margin-top: 20px;
 }
 
-/* Track Line */
-.track {
+.timeline::before {
+  content: "";
   position: absolute;
-  left: 7px;
-  top: 100%;
-  width: 5px;
-  height: 0;
-  background: #3498db;
-  border-radius: 5px;
-  animation: trackMove 2s ease-out forwards;
+  left: 6px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: var(--border);
 }
 
-/* Track Animation */
-@keyframes trackMove {
-  from {
-      top: 60%;
-      height: 40%;
-  }
-  to {
-      top: 2%;
-      height: 98%;
-  }
-}
-
-/* Milestones */
-.milestone {
+.timeline-item {
   position: relative;
-  margin-bottom: 5px;
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeInUp 0.8s ease-out forwards;
+  margin-bottom: 30px;
+  padding-left: 30px;
 }
 
-.milestone:nth-child(1) {
-  animation-delay: 0.5s;
-}
-.milestone:nth-child(2) {
-  animation-delay: 1s;
-}
-.milestone:nth-child(3) {
-  animation-delay: 1s;
-}
-
-/* Milestone Fade-in Animation */
-@keyframes fadeInUp {
-  from {
-      opacity: 0;
-      transform: translateY(20px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
-/* Blue Marker (Left Side) */
-.marker {
+.dot {
   position: absolute;
-  left: -38px;
-  top: 10px;
-  width: 15px;
-  height: 15px;
-  background: #3498db;
+  left: 0;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  background: var(--bg);
+  border: 2px solid var(--border);
   border-radius: 50%;
-  border: 3px solid #fff;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Experience Details */
-.details {
-  background: #ecf0f1;
+.box {
+  border: 1px solid var(--border);
   padding: 15px;
-  border-radius: 5px;
-  margin-left: 30px;
+  background: var(--bg);
+}
+
+/* BOTTOM → TOP ANIMATION */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
+}
+
+.reveal-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .resume-card {
+    flex-direction: column;
+  }
+  .resume-left,
+  .resume-right {
+    width: 100%;
+  }
 }
