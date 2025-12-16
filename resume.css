@@ -1,5 +1,5 @@
 /* ----------------------------------
-   ROOT THEME VARIABLES
+   ROOT THEME VARIABLES (LIGHT MODE)
 ---------------------------------- */
 :root {
   --bg: #ffffff;
@@ -7,16 +7,26 @@
   --card: #ffffff;
   --border: #ddd;
   --accent: #000;
-  --button-bg: #000000;        /* button background (light mode) */
-  --button-text: #ffffff;      /* button text (light mode) */
+
+  --button-bg: #000000;
+  --button-text: #ffffff;
+
   --panel-width: 360px;
+
   /* LIGHT MODE TEXTURES */
   --texture1: rgba(0,0,0,0.04);
   --texture2: rgba(0,0,0,0.02);
-  --footer-bg: #eaeaea;  /* light grey for contrast */
+
+  /* FOOTER */
+  --footer-bg: #eaeaea;
   --footer-text: #111;
   --footer-muted: #555;
   --footer-border: #ccc;
+
+  /* LEFT PANEL (INVERTED) */
+  --left-bg: #111111;
+  --left-text: #ffffff;
+  --left-border: #333;
 }
 
 /* ----------------------------------
@@ -28,45 +38,45 @@ body.dark {
   --card: #111111;
   --border: #333;
   --accent: #fff;
-  --button-bg: #ffffff;        /* button background (dark mode) */
-  --button-text: #000000;      /* button text (dark mode) */
+
+  --button-bg: #ffffff;
+  --button-text: #000000;
+
   --texture1: rgba(255,255,255,0.05);
   --texture2: rgba(255,255,255,0.03);
-  --footer-bg: #111;     /* darker than project cards */
+
+  --footer-bg: #111;
   --footer-text: #f2f2f2;
   --footer-muted: #aaa;
   --footer-border: #444;
+
+  /* LEFT PANEL (INVERTED) */
+  --left-bg: #f5f5f5;
+  --left-text: #111111;
+  --left-border: #ccc;
 }
 
 /* ----------------------------------
    GLOBAL BODY
 ---------------------------------- */
-/* GLOBAL BODY — SAME GRID IN BOTH MODES */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Poppins, sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
-    transition: 0.35s ease-in-out;
+  margin: 0;
+  padding: 0;
+  font-family: Poppins, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: 0.35s ease-in-out;
 
-    /* PREMIUM GRID BOXES (APPLIED TO BOTH LIGHT & DARK) */
-    background-image:
-        linear-gradient(to right, var(--texture1) 1px, transparent 1px),
-        linear-gradient(to bottom, var(--texture1) 1px, transparent 1px),
-        radial-gradient(circle at top, var(--texture2), transparent);
-    background-size: 45px 45px, 45px 45px, 100% 260px;
+  background-image:
+    linear-gradient(to right, var(--texture1) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--texture1) 1px, transparent 1px),
+    radial-gradient(circle at top, var(--texture2), transparent);
+  background-size: 45px 45px, 45px 45px, 100% 260px;
 }
 
-/* DARK MODE — ONLY COLOR VARIABLES CHANGE */
-body.dark {
-    background-image:
-        linear-gradient(to right, var(--texture1) 1px, transparent 1px),
-        linear-gradient(to bottom, var(--texture1) 1px, transparent 1px),
-        radial-gradient(circle at top, var(--texture2), transparent);
-}
-
-
+/* ----------------------------------
+   RESUME LAYOUT
+---------------------------------- */
 .resume-page {
   padding: 100px 20px;
   display: flex;
@@ -81,23 +91,42 @@ body.dark {
   border: 1px solid var(--border);
 }
 
-/* LEFT */
+/* ----------------------------------
+   LEFT PANEL (INVERTED COLORS)
+---------------------------------- */
 .resume-left {
   width: 35%;
   padding: 30px;
-  border-right: 1px solid var(--border);
+  background: var(--left-bg);
+  color: var(--left-text);
+  border-right: 1px solid var(--left-border);
+}
+
+.resume-left h1,
+.resume-left h2,
+.resume-left h3,
+.resume-left h4,
+.resume-left p,
+.resume-left span,
+.resume-left li {
+  color: var(--left-text);
 }
 
 .resume-left h3 {
   margin-top: 25px;
 }
 
-/* RIGHT */
+/* ----------------------------------
+   RIGHT PANEL
+---------------------------------- */
 .resume-right {
   width: 65%;
   padding: 30px;
 }
 
+/* ----------------------------------
+   TIMELINE
+---------------------------------- */
 .timeline {
   position: relative;
   margin-top: 20px;
@@ -136,7 +165,9 @@ body.dark {
   background: var(--bg);
 }
 
-/* BOTTOM → TOP ANIMATION */
+/* ----------------------------------
+   ANIMATION
+---------------------------------- */
 .reveal-up {
   opacity: 0;
   transform: translateY(40px);
@@ -148,13 +179,21 @@ body.dark {
   transform: translateY(0);
 }
 
-/* MOBILE */
+/* ----------------------------------
+   MOBILE
+---------------------------------- */
 @media (max-width: 768px) {
   .resume-card {
     flex-direction: column;
   }
+
   .resume-left,
   .resume-right {
     width: 100%;
+  }
+
+  .resume-left {
+    border-right: none;
+    border-bottom: 1px solid var(--left-border);
   }
 }
