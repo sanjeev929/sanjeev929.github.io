@@ -257,6 +257,70 @@ body.dark .about-btn:hover {
     transform: translateY(-2px);
 }
 
+/* ------------------------------
+   OVERVIEW / STATS SECTION
+------------------------------ */
+.overview-section {
+    padding: 50px 20px;           /* slightly less padding */
+    text-align: center;
+    background: inherit;          /* use page background */
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+}
+
+.overview-section .section-title {
+    font-size: 28px;              /* slightly smaller title */
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.overview-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.overview-item {
+    flex: 1 1 150px;
+    min-width: 130px;
+    transition: transform 0.3s ease;
+}
+
+.overview-item:hover {
+    transform: translateY(-3px);   /* subtle hover lift */
+}
+
+.overview-number {
+    font-size: 36px;              /* smaller numbers */
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.overview-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+/* ------------------------------
+   DARK MODE
+------------------------------ */
+body.dark .overview-section {
+    background: inherit;          /* match page dark background */
+    color: #fff;
+}
+
+body.dark .overview-number,
+body.dark .overview-label {
+    color: #fff;
+}
+
+
+
 /* ----------------------------------
    SKILLS SECTION
 --------------------------------*/
