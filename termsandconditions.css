@@ -123,32 +123,68 @@ nav a:hover {
 /* ----------------------------------
    THEME TOGGLE
 ---------------------------------- */
+/* Knob & track */
 .theme-toggle {
     margin-left: 25px;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: var(--card);
-    border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 52px;
+    height: 28px;
+    border-radius: 30px;
+    background: #000; /* 🔥 light mode = black track */
+    border: 1px solid #000000;
     cursor: pointer;
-    font-size: 20px;
-    transition: 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+    position: relative;
+    padding: 0;
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
-.theme-toggle:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.18);
-    opacity: 0.9;
+/* Knob */
+.theme-toggle > .toggle-knob {
+    position: absolute;
+    top: 3px;
+    left: 4px; /* light = left */
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    transition: left 0.3s ease, background 0.3s ease;
+    background: transparent; /* knob transparent */
 }
 
+/* Move knob for dark */
+body.dark .theme-toggle > .toggle-knob {
+    left: 26px;
+}
+
+/* Track color for dark mode */
 body.dark .theme-toggle {
-    background: #1a1a1a;
-    border: 1px solid #444;
-    box-shadow: 0 4px 12px rgba(255,255,255,0.10);
+    background: #fff;  /* 🔥 dark mode = white track */
+    border-color: #444;
+}
+
+/* Icons inside knob */
+.toggle-knob svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;  /* bigger solid icon */
+    height: 18px;
+    transform: translate(-50%, -50%);
+    transition: fill 0.3s ease;
+}
+
+/* LIGHT MODE: fully solid icons */
+.moon-icon {
+    fill: #000;   /* black moon */
+}
+.sun-icon {
+    fill: #fff;   /* white sun */
+}
+
+/* DARK MODE: fully solid icons */
+body.dark .moon-icon {
+    fill: #fff;   /* white moon */
+}
+body.dark .sun-icon {
+    fill: #000;   /* black sun */
 }
 
 /* =======================================================

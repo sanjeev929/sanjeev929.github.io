@@ -44,7 +44,19 @@
       <a href="contact.html">Contact</a>
     </nav>
 
-    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+  <span class="toggle-knob">
+    <!-- Moon solid -->
+    <svg class="moon-icon" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"/>
+    </svg>
+
+    <!-- Sun solid -->
+    <svg class="sun-icon" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"/>
+    </svg>
+  </span>
+</button>
   </div>
 </header>
 
@@ -119,26 +131,24 @@
 <script>
 /* ================= THEME TOGGLE ================= */
 function toggleTheme() {
-  document.body.classList.toggle("dark");
-  const isDark = document.body.classList.contains("dark");
-  document.querySelector(".theme-toggle").textContent = isDark ? "☀️" : "🌙";
-  localStorage.setItem("theme", isDark ? "dark" : "light");
+    const body = document.body;
+    body.classList.toggle("dark");
+
+    // Save preference
+    const isDark = body.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark");
+    }
+});
 /* ================= MOBILE NAV ================= */
 function toggleNav() {
   document.getElementById("mobileNav").classList.toggle("open");
 }
-
-/* ================= LOAD SAVED THEME ================= */
-window.onload = () => {
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark");
-  }
-  document.querySelector(".theme-toggle").textContent =
-    document.body.classList.contains("dark") ? "☀️" : "🌙";
-};
 
 emailjs.init("AN0Y7who_NrHI-Clj");
 
