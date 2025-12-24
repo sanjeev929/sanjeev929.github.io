@@ -537,6 +537,60 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 })();
 
+document.addEventListener("DOMContentLoaded", () => {
+  const overviewNumbers = document.querySelectorAll('.overview-number');
+
+  const animateNumber = (el, target) => {
+    let count = 0;
+    const increment = target / 100; // adjust speed
+
+    const updateNumber = () => {
+      count += increment;
+      if (count < target) {
+        el.textContent = Math.floor(count) + "+";
+        requestAnimationFrame(updateNumber);
+      } else {
+        el.textContent = target + "+";
+      }
+    };
+    updateNumber();
+  };
+
+  // Use Intersection Observer to trigger animation on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        overviewNumbers.forEach(el => {
+          const target = parseInt(el.getAttribute('data-target'));
+          animateNumber(el, target);
+        });
+        observer.disconnect(); // run once
+      }
+    });
+  }, { threshold: 0.5 }); // trigger when 50% visible
+
+  observer.observe(document.querySelector('#overview'));
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Select all major sections and nav/header/footer
+    const sections = document.querySelectorAll(".merged-section, .overview-section, .skills-section, .project-section");
+
+    sections.forEach(section => section.classList.add("section-animate"));
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target); // run once
+            }
+        });
+    }, { threshold: 0.1 }); // trigger when 10% visible
+
+    sections.forEach(section => observer.observe(section));
+});
+
+
 </script>
 
 

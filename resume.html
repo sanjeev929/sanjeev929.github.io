@@ -206,6 +206,23 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    // Select all major sections and nav/header/footer
+    const sections = document.querySelectorAll(".resume-page");
+
+    sections.forEach(section => section.classList.add("section-animate"));
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target); // run once
+            }
+        });
+    }, { threshold: 0.1 }); // trigger when 10% visible
+
+    sections.forEach(section => observer.observe(section));
+});
 </script>
 
 </body>

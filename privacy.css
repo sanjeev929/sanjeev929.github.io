@@ -38,6 +38,20 @@ body.dark {
   --footer-border: #444;
 }
 
+
+/* Initial state for all sections */
+.section-animate {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.7s ease-out;
+}
+
+/* Animate into view */
+.section-animate.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* ----------------------------------
    GLOBAL BODY
 ---------------------------------- */

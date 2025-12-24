@@ -56,6 +56,73 @@ body.dark {
   --left-border: #ccc;
 }
 
+/* Initial state for all sections */
+.section-animate {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.7s ease-out;
+}
+
+/* Animate into view */
+.section-animate.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ----------------------------------
+   HEADER
+---------------------------------- */
+.header {
+    padding: 18px 0;
+    border-bottom: 2px solid var(--border);
+    background: var(--bg);
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+.container {
+    width: 92%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* NAVBAR */
+nav a {
+    margin-left: 25px;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 4px;
+    transition: 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    opacity: 0.8;
+    transform: translateY(-1px);
+}
+
+
 /* Knob & track */
 .theme-toggle {
     margin-left: 25px;
