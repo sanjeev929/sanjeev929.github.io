@@ -395,6 +395,67 @@ body.dark .skill-line {
     opacity: 0.8;
 }
 
+/* Acheivement Logos */
+.achievement-logos {
+  margin: 70px auto;
+  text-align: center;
+}
+
+.logo-loop {
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 22px 0;
+}
+
+.logo-track {
+  display: flex;
+  gap: 60px;
+  width: max-content;
+  animation: loopScroll 20s linear infinite;
+}
+
+.logo-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  white-space: nowrap;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.logo-item span {
+  color: #000;
+  opacity: 1;
+}
+
+.logo-item img {
+  height: 32px;
+  width: auto;
+  filter: grayscale(100%);
+  opacity: 0.9;
+}
+
+body.dark .logo-item span {
+  color: #ffffff !important;
+}
+
+body.dark .logo-item img {
+  filter: grayscale(100%) invert(1);
+}
+
+/* ✨ KEY PART */
+@keyframes loopScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+
 /* PROJECT SECTION ---------------------------------------------*/
 .project-section {
     padding: 0 20px;
