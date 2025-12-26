@@ -395,16 +395,29 @@ body.dark .skill-line {
     opacity: 0.8;
 }
 
-/* Acheivement Logos */
+/* ===============================
+   ACHIEVEMENT SECTION
+================================ */
+
 .achievement-logos {
-  margin: 70px auto;
+  margin: 80px auto;
   text-align: center;
 }
 
+.section-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* ===============================
+   LOGO MARQUEE
+================================ */
+
 .logo-loop {
   overflow: hidden;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--border, #ddd);
+  border-bottom: 1px solid var(--border, #ddd);
   padding: 22px 0;
 }
 
@@ -412,7 +425,12 @@ body.dark .skill-line {
   display: flex;
   gap: 60px;
   width: max-content;
-  animation: loopScroll 20s linear infinite;
+  animation: marquee 18s linear infinite;
+}
+
+/* Pause on hover (optional but nice) */
+.logo-loop:hover .logo-track {
+  animation-play-state: paused;
 }
 
 .logo-item {
@@ -421,40 +439,40 @@ body.dark .skill-line {
   gap: 14px;
   white-space: nowrap;
   font-weight: 600;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .logo-item span {
   color: #000;
-  opacity: 1;
 }
 
+/* LOGO SIZE (uniform) */
 .logo-item img {
-  height: 32px;
-  width: auto;
-  filter: grayscale(100%);
-  opacity: 0.9;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
 }
+
+/* ===============================
+   DARK MODE SUPPORT
+================================ */
 
 body.dark .logo-item span {
-  color: #ffffff !important;
+  color: #fff;
 }
 
-body.dark .logo-item img {
-  filter: grayscale(100%) invert(1);
-}
+/* ===============================
+   ANIMATION
+================================ */
 
-/* ✨ KEY PART */
-@keyframes loopScroll {
-  0% {
+@keyframes marquee {
+  from {
     transform: translateX(0);
   }
-  100% {
+  to {
     transform: translateX(-50%);
   }
 }
-
-
 
 /* PROJECT SECTION ---------------------------------------------*/
 .project-section {
