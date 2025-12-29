@@ -184,7 +184,7 @@
     </div>
 </section>
 
-<section class="achievement-logos">
+<section id="achievements" class="achievement-logos">
   <h2 class="section-title">Built & Achievements</h2>
 
   <div class="logo-loop">
@@ -641,7 +641,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     // Select all major sections and nav/header/footer
-    const sections = document.querySelectorAll(".merged-section, .overview-section, .skills-section, .project-section");
+    const sections = document.querySelectorAll(".merged-section, .overview-section, .skills-section, .achievement-logos, .project-section");
 
     sections.forEach(section => section.classList.add("section-animate"));
 
