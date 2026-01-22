@@ -311,6 +311,36 @@ body {
   transform: translateY(0);
 }
 
+/* Scrollable project list inside experience */
+.project-scroll {
+  max-height: 120px;       /* adjust height as you like */
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* Optional: smooth scrollbar */
+.project-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.project-scroll::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+.project-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.project-scroll ul li {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.project-scroll {
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+
 /* ----------------------------------
    MOBILE
 ---------------------------------- */
