@@ -395,6 +395,132 @@ body.dark .skill-line {
     opacity: 0.8;
 }
 
+.skills-wrapper {
+    position: relative;
+    padding: 120px 0;
+    background: black;
+    color: white;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* ================= STARS ================= */
+
+.stars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.stars-back {
+    background: radial-gradient(1px 1px at 20% 30%, #fff, transparent);
+    background-size: 300px 300px;
+    opacity: 0.3;
+    animation: drift 160s linear infinite;
+}
+
+.stars-mid {
+    background: radial-gradient(1.5px 1.5px at 50% 50%, #fff, transparent);
+    background-size: 220px 220px;
+    opacity: 0.5;
+    animation: drift 120s linear infinite;
+}
+
+.stars-front {
+    background: radial-gradient(2px 2px at 70% 40%, #fff, transparent);
+    background-size: 180px 180px;
+    opacity: 0.7;
+    animation: drift 80s linear infinite;
+}
+
+@keyframes drift {
+    from { transform: translateY(0); }
+    to { transform: translateY(-800px); }
+}
+
+/* ================= LAYOUT ================= */
+
+.skills-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    z-index: 5;
+}
+
+.skills-orbit {
+    position: relative;
+    width: 600px;
+    height: 600px;
+}
+
+/* ================= SKILL BALLS ================= */
+
+.skill-ball {
+    position: absolute;
+    border-radius: 50%;
+    background: #0b0b0b;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.skill-ball.big { width: 72px; height: 72px; }
+.skill-ball.small { width: 52px; height: 52px; }
+
+.skill-ball.sun {
+    width: 130px;
+    height: 130px;
+    background: radial-gradient(circle,#ffd84d,#ff9800);
+    box-shadow: 0 0 60px orange;
+    z-index: 10;
+}
+
+.skill-ball:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 20px #00c6ff;
+}
+
+/* ================= RIGHT LIST ================= */
+
+.skills-list {
+    min-width: 260px;
+    text-align: left;
+}
+
+.skill-item {
+    margin-bottom: 18px;
+}
+
+.skill-bar {
+    height: 8px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg,#ffd695,#ffa91f);
+}
+
+/* ================= TOOLTIP ================= */
+
+.skill-tooltip {
+    position: fixed;
+    padding: 10px 14px;
+    background: rgba(15,15,25,0.95);
+    border-radius: 10px;
+    font-size: 14px;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.2s ease;
+    z-index: 9999;
+}
+
+
 /* ===============================
    ACHIEVEMENT SECTION
 ================================ */
