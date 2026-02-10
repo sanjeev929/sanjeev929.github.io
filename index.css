@@ -522,77 +522,66 @@ body.dark .skill-line {
 
 
 /* ===============================
-   ACHIEVEMENT SECTION
+   ACHIEVEMENT CTA
 ================================ */
 
-.achievement-logos {
-  margin: 80px auto;
+.overview-cta {
+  margin-top: 40px;
   text-align: center;
 }
 
-.section-title {
-  font-size: 26px;
+/* BASE BUTTON */
+.achievement-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: 15px;
   font-weight: 700;
-  margin-bottom: 30px;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 0; /* square */
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 /* ===============================
-   LOGO MARQUEE
+   LIGHT MODE
 ================================ */
 
-.logo-loop {
-  overflow: hidden;
-  border-top: 1px solid var(--border, #ddd);
-  border-bottom: 1px solid var(--border, #ddd);
-  padding: 22px 0;
+/* Default: BLACK */
+body:not(.dark) .achievement-btn {
+  background: #000;
+  color: #fff;
+  border-color: #000;
 }
 
-.logo-track {
-  display: flex;
-  gap: 60px;
-  width: max-content;
-  animation: marquee 18s linear infinite;
-}
-
-.logo-item {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  white-space: nowrap;
-  font-weight: 600;
-  opacity: 0.9;
-}
-
-.logo-item span {
+/* Hover: WHITE */
+body:not(.dark) .achievement-btn:hover {
+  background: #fff;
   color: #000;
 }
 
-/* LOGO SIZE (uniform) */
-.logo-item img {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-}
-
 /* ===============================
-   DARK MODE SUPPORT
+   DARK MODE
 ================================ */
 
-body.dark .logo-item span {
+/* Default: WHITE */
+body.dark .achievement-btn {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+/* Hover: BLACK */
+body.dark .achievement-btn:hover {
+  background: #000;
   color: #fff;
 }
 
 /* ===============================
-   ANIMATION
+   ACTIVE
 ================================ */
 
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+.achievement-btn:active {
+  opacity: 0.85;
 }
 
 /* ===============================

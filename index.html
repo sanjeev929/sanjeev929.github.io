@@ -98,30 +98,18 @@
 </section>
 
 <section class="skills-wrapper">
-
     <h2 class="skills-heading">Skills</h2>
-
-    <!-- STAR BACKGROUND -->
     <div class="stars stars-back"></div>
     <div class="stars stars-mid"></div>
     <div class="stars stars-front"></div>
-
-    <!-- TOOLTIP -->
     <div id="skillTooltip" class="skill-tooltip"></div>
-
     <div class="skills-container">
-
-        <!-- SOLAR SYSTEM -->
         <div class="skills-orbit" id="orbit">
-
-            <!-- SUN -->
             <img src="/image/profile/python.png"
                  class="skill-ball sun"
                  id="sun"
                  data-name="Python"
                  data-percent="95">
-
-            <!-- PLANETS -->
             <img src="/image/profile/fastapi.png" class="skill-ball big" data-name="FastAPI" data-percent="90">
             <img src="/image/profile/ai.png" class="skill-ball big" data-name="AI" data-percent="80">
             <img src="/image/profile/aws.png" class="skill-ball big" data-name="AWS" data-percent="50">
@@ -133,20 +121,13 @@
             <img src="/image/profile/firebase.png" class="skill-ball small" data-name="Firebase" data-percent="75">
             <img src="/image/profile/nginx.png" class="skill-ball small" data-name="Nginx" data-percent="90">
             <img src="/image/profile/alexa.png" class="skill-ball small" data-name="Alexa" data-percent="80">
-
         </div>
-
-        <!-- RIGHT SIDE SKILL LIST -->
         <div class="skills-list" id="skillsList"></div>
-
     </div>
 </section>
 
-
-
-
 <section id="overview" class="overview-section">
-  <h2 class="section-title">My Achievements</h2>
+  <h2 class="section-title">Highlights Overview</h2>
   <div class="overview-container">
     <div class="overview-item">
       <h3 class="overview-number" data-target="24">25+</h3>
@@ -236,67 +217,12 @@
     </div>
 </section>
 
-<section id="achievements" class="achievement-logos">
-  <h2 class="section-title">Built & Achievements</h2>
+<div class="overview-cta">
+  <a href="404.html" class="achievement-btn">
+    View Detailed Achievements →
+  </a>
+</div>
 
-  <div class="logo-loop">
-    <div class="logo-track">
-
-      <!-- ORIGINAL -->
-      <div class="logo-item">
-        <img src="image/profile/GitHub Actions.png" alt="Github Actions">
-        <span>Github Actions</span>
-      </div>
-
-      <div class="logo-item">
-        <img src="image/profile/python.png" alt="PyPI">
-        <span>Published Python Package on PyPI</span>
-      </div>
-
-      <div class="logo-item">
-        <img src="image/profile/NGINX.png" alt="NGINX">
-        <span>NGINX-based Server</span>
-      </div>
-
-      <div class="logo-item">
-        <img src="image/profile/alexa.png" alt="Alexa">
-        <span>AWS Alexa Skill</span>
-      </div>
-
-      <!-- <div class="logo-item">
-        <img src="image/profile/Visual Studio Code (VS Code).png" alt="VS Code">
-        <span>Visual Studio Code Tools</span>
-      </div> -->
-
-      <!-- DUPLICATE (for seamless infinite loop) -->
-      <div class="logo-item">
-        <img src="image/profile/GitHub Actions.png" alt="Github Actions">
-        <span>Github Actions</span>
-      </div>
-
-      <div class="logo-item">
-        <img src="image/profile/python.png" alt="PyPI">
-        <span>Published Python Package on PyPI</span>
-      </div>
-
-      <div class="logo-item">
-        <img src="image/profile/NGINX.png" alt="NGINX">
-        <span>NGINX-based Server</span>
-      </div>
-
-      <div class="logo-item">
-        <img src="image/profile/alexa.png" alt="Alexa">
-        <span>AWS Alexa Skill</span>
-      </div>
-
-      <!-- <div class="logo-item">
-        <img src="image/profile/Visual Studio Code (VS Code).png" alt="VS Code">
-        <span>Visual Studio Code Tools</span>
-      </div> -->
-
-    </div>
-  </div>
-</section>
 
 <section id="certificates" class="certificates-section">
   <h2 class="section-title">Certificates & Courses</h2>
@@ -682,7 +608,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 120);
   });
 })();
-
 document.addEventListener("DOMContentLoaded", () => {
   const overviewNumbers = document.querySelectorAll('.overview-number');
 
@@ -717,10 +642,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   observer.observe(document.querySelector('#overview'));
 });
-
 document.addEventListener("DOMContentLoaded", () => {
     // Select all major sections and nav/header/footer
-    const sections = document.querySelectorAll(".merged-section, .overview-section, .skills-section, .achievement-logos, .project-section");
+    const sections = document.querySelectorAll(".merged-section, .skills-section, .achievement-logos, .project-section");
 
     sections.forEach(section => section.classList.add("section-animate"));
 

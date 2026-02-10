@@ -1,0 +1,266 @@
+/* ===============================
+   RESET
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ===============================
+   BACKGROUND GRID
+================================ */
+.grid {
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===============================
+   BULBS
+================================ */
+.bulbs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  z-index: 1;
+}
+
+.bulb {
+  position: relative;
+  width: 30px;
+}
+
+/* ===============================
+   WIRE
+================================ */
+.bulb::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  background: rgba(255,255,255,0.7);
+  transform: translateX(-50%);
+}
+
+.bulb:nth-child(1)::before { height: 90px; }
+.bulb:nth-child(2)::before { height: 150px; }
+.bulb:nth-child(3)::before { height: 110px; }
+.bulb:nth-child(4)::before { height: 170px; }
+.bulb:nth-child(5)::before { height: 130px; }
+
+
+/* ===============================
+   BULB (OFF STATE)
+================================ */
+.bulb::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 22px solid #fff;
+  opacity: 0.85;
+  z-index: 3;
+}
+
+/* Attach bulb */
+.bulb:nth-child(1)::after { top: 80px; }
+.bulb:nth-child(2)::after { top: 150px; }
+.bulb:nth-child(3)::after { top: 100px; }
+.bulb:nth-child(4)::after { top: 170px; }
+.bulb:nth-child(5)::after { top: 120px; }
+
+/* ===============================
+   LIGHT BEAM (OFF)
+================================ */
+.bulb::before {
+  pointer-events: none;
+}
+
+.bulb::after {
+  pointer-events: none;
+}
+
+/* Beam */
+.bulb::selection,
+.bulb::marker {
+  display: none;
+}
+
+.bulb::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 320px;
+  background: radial-gradient(
+    ellipse at top,
+    rgba(255, 210, 80, 0.55) 0%,
+    rgba(255, 200, 60, 0.35) 35%,
+    rgba(255, 180, 40, 0.15) 60%,
+    rgba(255, 180, 40, 0) 100%
+  );
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  filter: blur(1.5px);
+  opacity: 0;
+  z-index: 1;
+}
+
+/* Attach beam */
+.bulb:nth-child(1)::before { top: 102px; }
+.bulb:nth-child(2)::before { top: 172px; }
+.bulb:nth-child(3)::before { top: 122px; }
+.bulb:nth-child(4)::before { top: 192px; }
+.bulb:nth-child(5)::before { top: 142px; }
+
+/* ===============================
+   FLICKER ANIMATIONS
+================================ */
+@keyframes bulbFlicker {
+  0%, 82%, 100% {
+    border-bottom-color: #fff;
+    filter: none;
+    opacity: 0.85;
+  }
+  86%, 90% {
+    border-bottom-color: #ffd65a;
+    filter: drop-shadow(0 0 12px rgba(255,214,90,0.9))
+            drop-shadow(0 0 22px rgba(255,214,90,0.6));
+    opacity: 1;
+  }
+}
+
+@keyframes beamFlicker {
+  0%, 82%, 100% {
+    opacity: 0;
+  }
+  86%, 90% {
+    opacity: 1;
+  }
+}
+
+/* ===============================
+   APPLY RANDOM FLICKER
+================================ */
+.bulb:nth-child(1)::after,
+.bulb:nth-child(1)::before {
+  animation: bulbFlicker 3.6s infinite;
+}
+
+.bulb:nth-child(1)::before {
+  animation-name: beamFlicker;
+}
+
+.bulb:nth-child(2)::after,
+.bulb:nth-child(2)::before {
+  animation: bulbFlicker 2.4s infinite;
+}
+
+.bulb:nth-child(2)::before {
+  animation-name: beamFlicker;
+}
+
+.bulb:nth-child(3)::after,
+.bulb:nth-child(3)::before {
+  animation: bulbFlicker 2.1s infinite;
+}
+
+.bulb:nth-child(3)::before {
+  animation-name: beamFlicker;
+}
+
+.bulb:nth-child(4)::after,
+.bulb:nth-child(4)::before {
+  animation: bulbFlicker 3.2s infinite;
+}
+
+.bulb:nth-child(4)::before {
+  animation-name: beamFlicker;
+}
+
+.bulb:nth-child(5)::after,
+.bulb:nth-child(5)::before {
+  animation: bulbFlicker 2.9s infinite;
+}
+
+.bulb:nth-child(5)::before {
+  animation-name: beamFlicker;
+}
+
+/* ===============================
+   CONTENT
+================================ */
+.wrapper {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 420px;
+}
+
+.error-code {
+  font-size: 140px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-bottom: 12px;
+  opacity: 0.85;
+}
+
+h1 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+p {
+  font-size: 15px;
+  opacity: 0.75;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* ===============================
+   BUTTON
+================================ */
+.home-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  font-weight: 700;
+  border: 2px solid #fff;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.home-btn:hover {
+  background: #000;
+  color: #fff;
+}
