@@ -1,0 +1,246 @@
+<section id="skills" class="skills-section">
+    <h2 class="section-title">Skills & Expertise</h2>
+    <p class="section-subtitle">Technologies I work with to build scalable and intelligent systems</p>
+
+    <div class="skills-text-strips">
+
+        <div class="skill-line">
+            <span class="skill-title">Python 🐍</span>
+            <p>Fast backend development</p>
+        </div>
+
+        <div class="skill-line">
+            <span class="skill-title">FastAPI ⚡</span>
+            <p>High-speed API engineering</p>
+        </div>
+
+        <div class="skill-line">
+            <span class="skill-title">AI / ML 🤖</span>
+            <p>Automation & intelligent systems</p>
+        </div>
+
+        <div class="skill-line">
+            <span class="skill-title">Agno AI Frame Work ⚙️</span>
+            <p>Agent-based automation & intelligent workflows</p>
+        </div>
+
+        <div class="skill-line">
+            <span class="skill-title">Django 🟩</span>
+            <p>Enterprise-grade backend apps</p>
+        </div>
+
+        <div class="skill-line">
+            <span class="skill-title">Streamlit 📊</span>
+            <p>Interactive dashboards & AI tools</p>
+        </div>
+
+        <div class="skill-line">
+            <span class="skill-title">PostgreSQL 🐘</span>
+            <p>Reliable relational database design</p>
+        </div>
+
+        <div class="skill-line">
+            <span class="skill-title">MongoDB 🍃</span>
+            <p>NoSQL & scalable data modelling</p>
+        </div>
+
+        <div class="skill-line">
+            <span class="skill-title">Firebase 🔥</span>
+            <p>Real-time apps & authentication</p>
+        </div>
+
+        <div class="skill-line">
+            <span class="skill-title">AWS ☁️</span>
+            <p>Cloud deployment & infrastructure</p>
+        </div>
+
+        <div class="skill-line">
+            <span class="skill-title">Alexa 🔊</span>
+            <p>Voice-enabled application development</p>
+        </div>
+    </div>
+</section>
+<script>
+    /* ==========================
+   ELEMENTS
+========================== */
+
+const orbit = document.getElementById("orbit");
+const sun = document.getElementById("sun");
+const planets = [...document.querySelectorAll(".skill-ball:not(.sun)")];
+const skills = [...document.querySelectorAll(".skill-ball")];
+const tooltip = document.getElementById("skillTooltip");
+const listContainer = document.getElementById("skillsList");
+
+/* ==========================
+   CENTER SUN
+========================== */
+
+sun.style.left = "50%";
+sun.style.top = "50%";
+sun.style.transform = "translate(-50%, -50%)";
+
+/* ==========================
+   ORBIT CONFIG
+========================== */
+
+const BASE_RADIUS = 150;
+const GAP = 60;
+const SPEEDS = [0.001, 0.0008, 0.0006, 0.0005];
+const RING_COUNT = 4;
+
+const layers = Array.from({ length: RING_COUNT }, () => []);
+
+/* distribute planets into rings */
+planets.forEach((p, i) => {
+    layers[i % RING_COUNT].push(p);
+});
+
+/* initialize planet data */
+layers.forEach((layer, ringIndex) => {
+    const radius = BASE_RADIUS + ringIndex * GAP;
+    const step = (Math.PI * 2) / layer.length;
+    const offset = Math.random() * Math.PI * 2;
+
+    layer.forEach((p, i) => {
+        p.angle = offset + i * step;
+        p.radius = radius;
+        p.speed = SPEEDS[ringIndex];
+        p.isDragging = false;
+        p.currentX = null;
+        p.currentY = null;
+    });
+});
+
+/* ==========================
+   HELPERS
+========================== */
+
+function lerp(a, b, t) {
+    return a + (b - a) * t;
+}
+
+/* ==========================
+   ANIMATION LOOP
+========================== */
+
+function animate() {
+
+    layers.forEach(layer => {
+        layer.forEach(p => {
+
+            if (!p.isDragging) {
+                p.angle += p.speed;
+            }
+
+            const targetX = Math.cos(p.angle) * p.radius;
+            const targetY = Math.sin(p.angle) * p.radius;
+
+            if (p.currentX === null) p.currentX = targetX;
+            if (p.currentY === null) p.currentY = targetY;
+
+            if (!p.isDragging) {
+                p.currentX = lerp(p.currentX, targetX, 0.08);
+                p.currentY = lerp(p.currentY, targetY, 0.08);
+
+                p.style.left = "50%";
+                p.style.top = "50%";
+                p.style.transform =
+                    `translate(-50%, -50%) translate(${p.currentX}px, ${p.currentY}px)`;
+            }
+        });
+    });
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+/* ==========================
+   RIGHT SIDE SKILL LIST
+========================== */
+
+skills.forEach(skill => {
+    const item = document.createElement("div");
+    item.className = "skill-item";
+
+    item.innerHTML = `
+        <h4>${skill.dataset.name}</h4>
+        <div class="skill-bar">
+            <div class="skill-bar-fill" style="width:${skill.dataset.percent}%"></div>
+        </div>
+    `;
+
+    listContainer.appendChild(item);
+});
+
+/* ==========================
+   TOOLTIP
+========================== */
+
+skills.forEach(skill => {
+
+    skill.addEventListener("mouseenter", () => {
+        tooltip.innerHTML =
+            `<strong>${skill.dataset.name}</strong><br>${skill.dataset.percent}%`;
+        tooltip.style.opacity = 1;
+    });
+
+    skill.addEventListener("mousemove", e => {
+        tooltip.style.left = e.clientX + 15 + "px";
+        tooltip.style.top = e.clientY + 15 + "px";
+    });
+
+    skill.addEventListener("mouseleave", () => {
+        tooltip.style.opacity = 0;
+    });
+
+});
+
+/* ==========================
+   DRAG & SNAP BACK
+========================== */
+
+let draggedPlanet = null;
+let offsetX = 0;
+let offsetY = 0;
+
+planets.forEach(planet => {
+
+    planet.addEventListener("mousedown", e => {
+        draggedPlanet = planet;
+        planet.isDragging = true;
+
+        const rect = planet.getBoundingClientRect();
+        offsetX = e.clientX - rect.left - rect.width / 2;
+        offsetY = e.clientY - rect.top - rect.height / 2;
+
+        planet.style.cursor = "grabbing";
+    });
+
+});
+
+document.addEventListener("mousemove", e => {
+    if (!draggedPlanet) return;
+
+    const orbitRect = orbit.getBoundingClientRect();
+
+    draggedPlanet.currentX =
+        e.clientX - orbitRect.left - orbitRect.width / 2 - offsetX;
+    draggedPlanet.currentY =
+        e.clientY - orbitRect.top - orbitRect.height / 2 - offsetY;
+
+    draggedPlanet.style.left = "50%";
+    draggedPlanet.style.top = "50%";
+    draggedPlanet.style.transform =
+        `translate(-50%, -50%) translate(${draggedPlanet.currentX}px, ${draggedPlanet.currentY}px)`;
+});
+
+document.addEventListener("mouseup", () => {
+    if (!draggedPlanet) return;
+
+    draggedPlanet.isDragging = false;
+    draggedPlanet.style.cursor = "grab";
+    draggedPlanet = null;
+});
+</script>
