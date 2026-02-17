@@ -1,70 +1,45 @@
-<section id="skills" class="skills-section">
-    <h2 class="section-title">Skills & Expertise</h2>
-    <p class="section-subtitle">Technologies I work with to build scalable and intelligent systems</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills Space</title>
+<link rel="stylesheet" href="acheivement.css">
+</head>
+<body>
+<div class="skills-wrapper">
+    <button class="home-btn" onclick="window.location.href='/'">⬅ Home</button>
+    <div class="stars stars-back"></div>
+    <div class="stars stars-mid"></div>
+    <div class="stars stars-front"></div>
+    <section class="skills-section">
+        <div class="skills-container">
+            <div id="orbit" class="skills-orbit">
+                <div id="sun" class="skill-ball sun" data-name="Python" data-percent="95">
+                    <img src="image/profile/python.png" alt="Python">
+                </div>
+                <div class="skill-ball big" data-name="CICD" data-percent="90">
+                    <img src="image/profile/GitHub Actions.png" alt="CICD">
+                </div>
+                <div class="skill-ball big" data-name="Pip Package" data-percent="85">
+                    <img src="image/profile/python.png" alt="Pip Package">
+                </div>
 
-    <div class="skills-text-strips">
+                <div class="skill-ball small" data-name="Alexa" data-percent="85">
+                    <img src="image/profile/alexa.png" alt="Alexa">
+                </div>
 
-        <div class="skill-line">
-            <span class="skill-title">Python 🐍</span>
-            <p>Fast backend development</p>
+                <div class="skill-ball small" data-name="NGINX" data-percent="90">
+                    <img src="image/profile/NGINX.png" alt="NGINX">
+                </div>
+            </div>
+            <div id="skillsList" class="skills-list"></div>
         </div>
+        <div id="skillTooltip" class="skill-tooltip"></div>
+    </section>
+</div>
 
-        <div class="skill-line">
-            <span class="skill-title">FastAPI ⚡</span>
-            <p>High-speed API engineering</p>
-        </div>
-
-        <div class="skill-line">
-            <span class="skill-title">AI / ML 🤖</span>
-            <p>Automation & intelligent systems</p>
-        </div>
-
-        <div class="skill-line">
-            <span class="skill-title">Agno AI Frame Work ⚙️</span>
-            <p>Agent-based automation & intelligent workflows</p>
-        </div>
-
-        <div class="skill-line">
-            <span class="skill-title">Django 🟩</span>
-            <p>Enterprise-grade backend apps</p>
-        </div>
-
-        <div class="skill-line">
-            <span class="skill-title">Streamlit 📊</span>
-            <p>Interactive dashboards & AI tools</p>
-        </div>
-
-        <div class="skill-line">
-            <span class="skill-title">PostgreSQL 🐘</span>
-            <p>Reliable relational database design</p>
-        </div>
-
-        <div class="skill-line">
-            <span class="skill-title">MongoDB 🍃</span>
-            <p>NoSQL & scalable data modelling</p>
-        </div>
-
-        <div class="skill-line">
-            <span class="skill-title">Firebase 🔥</span>
-            <p>Real-time apps & authentication</p>
-        </div>
-
-        <div class="skill-line">
-            <span class="skill-title">AWS ☁️</span>
-            <p>Cloud deployment & infrastructure</p>
-        </div>
-
-        <div class="skill-line">
-            <span class="skill-title">Alexa 🔊</span>
-            <p>Voice-enabled application development</p>
-        </div>
-    </div>
-</section>
 <script>
-    /* ==========================
-   ELEMENTS
-========================== */
-
 const orbit = document.getElementById("orbit");
 const sun = document.getElementById("sun");
 const planets = [...document.querySelectorAll(".skill-ball:not(.sun)")];
@@ -72,31 +47,19 @@ const skills = [...document.querySelectorAll(".skill-ball")];
 const tooltip = document.getElementById("skillTooltip");
 const listContainer = document.getElementById("skillsList");
 
-/* ==========================
-   CENTER SUN
-========================== */
-
 sun.style.left = "50%";
 sun.style.top = "50%";
 sun.style.transform = "translate(-50%, -50%)";
 
-/* ==========================
-   ORBIT CONFIG
-========================== */
-
 const BASE_RADIUS = 150;
 const GAP = 60;
 const SPEEDS = [0.001, 0.0008, 0.0006, 0.0005];
-const RING_COUNT = 4;
+const RING_COUNT = 3;
 
 const layers = Array.from({ length: RING_COUNT }, () => []);
 
-/* distribute planets into rings */
-planets.forEach((p, i) => {
-    layers[i % RING_COUNT].push(p);
-});
+planets.forEach((p, i) => layers[i % RING_COUNT].push(p));
 
-/* initialize planet data */
 layers.forEach((layer, ringIndex) => {
     const radius = BASE_RADIUS + ringIndex * GAP;
     const step = (Math.PI * 2) / layer.length;
@@ -112,26 +75,12 @@ layers.forEach((layer, ringIndex) => {
     });
 });
 
-/* ==========================
-   HELPERS
-========================== */
-
-function lerp(a, b, t) {
-    return a + (b - a) * t;
-}
-
-/* ==========================
-   ANIMATION LOOP
-========================== */
+function lerp(a, b, t) { return a + (b - a) * t; }
 
 function animate() {
-
     layers.forEach(layer => {
         layer.forEach(p => {
-
-            if (!p.isDragging) {
-                p.angle += p.speed;
-            }
+            if (!p.isDragging) p.angle += p.speed;
 
             const targetX = Math.cos(p.angle) * p.radius;
             const targetY = Math.sin(p.angle) * p.radius;
@@ -150,97 +99,34 @@ function animate() {
             }
         });
     });
-
     requestAnimationFrame(animate);
 }
-
 animate();
-
-/* ==========================
-   RIGHT SIDE SKILL LIST
-========================== */
 
 skills.forEach(skill => {
     const item = document.createElement("div");
     item.className = "skill-item";
-
     item.innerHTML = `
         <h4>${skill.dataset.name}</h4>
         <div class="skill-bar">
             <div class="skill-bar-fill" style="width:${skill.dataset.percent}%"></div>
         </div>
     `;
-
     listContainer.appendChild(item);
 });
 
-/* ==========================
-   TOOLTIP
-========================== */
-
 skills.forEach(skill => {
-
     skill.addEventListener("mouseenter", () => {
-        tooltip.innerHTML =
-            `<strong>${skill.dataset.name}</strong><br>${skill.dataset.percent}%`;
+        tooltip.innerHTML = `<strong>${skill.dataset.name}</strong><br>${skill.dataset.percent}%`;
         tooltip.style.opacity = 1;
     });
-
     skill.addEventListener("mousemove", e => {
         tooltip.style.left = e.clientX + 15 + "px";
         tooltip.style.top = e.clientY + 15 + "px";
     });
-
-    skill.addEventListener("mouseleave", () => {
-        tooltip.style.opacity = 0;
-    });
-
-});
-
-/* ==========================
-   DRAG & SNAP BACK
-========================== */
-
-let draggedPlanet = null;
-let offsetX = 0;
-let offsetY = 0;
-
-planets.forEach(planet => {
-
-    planet.addEventListener("mousedown", e => {
-        draggedPlanet = planet;
-        planet.isDragging = true;
-
-        const rect = planet.getBoundingClientRect();
-        offsetX = e.clientX - rect.left - rect.width / 2;
-        offsetY = e.clientY - rect.top - rect.height / 2;
-
-        planet.style.cursor = "grabbing";
-    });
-
-});
-
-document.addEventListener("mousemove", e => {
-    if (!draggedPlanet) return;
-
-    const orbitRect = orbit.getBoundingClientRect();
-
-    draggedPlanet.currentX =
-        e.clientX - orbitRect.left - orbitRect.width / 2 - offsetX;
-    draggedPlanet.currentY =
-        e.clientY - orbitRect.top - orbitRect.height / 2 - offsetY;
-
-    draggedPlanet.style.left = "50%";
-    draggedPlanet.style.top = "50%";
-    draggedPlanet.style.transform =
-        `translate(-50%, -50%) translate(${draggedPlanet.currentX}px, ${draggedPlanet.currentY}px)`;
-});
-
-document.addEventListener("mouseup", () => {
-    if (!draggedPlanet) return;
-
-    draggedPlanet.isDragging = false;
-    draggedPlanet.style.cursor = "grab";
-    draggedPlanet = null;
+    skill.addEventListener("mouseleave", () => tooltip.style.opacity = 0);
 });
 </script>
+
+</body>
+</html>
