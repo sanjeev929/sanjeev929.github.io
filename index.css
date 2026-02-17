@@ -373,6 +373,7 @@ body.dark .overview-label {
 
 /* skill item */
 .skill-line {
+  position: relative;   /* ADD THIS */
   margin-bottom: 42px;
   padding-left: 14px;
   opacity: 0;
@@ -380,15 +381,32 @@ body.dark .overview-label {
   transition: all 0.55s ease;
 }
 
+
+.skill-line::before {
+  content: "";
+  position: absolute;
+  left: -31px;   /* adjusted to center on the 3px line */
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--text);
+  transform: scale(0);
+  transition: transform 0.4s ease;
+}
+
+
+/* animate dot when visible */
+.skill-line.show::before {
+  transform: scale(1);
+}
+
+
 .skill-line.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* subtle hover */
-.skill-line:hover {
-  transform: translateX(8px);
-}
 
 /* text */
 .skill-line p {
