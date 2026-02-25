@@ -334,89 +334,131 @@ body.dark .overview-label {
 }
 
 /* ===============================
-   SKILLS TIMELINE — SOLID STYLE
+   SECTION
 ================================ */
 
 .skills-section {
-  max-width: 700px;
-  margin: 120px auto;
-  padding-left: 28px;
+  padding: 120px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* TITLE */
+.skills-main-title {
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 70px;
+  color: var(--text);
+}
+
+/* LAYOUT */
+.skills-container {
+  display: grid;
+  grid-template-columns: 1.1fr 80px 1.4fr;
+  align-items: start;
+}
+
+/* LEFT */
+.skills-left {
+  max-width: 420px;
+}
+
+.skills-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+  opacity: 0.85;
+}
+
+.brace {
+  font-size: 34px;
+  color: var(--accent);
+  display: block;
+}
+
+.brace.top { margin-bottom: 10px; }
+.brace.bottom { margin-top: 10px; }
+
+/* DIVIDER */
+.skills-divider {
+  width: 3px;
+  height: 300px;
+  background: var(--border);
+  margin: auto;
+  border-radius: 4px;
   position: relative;
 }
 
-/* SOLID LINE */
-.skills-section::before {
+.skills-divider::after {
   content: "";
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 3px;
-  height: 100%;
-  background: var(--text);   /* always solid */
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 1s ease;
+  inset: 0;
+  background: var(--accent);
+  filter: blur(12px);
+  opacity: 0.6;
 }
 
-/* animate line */
-.skills-section.show-line::before {
-  transform: scaleY(1);
+/* RIGHT SIDE GRID */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
 }
 
-/* title */
-.skills-title {
-  font-size: 34px;
-  margin-bottom: 50px;
-  letter-spacing: 2px;
+/* LIST */
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+  font-size: 16px;
   color: var(--text);
 }
 
-/* skill item */
-.skill-line {
-  position: relative;   /* ADD THIS */
-  margin-bottom: 42px;
-  padding-left: 14px;
-  opacity: 0;
-  transform: translateY(35px);
-  transition: all 0.55s ease;
+/* ICON SIZE */
+.skills-list img {
+  width: 44px;
+  height: 44px;
 }
 
+/* DARK MODE SWITCH */
+.icon-dark { display: none; }
 
-.skill-line::before {
-  content: "";
-  position: absolute;
-  left: -31px;   /* adjusted to center on the 3px line */
-  top: 6px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--text);
-  transform: scale(0);
-  transition: transform 0.4s ease;
+body.dark .icon-light { display: none; }
+body.dark .icon-dark { display: inline-block; }
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
+@media (max-width: 768px) {
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 
-/* animate dot when visible */
-.skill-line.show::before {
-  transform: scale(1);
+  .skills-divider {
+    display: none;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-left {
+    text-align: center;
+    margin: auto;
+  }
 }
-
-
-.skill-line.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-/* text */
-.skill-line p {
-  font-size: 17px;
-  letter-spacing: 0.6px;
-  color: var(--text);
-}
-
-
-
 /* ===============================
    ACHIEVEMENT CTA
 ================================ */
