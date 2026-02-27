@@ -1,0 +1,133 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f5f7fa;
+    color: #333;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Hero (overlay only, image comes from HTML) */
+.hero {
+    position: relative;
+    color: #fff;
+    padding: 70px 0;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.tagline {
+    margin-top: 10px;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* Sections */
+.section {
+    background: #fff;
+    margin: 30px 0;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.section h2 {
+    margin-bottom: 15px;
+}
+
+/* Preview */
+.preview {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Features */
+.features {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.features li {
+    margin-bottom: 8px;
+}
+
+/* Tech Stack */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-stack span {
+    background: #f1f1f1;
+    color: #333;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* Buttons */
+.links {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 24px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 1px;
+    border: 1px solid #000;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.btn.secondary {
+    background: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.btn.secondary:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
