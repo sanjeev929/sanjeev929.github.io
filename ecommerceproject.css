@@ -8,8 +8,50 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background: #f5f7fa;
-    color: #333;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* LIGHT MODE */
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --card: #ffffff;
+  --border: #dcdcdc;
+  --accent: #000000;
+
+  --button-bg: #000000;
+  --button-text: #ffffff;
+
+  --panel-width: 360px;
+
+  --texture1: rgba(0,0,0,0.04);
+  --texture2: rgba(0,0,0,0.02);
+
+  --footer-bg: #f2f2f2;
+  --footer-text: #000000;
+  --footer-muted: #555555;
+  --footer-border: #d0d0d0;
+}
+
+/* DARK MODE */
+body.dark {
+  --bg: #000000;
+  --text: #ffffff;
+  --card: #111111;
+  --border: #333333;
+  --accent: #ffffff;
+
+  --button-bg: #ffffff;
+  --button-text: #000000;
+
+  --texture1: rgba(255,255,255,0.05);
+  --texture2: rgba(255,255,255,0.03);
+
+  --footer-bg: #0d0d0d;
+  --footer-text: #ffffff;
+  --footer-muted: #aaaaaa;
+  --footer-border: #333333;
 }
 
 /* Back Button */
@@ -18,18 +60,18 @@ body {
     top: 20px;
     left: 20px;
     z-index: 2;
-    color: #fff;
+    color:  rgb(255, 255, 255);
     text-decoration: none;
     font-size: 16px;
-    background: rgba(193, 193, 193, 0.5);
+    background: rgba(128,128,128,0.3);
     padding: 8px 14px;
     border-radius: 6px;
     transition: 0.3s ease;
 }
 
 .back-btn:hover {
-    color: #000000;
-    background: rgba(255, 255, 255, 0.8);
+    background:#ffffff;
+    color:#000000;
 }
 
 /* Container */
@@ -39,10 +81,10 @@ body {
     margin: auto;
 }
 
-/* Hero (overlay only, image comes from HTML) */
+/* Hero */
 .hero {
     position: relative;
-    color: #fff;
+    color: #ffffff;
     padding: 70px 0;
     text-align: center;
     background-size: cover;
@@ -61,6 +103,52 @@ body {
     z-index: 1;
 }
 
+/* Hide default scrollbar height */
+.preview-scroll {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    scroll-behavior: smooth;
+}
+
+/* Webkit browsers (Chrome, Edge, Safari) */
+.preview-scroll::-webkit-scrollbar {
+    height: 8px;
+}
+
+.preview-scroll::-webkit-scrollbar-track {
+    background: var(--texture2);
+    border-radius: 10px;
+}
+
+.preview-scroll::-webkit-scrollbar-thumb {
+    background: var(--text);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.preview-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+/* Firefox */
+.preview-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: var(--text) var(--texture2);
+}
+
+/* Image styling */
+.preview-scroll img {
+    height: 220px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease;
+}
+
+.preview-scroll img:hover {
+    transform: scale(1.05);
+}
 .tagline {
     margin-top: 10px;
     font-size: 18px;
@@ -69,11 +157,12 @@ body {
 
 /* Sections */
 .section {
-    background: #fff;
+    background: var(--card);
     margin: 30px 0;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 12px var(--texture1);
 }
 
 .section h2 {
@@ -84,6 +173,7 @@ body {
 .preview {
     width: 50%;
     border-radius: 8px;
+    border: 1px solid var(--border);
 }
 
 /* Features */
@@ -104,16 +194,19 @@ body {
 }
 
 .tech-stack span {
-    background: #f1f1f1;
-    color: #333;
+    background: var(--texture2);
+    color: var(--text);
     padding: 8px 14px;
     border-radius: 10px;
     font-size: 15px;
+    border: 1px solid var(--border);
 }
 
 /* Footer */
 .footer {
     text-align: center;
     padding: 20px;
-    color: #666;
+    background: var(--footer-bg);
+    color: var(--footer-text);
+    border-top: 1px solid var(--footer-border);
 }

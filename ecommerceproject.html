@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="ecommerceproject.css">
 </head>
 <body>
-    <header class="hero" style="background-image: url('image/projects/ecommerceproject.jpg');">
+    <header class="hero" style="background-image: url('image/projects/ecommerce/ecommerceproject.jpg');">
         <a href="index.html#projects" class="back-btn">
             ← Back to Home
         </a>
@@ -49,31 +49,48 @@
         <section class="section">
             <h2>Project Overview</h2>
             <p>
-                This project is a web application designed to solve a specific problem.
-                Explain what the project does and what makes it unique.
+                This is a scalable E-Commerce API that powers secure online shopping with OTP-based authentication.
+                It manages the complete buying flow including products, cart, wishlist, and orders.
+                The system supports multi-role operations with dedicated Vendor and Admin panels.
+                Built with modular architecture, it enables real-time order tracking and efficient product management.
             </p>
         </section>
         <section class="section">
-            <h2>View</h2>
-            <img src="image/projects/ecommerceproject.jpg" alt="Project Screenshot" class="preview">
-        </section>
+    <h2>Preview</h2>
+
+    <div class="preview-scroll">
+        <img src="image/projects/ecommerce/ecommerce_api.png">
+        <img src="image/projects/ecommerce/ecommerce_api2.png">
+        <img src="image/projects/ecommerce/ecommerce_api3.png">
+        <img src="image/projects/ecommerce/ecommerce_api4.png">
+        <img src="image/projects/ecommerce/ecommerce_api5.png">
+        <img src="image/projects/ecommerce/ecommerce_api6.png">
+        <img src="image/projects/ecommerce/ecommerce_api7.png">
+        <img src="image/projects/ecommerce/ecommerce_api8.png">
+        <img src="image/projects/ecommerce/ecommerce_api9.png">
+        <img src="image/projects/ecommerce/ecommerce_api10.png">
+
+    </div>
+</section>
         <section class="section">
             <h2>Tech Stack</h2>
             <div class="tech-stack">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>React</span>
-                <span>Node.js</span>
+                <span>Python</span>
+                <span>FastAPI</span>
+                <span>PostgresSQL</span>
+                <span>AWS Lightsail</span>
+                <span>AWS S3</span>
             </div>
         </section>
         <section class="section">
             <h2>Key Features</h2>
             <ul class="features">
-                <li>User authentication and authorization</li>
-                <li>Responsive design for all devices</li>
-                <li>Interactive dashboard</li>
-                <li>API integration</li>
+                <li>OTP-based user authentication</li>
+                <li>Cart, Wishlist & Temporary Cart</li>
+                <li>Product, Category & Subcategory management</li>
+                <li>Order management & real-time tracking</li>
+                <li>Vendor panel for inventory and orders</li>
+                <li>Admin dashboard with role-based access</li>
             </ul>
         </section>
     </main>
@@ -82,5 +99,39 @@
         <p>© 2026 Sanjeev C</p>
     </footer>
 
+<script>
+        function toggleTheme() {
+    const body = document.body;
+    body.classList.toggle("dark");
+
+    // Save preference
+    const isDark = body.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark");
+    }
+});
+document.addEventListener("DOMContentLoaded", () => {
+    // Select all major sections and nav/header/footer
+    const sections = document.querySelectorAll(".merged-section");
+
+    sections.forEach(section => section.classList.add("section-animate"));
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target); // run once
+            }
+        });
+    }, { threshold: 0.1 }); // trigger when 10% visible
+
+    sections.forEach(section => observer.observe(section));
+});
+    </script>    
 </body>
 </html>
