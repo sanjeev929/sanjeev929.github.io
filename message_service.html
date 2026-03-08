@@ -33,38 +33,44 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Project Showcase</title>
-    <link rel="stylesheet" href="speech_to_text.css">
+    <link rel="stylesheet" href="message_service.css">
 </head>
 <body>
-    <header class="hero" style="background-image: url('image/projects/speechtotext/speech_to_text.png');">
+    <header class="hero" style="background-image: url('image/projects/message_service/communication.jpeg');">
         <a href="index.html#projects" class="back-btn">
             ← Back to Home
         </a>
         <div class="container">
-            <h1>Speech to text</h1>
-            <p class="tagline">Speech API with Whisper AI</p>
+            <h1>Message Service</h1>
+            <p class="tagline">Message sent to whatsapp, message and mail</p>
         </div>
     </header>
     <main class="container">
         <section class="section">
             <h2>Project Overview</h2>
             <p>
-                This is a scalable Speech-to-Text API that enables secure audio processing using the Whisper model.
-                The system allows users to upload audio files, automatically stores them in Amazon S3, and generates accurate text transcriptions.
+            I developed a Message Service Application that enables businesses to communicate with users through multiple channels including WhatsApp, normal SMS messages, and email. 
+            The platform supports campaign-based messaging, allowing administrators to send bulk messages to targeted users efficiently.
 
-                It manages the complete workflow including audio upload, transcription processing, and history tracking.
-                All audio metadata and extracted text are stored in PostgreSQL for efficient retrieval and analytics.
+            It provides features to create and manage message templates, which can be selected and customized before sending emails or messages. 
+            The system manages the complete workflow including campaign creation, template selection, message delivery, and tracking.
 
-                Built with a modular architecture, the platform ensures secure storage, scalable processing, and easy management of user audio records with their corresponding transcripts.
-            </p>
+            All campaign data, message records, and user communication history are securely stored in the database for easy management, retrieval, and analytics.
+
+            Built with a modular architecture, the platform ensures scalable messaging operations, organized campaign management, and efficient handling of user communication records.
+        </p>
         </section>
         <section class="section">
     <h2>Preview</h2>
 
     <div class="preview-scroll">
-        <img src="image/projects/speechtotext/speech_to_text_api1.png">
-        <img src="image/projects/speechtotext/speech_to_text_api2.png">
-        <img src="image/projects/speechtotext/speech_to_text_api3.png">
+        <img src="image/projects/message_service/message_service_api1.png">
+        <img src="image/projects/message_service/message_service_api2.png">
+        <img src="image/projects/message_service/message_service_api3.png">
+        <img src="image/projects/message_service/message_service_api4.png">
+        <img src="image/projects/message_service/message_service_api5.png">
+        <img src="image/projects/message_service/message_service_api6.png">
+        <img src="image/projects/message_service/message_service_api7.png">
     </div>
 </section>
         <section class="section">
@@ -72,8 +78,10 @@
             <div class="tech-stack">
                 <span>Python</span>
                 <span>FastAPI</span>
-                <span>PostgresSQL</span>
-                <span>Whisper AI</span>
+                <span>PostgreSQL</span>
+                <span>WhatsApp Business API</span>
+                <span>Email Templates</span>
+                <span>SMS Gateway</span>
                 <span>AWS Lightsail</span>
                 <span>AWS S3</span>
             </div>
@@ -81,12 +89,13 @@
         <section class="section">
             <h2>Key Features</h2>
             <ul class="features">
-                <li>Audio upload with secure storage in Amazon S3</li>
-                <li>High-accuracy transcription using Whisper</li>
-                <li>Transcript & metadata stored in PostgreSQL</li>
-                <li>User audio history with text records</li>
-                <li>Secure access with user-level isolation</li>
-                <li>REST API for easy integration</li>
+                <li>Campaign-based messaging to send bulk messages to users</li>
+                <li>Multi-channel communication via WhatsApp, Email, and SMS</li>
+                <li>Create and manage reusable message and email templates</li>
+                <li>Select templates and send personalized messages to targeted users</li>
+                <li>Store campaign data, message history, and user records in PostgreSQL</li>
+                <li>Track message delivery and maintain communication logs</li>
+                <li>Secure API-based architecture for scalable messaging services</li>
             </ul>
         </section>
     </main>

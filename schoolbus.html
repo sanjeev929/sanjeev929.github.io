@@ -33,38 +33,52 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Project Showcase</title>
-    <link rel="stylesheet" href="speech_to_text.css">
+    <link rel="stylesheet" href="schoolbus.css">
 </head>
 <body>
-    <header class="hero" style="background-image: url('image/projects/speechtotext/speech_to_text.png');">
+    <header class="hero" style="background-image: url('image/projects/school_bus/school_bus_api.jpg');">
         <a href="index.html#projects" class="back-btn">
             ← Back to Home
         </a>
         <div class="container">
-            <h1>Speech to text</h1>
-            <p class="tagline">Speech API with Whisper AI</p>
+            <h1>Message Service</h1>
+            <p class="tagline">Message sent to whatsapp, message and mail</p>
         </div>
     </header>
     <main class="container">
         <section class="section">
             <h2>Project Overview</h2>
             <p>
-                This is a scalable Speech-to-Text API that enables secure audio processing using the Whisper model.
-                The system allows users to upload audio files, automatically stores them in Amazon S3, and generates accurate text transcriptions.
+            I developed a School Bus Management System that helps schools manage transportation operations efficiently. 
+            The platform allows administrators to assign routes and trips to drivers, manage buses, and monitor transportation activities in real time.
 
-                It manages the complete workflow including audio upload, transcription processing, and history tracking.
-                All audio metadata and extracted text are stored in PostgreSQL for efficient retrieval and analytics.
+            Drivers can view trip details including assigned routes, student lists, bus stops, and attendance. 
+            The system also includes map integration to track bus locations, estimated arrival times at each stop, and overall trip progress.
 
-                Built with a modular architecture, the platform ensures secure storage, scalable processing, and easy management of user audio records with their corresponding transcripts.
-            </p>
+            It manages important records such as student transportation details, bus stop information, staff data, and fee management. 
+            All transportation data, trip logs, and attendance records are securely stored in the database for easy access and tracking.
+
+            Built with a structured system architecture, the platform ensures organized route management, efficient communication between school staff and drivers, and reliable monitoring of school bus operations.
+        </p>
         </section>
         <section class="section">
     <h2>Preview</h2>
 
     <div class="preview-scroll">
-        <img src="image/projects/speechtotext/speech_to_text_api1.png">
-        <img src="image/projects/speechtotext/speech_to_text_api2.png">
-        <img src="image/projects/speechtotext/speech_to_text_api3.png">
+        <img src="image/projects/school_bus/school_bus_api1.png">
+        <img src="image/projects/school_bus/school_bus_api2.png">
+        <img src="image/projects/school_bus/school_bus_api3.png">
+        <img src="image/projects/school_bus/school_bus_api4.png">
+        <img src="image/projects/school_bus/school_bus_api5.png">
+        <img src="image/projects/school_bus/school_bus_api6.png">
+        <img src="image/projects/school_bus/school_bus_api7.png">
+        <img src="image/projects/school_bus/school_bus_api8.png">
+        <img src="image/projects/school_bus/school_bus_api9.png">
+        <img src="image/projects/school_bus/school_bus_api10.png">
+        <img src="image/projects/school_bus/school_bus_api11.png">
+        <img src="image/projects/school_bus/school_bus_api12.png">
+        <img src="image/projects/school_bus/school_bus_api13.png">
+        <img src="image/projects/school_bus/school_bus_api14.png">
     </div>
 </section>
         <section class="section">
@@ -72,21 +86,22 @@
             <div class="tech-stack">
                 <span>Python</span>
                 <span>FastAPI</span>
-                <span>PostgresSQL</span>
-                <span>Whisper AI</span>
+                <span>PostgreSQL</span>
                 <span>AWS Lightsail</span>
                 <span>AWS S3</span>
             </div>
         </section>
         <section class="section">
             <h2>Key Features</h2>
-            <ul class="features">
-                <li>Audio upload with secure storage in Amazon S3</li>
-                <li>High-accuracy transcription using Whisper</li>
-                <li>Transcript & metadata stored in PostgreSQL</li>
-                <li>User audio history with text records</li>
-                <li>Secure access with user-level isolation</li>
-                <li>REST API for easy integration</li>
+           <ul class="features">
+                <li>Admin can assign routes and trips to drivers</li>
+                <li>Drivers can view trip details including assigned students and bus stops</li>
+                <li>Student attendance tracking during pickup and drop</li>
+                <li>Bus stop management with map and route visualization</li>
+                <li>Real-time tracking of bus location and estimated arrival times</li>
+                <li>Student transportation records and trip history stored in database</li>
+                <li>School staff and driver management system</li>
+                <li>Student fee management and transportation fee tracking</li>
             </ul>
         </section>
     </main>
