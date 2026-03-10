@@ -1,0 +1,120 @@
+/* Reset */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+/* Light Mode */
+:root{
+--bg:#ffffff;
+--text:#000000;
+--card:#f5f5f5;
+--accent:#ff7a00;
+}
+
+/* Dark Mode */
+body.dark{
+--bg:#000000;
+--text:#ffffff;
+--card:#111111;
+--accent:#ff9800;
+}
+
+/* Body */
+body{
+background:var(--bg);
+color:var(--text);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+transition:0.3s;
+overflow:hidden;
+}
+
+/* Back Button */
+.back-btn{
+position:absolute;
+top:20px;
+left:20px;
+text-decoration:none;
+color:#ffffff;
+background:#000000;
+padding:10px 18px;
+border-radius:0px;
+font-weight:600;
+transition:all 0.3s ease;
+}
+
+/* Button hover animation */
+.back-btn:hover{
+transform:translateY(-3px) scale(1.05);
+box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+
+body.dark .back-btn{
+background:#ffffff;
+color:#000000;
+}
+
+body.dark .back-btn:hover{
+box-shadow:0 8px 20px rgba(255,255,255,0.25);
+}
+
+/* Center Container */
+.container{
+text-align:center;
+background:var(--card);
+padding:50px;
+border-radius:14px;
+transition:all 0.4s ease;
+}
+
+/* Container hover */
+.container:hover{
+transform:translateY(-6px);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Naruto Image */
+.anime{
+width:220px;
+margin-bottom:20px;
+animation:float 4s ease-in-out infinite;
+}
+
+/* Floating Animation */
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-18px)}
+100%{transform:translateY(0)}
+}
+
+/* Title animation */
+h1{
+margin-bottom:12px;
+font-size:30px;
+letter-spacing:1px;
+animation:fadeIn 1s ease;
+}
+
+/* Text */
+p{
+opacity:0.85;
+font-size:16px;
+animation:fadeIn 1.5s ease;
+}
+
+/* Fade animation */
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(10px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
