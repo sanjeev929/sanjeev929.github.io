@@ -555,17 +555,12 @@ body.dark .achievement-btn:hover {
 .certificate-card {
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 0px;
     padding: 16px;
     transition: 0.3s ease;
     text-align: center;
 }
 
-.certificate-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
-    border-color: var(--accent);
-}
 
 .certificate-card img {
     width: 100%;
@@ -601,6 +596,75 @@ body.dark .certificate-card:hover {
     border-color: #fff;
 }
 
+/* ===============================
+   BLOG SECTION
+================================ */
+
+.blog-section {
+    padding: 70px 20px;
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+}
+
+.blog-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+}
+
+/* BLOG CARD */
+
+.blog-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 0px; /* sharp edges */
+    padding: 18px;
+    text-align: left;
+}
+
+/* IMAGE */
+
+.blog-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 0px;
+    margin-bottom: 14px;
+}
+
+/* TITLE */
+
+.blog-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+/* DESCRIPTION */
+
+.blog-card p {
+    font-size: 14px;
+    opacity: 0.85;
+    margin-bottom: 14px;
+}
+
+/* REDIRECTION LINK */
+
+.blog-link {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--accent);
+    display: inline-block;
+}
+
+/* subtle hover only on text */
+
+.blog-link:hover {
+    text-decoration: underline;
+}
 
 /* PROJECT SECTION ---------------------------------------------*/
 .project-section {

@@ -123,7 +123,7 @@
 
 <div class="overview-cta">
   <a href="acheivement.html" class="achievement-btn">
-    View Detailed Achievements →
+    View Achievements Visuals →
   </a>
 </div>
 
@@ -230,6 +230,71 @@
   </div>
 </section>
 
+<section id="blogs" class="blog-section">
+
+  <h2 class="section-title">Blogs</h2>
+  <p class="section-subtitle">
+    Articles about Python, AI, Backend Development and System Design
+  </p>
+
+  <div class="blog-grid">
+
+    <!-- Blog Card -->
+    <div class="blog-card">
+      <img src="image/profile/cicd_blog.png" alt="FastAPI CI/CD GitHub Actions">
+
+      <h3>CI/CD for FastAPI using GitHub Actions</h3>
+
+      <p>
+        Learn how to building, and deployment of FastAPI applications 
+        using GitHub Actions. This guide explains how to create a CI/CD pipeline that 
+        deploys your API to production.
+      </p>
+
+      <a href="404.html" class="blog-link">
+        Read Article →
+      </a>
+    </div>
+
+
+    <!-- Blog Card -->
+    <div class="blog-card">
+      <img src="image/profile/nginx_blog.png" alt="Nginx Reverse Proxy FastAPI">
+
+      <h3>Setting up Nginx for FastAPI Deployment</h3>
+
+      <p>
+        A step-by-step guide to configuring Nginx as a reverse proxy for FastAPI 
+        applications. Learn how to improve security 
+        when deploying FastAPI APIs on production servers.
+      </p>
+
+      <a href="404.html" class="blog-link">
+        Read Article →
+      </a>
+    </div>
+
+
+    <!-- Blog Card -->
+    <div class="blog-card">
+    <img src="image/profile/alexa_blog.png" alt="Amazon Alexa Setup Guide">
+
+    <h3>How to Setup and Configure Amazon Alexa</h3>
+
+    <p>
+      A beginner-friendly guide to setting up Amazon Alexa devices, connecting 
+      smart home services, and customizing voice commands for automation 
+      and productivity.
+    </p>
+
+    <a href="404.html" class="blog-link">
+      Read Article →
+    </a>
+  </div>
+
+  </div>
+
+</section>
 
 <div id="projects" class="project-section">
   <h2 class="section-title">Projects</h2>
@@ -678,7 +743,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 document.addEventListener("DOMContentLoaded", () => {
     // Select all major sections and nav/header/footer
-    const sections = document.querySelectorAll(".merged-section, .overview-section, .skills-section, .certificates-section, .achievement-logos, .project-section");
+    const sections = document.querySelectorAll(".merged-section, .overview-section, .skills-section, .certificates-section, .blog-section , .achievement-logos, .project-section");
 
     sections.forEach(section => section.classList.add("section-animate"));
 
